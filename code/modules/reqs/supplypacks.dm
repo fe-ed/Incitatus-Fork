@@ -463,7 +463,7 @@ WEAPONS
 /datum/supply_packs/weapons/specdemo
 	name = "RL-152 SADAR Rocket Launcher kit"
 	contains = list(/obj/item/storage/holster/backholster/rlsadar/full)
-	cost = SADAR_PRICE
+	cost = SADAR_PRICE + 150
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/weapons/rpg_regular
