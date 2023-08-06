@@ -340,7 +340,7 @@ WEAPONS
 	cost = 25
 
 /datum/supply_packs/weapons/recoillesskit
-	name = "RL-160 Recoilless rifle kit"
+	name = "RL-160 Recoilless Launcher kit"
 	contains = list(/obj/item/storage/holster/backholster/rpg/full)
 	cost = 400
 	available_against_xeno_only = TRUE
@@ -449,9 +449,9 @@ WEAPONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/weapons/thermobaric
-	name = "RL-57 Thermobaric Launcher"
-	contains = list(/obj/item/weapon/gun/launcher/rocket/m57a4/t57)
-	cost = 500
+	name = "RL-57 Thermobaric Launcher kit"
+	contains = list(/obj/item/storage/holster/backholster/rlquad/full)
+	cost = 550
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/weapons/thermobaric_wp
@@ -461,8 +461,8 @@ WEAPONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/weapons/specdemo
-	name = "RL-152 SADAR Rocket Launcher"
-	contains = list(/obj/item/weapon/gun/launcher/rocket/sadar)
+	name = "RL-152 SADAR Rocket Launcher kit"
+	contains = list(/obj/item/storage/holster/backholster/rlsadar/full)
 	cost = SADAR_PRICE
 	available_against_xeno_only = TRUE
 
