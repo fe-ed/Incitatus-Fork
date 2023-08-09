@@ -340,7 +340,7 @@ WEAPONS
 	cost = 25
 
 /datum/supply_packs/weapons/recoillesskit
-	name = "RL-160 Recoilless Launcher kit"
+	name = "RL-160 Recoilless rifle kit"
 	contains = list(/obj/item/storage/holster/backholster/rpg/full)
 	cost = 400
 	available_against_xeno_only = TRUE
