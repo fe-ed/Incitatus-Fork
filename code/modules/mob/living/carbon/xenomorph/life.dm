@@ -189,12 +189,18 @@
 		return
 
 	// Health Hud
-	if(hud_used && hud_used.healths)
-		if(stat != DEAD)
-			var/bucket = get_bucket(XENO_HUD_ICON_BUCKETS, maxHealth, health, get_crit_threshold(), list("full", "critical"))
-			hud_used.healths.icon_state = "health[bucket]"
-		else
-			hud_used.healths.icon_state = "health_dead"
+
+	var/image/holder = hud_used.healths
+	if(!holder)
+		return
+	if(stat == DEAD)
+		holder.icon_state = "health_dead"
+		return
+
+	var/amount = health > 0 ? round(health * 100 / maxHealth, 10) : CEILING(health, 16)
+	if(!amount && health < 0)
+		amount = -1 //don't want the 'zero health' icon when we are crit
+	holder.icon_state = "health[amount]"
 
 	// Plasma Hud
 	if(hud_used && hud_used.alien_plasma_display)
