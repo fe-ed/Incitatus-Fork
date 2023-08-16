@@ -200,7 +200,7 @@
 		var/amount = round(plasma_stored * 100 / xeno_caste.plasma_max, 5)
 		hud_used.alien_plasma_display.icon_state = "power_display_[amount]"
 	else
-		hud_used.alien_plasma_display.icon_state = "power_display_empty"
+		hud_used.alien_plasma_display.icon_state = "power_display_0"
 
 	// Crit Hud (Probably oxy crit from human Hud)
 	if(stat != DEAD && !endure)
