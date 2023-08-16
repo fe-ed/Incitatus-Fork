@@ -3,8 +3,6 @@
 #define XENO_STANDING_HEAL 0.2
 #define XENO_CRIT_DAMAGE 5
 
-#define XENO_HUD_ICON_BUCKETS 16  // should equal the number of icons you use to represent health / plasma (from 0 -> X)
-
 /mob/living/carbon/xenomorph/Life()
 
 	if(!loc)
@@ -189,46 +187,38 @@
 		return
 
 	// Health Hud
-
-	var/image/holder = hud_used.healths
-	if(!holder)
-		return
-	if(stat == DEAD)
-		holder.icon_state = "health_dead"
-		return
-
-	var/amount = health > 0 ? round(health * 100 / maxHealth, 10) : CEILING(health, 16)
-	if(!amount && health < 0)
-		amount = -1 //don't want the 'zero health' icon when we are crit
-	holder.icon_state = "health[amount]"
+	if(stat != DEAD)
+		var/amount = round(health * 100 / maxHealth, 5)
+		if(health < 0)
+			amount = 0 //We dont want crit sprite only at 0 health
+		hud_used.healths.icon_state = "health[amount]"
+	else
+		hud_used.healths.icon_state = "health_dead"
 
 	// Plasma Hud
-	if(hud_used && hud_used.alien_plasma_display)
-		if(stat != DEAD)
-			var/bucket = get_bucket(XENO_HUD_ICON_BUCKETS, xeno_caste.plasma_max, plasma_stored, 0, list("full", "empty"))
-			hud_used.alien_plasma_display.icon_state = "power_display_[bucket]"
-			hud_used.alien_plasma_display.desc = "[plasma_stored]/[xeno_caste.plasma_max]"
-		else
-			hud_used.alien_plasma_display.icon_state = "power_display_empty"
-			hud_used.alien_plasma_display.desc = "0/0"
+	if(stat != DEAD)
+		var/amount = round(plasma_stored * 100 / xeno_caste.plasma_max, 5)
+		hud_used.alien_plasma_display.icon_state = "power_display_[amount]"
+	else
+		hud_used.alien_plasma_display.icon_state = "power_display_empty"
 
 	// Crit Hud (Probably oxy crit from human Hud)
-	if(stat != DEAD && endure != TRUE)
+	if(stat != DEAD && !endure)
 		var/severity = 0
 		var/divideh = maxHealth / health
 		switch(divideh)
 			if(1.5 to 2)
-				severity = 2
+				severity = 1
 			if(2 to 3)
-				severity = 3
+				severity = 2
 			if(3 to 4.5)
-				severity = 4
+				severity = 3
 			if(4.5 to 6.5)
+				severity = 4
+			if(6.5 to 10)
 				severity = 5
-			if(6.5 to 9)
+			if(10 to INFINITY)
 				severity = 6
-			if(9 to INFINITY)
-				severity = 7
 		overlay_fullscreen("xcrit", /atom/movable/screen/fullscreen/oxy, severity)
 	else
 		clear_fullscreen("xcrit")
