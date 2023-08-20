@@ -666,7 +666,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/bullet/rifle/repeater
 	name = "heavy impact rifle bullet"
 	hud_state = "sniper"
-	damage = 70
+	damage = 65
 	penetration = 20
 	sundering = 1.25
 
@@ -1142,6 +1142,9 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	sundering = 7.5
 	damage_falloff = 0.25
 
+/datum/ammo/bullet/sniper/pfc/on_hit_mob(mob/M, obj/projectile/P)
+	staggerstun(M, P, slowdown = 2, stagger = 1)
+
 /datum/ammo/bullet/sniper/pfc/flak
 	name = "high caliber flak rifle bullet"
 	hud_state = "sniper_heavy_flak"
@@ -1152,7 +1155,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	damage_falloff = 0.25
 
 /datum/ammo/bullet/sniper/pfc/flak/on_hit_mob(mob/M, obj/projectile/P)
-	staggerstun(M, P, knockback = 4, slowdown = 1.5, stagger = 1, max_range = 17)
+	staggerstun(M, P, knockback = 4, slowdown = 2, stagger = 1, max_range = 17)
 
 
 /datum/ammo/bullet/sniper/auto
