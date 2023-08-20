@@ -604,9 +604,15 @@
 	target.balloon_alert_to_viewers("Grabbed!")
 	RegisterSignal(target, COMSIG_MOVABLE_POST_THROW, PROC_REF(delete_beam))
 	target.throw_at(owner, TENTACLE_ABILITY_RANGE, 1, owner, FALSE)
-	if(isliving(target))
+	var/turf/current = get_turf(owner)
+	var/turf/target_turf = get_turf(target)
+	if(isliving(target) && get_dist(current, target_turf) < TENTACLE_ABILITY_RANGE * 0.5)
 		var/mob/living/loser = target
 		loser.apply_effects(stun = 1, weaken = 0.1)
+	else if(isliving(target) && get_dist(current, target_turf) >= TENTACLE_ABILITY_RANGE * 0.5)
+		var/mob/living/loser = target
+		loser.apply_effects(weaken = 0.2)
+		loser.apply_damage(50, STAMINA)
 
 ///signal handler to delete tetacle after we are done draggging owner along
 /datum/action/xeno_action/activable/tentacle/proc/delete_beam(datum/source, atom/impacted)
