@@ -666,7 +666,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 /datum/ammo/bullet/rifle/repeater
 	name = "heavy impact rifle bullet"
 	hud_state = "sniper"
-	damage = 70
+	damage = 65
 	penetration = 20
 	sundering = 1.25
 
