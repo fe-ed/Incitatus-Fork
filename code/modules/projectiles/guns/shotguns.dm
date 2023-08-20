@@ -158,6 +158,8 @@
 	reciever_flags = AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_TOGGLES_OPEN_EJECTS|AMMO_RECIEVER_HANDFULS
 	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 21,"rail_x" = 15, "rail_y" = 22, "under_x" = 21, "under_y" = 16, "stock_x" = 21, "stock_y" = 16)
 
+	extra_delay = 2 SECONDS
+	burst_delay = 2
 	fire_delay = 0.55 SECONDS
 	scatter = 4
 	scatter_unwielded = 8
@@ -217,7 +219,6 @@
 	scatter_unwielded = 10
 	recoil = 1
 	recoil_unwielded = 4
-	aim_slowdown = 0.6
 
 
 //-------------------------------------------------------
