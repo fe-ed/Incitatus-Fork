@@ -160,7 +160,7 @@
 
 	extra_delay = 2 SECONDS
 	burst_delay = 2
-	fire_delay = 0.55 SECONDS
+	fire_delay = 0.65 SECONDS
 	scatter = 4
 	scatter_unwielded = 8
 	recoil = 2
@@ -213,7 +213,7 @@
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY
 	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 17,"rail_x" = 15, "rail_y" = 19, "under_x" = 21, "under_y" = 13, "stock_x" = 13, "stock_y" = 16)
 
-	fire_delay = 0.55 SECONDS
+	fire_delay = 0.65 SECONDS
 	burst_amount = 1
 	scatter = 3
 	scatter_unwielded = 10
