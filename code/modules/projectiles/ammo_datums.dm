@@ -1143,7 +1143,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	damage_falloff = 0.25
 
 /datum/ammo/bullet/sniper/pfc/on_hit_mob(mob/M, obj/projectile/P)
-	staggerstun(M, P, slowdown = 2, stagger = 1)
+	staggerstun(M, P, slowdown = 1.5, max_range = 17)
 
 /datum/ammo/bullet/sniper/pfc/flak
 	name = "high caliber flak rifle bullet"
