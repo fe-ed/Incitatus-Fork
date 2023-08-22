@@ -286,6 +286,21 @@
 		infection_hud.icon_state = "hudsynth" //Xenos can feel synths are not human.
 		return TRUE
 
+	if(species.species_flags & ROBOTIC_LIMBS)
+		simple_status_hud.icon_state = ""
+		if(stat != DEAD)
+			status_hud.icon_state = "hudrobot"
+		else
+			if(!client)
+				var/mob/dead/observer/G = get_ghost(FALSE, TRUE)
+				if(!G)
+					status_hud.icon_state = "hudrobotdnr"
+				else
+					status_hud.icon_state = "hudrobotdead"
+			return
+		infection_hud.icon_state = "hudrobot"
+		return TRUE
+
 	if(species.species_flags & HEALTH_HUD_ALWAYS_DEAD)
 		status_hud.icon_state = "huddead"
 		infection_hud.icon_state = ""
@@ -312,12 +327,12 @@
 	switch(stat)
 		if(DEAD)
 			simple_status_hud.icon_state = ""
-			infection_hud.icon_state = "huddead"
+			infection_hud.icon_state = "huddeaddefib4"
 			if(!HAS_TRAIT(src, TRAIT_PSY_DRAINED))
 				infection_hud.icon_state = "psy_drain"
 			if(HAS_TRAIT(src, TRAIT_UNDEFIBBABLE ))
 				hud_list[HEART_STATUS_HUD].icon_state = "still_heart"
-				status_hud.icon_state = "huddead"
+				status_hud.icon_state = "huddeaddefib4"
 				return TRUE
 			if(!client)
 				var/mob/dead/observer/ghost = get_ghost()
