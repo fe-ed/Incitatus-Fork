@@ -277,7 +277,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "undefibbable")
 		return
 	if(wearer.stat == DEAD)
-		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable")
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable1")
 		return
 	if(wearer.assigned_squad)
 		SSminimaps.add_marker(wearer, wearer.z, marker_flags, lowertext(wearer.assigned_squad.name)+"_"+wearer.job.minimap_icon)
@@ -297,7 +297,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		marker_flags = MINIMAP_FLAG_MARINE_REBEL
 	else if(hud_type == DATA_HUD_SQUAD_SOM)
 		marker_flags = MINIMAP_FLAG_MARINE_SOM
-	SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable")
+	SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable1")
 
 ///Change the minimap icon to a undefibbable icon
 /obj/item/radio/headset/mainship/proc/set_undefibbable_on_minimap()
