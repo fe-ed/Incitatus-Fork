@@ -297,7 +297,20 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		marker_flags = MINIMAP_FLAG_MARINE_REBEL
 	else if(hud_type == DATA_HUD_SQUAD_SOM)
 		marker_flags = MINIMAP_FLAG_MARINE_SOM
-	SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable1")
+	if(issynth(wearer))
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable_synt")
+	else if(isrobot(wearer))
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable_robo")
+	else
+		var/stage
+		switch(wearer.dead_ticks)
+			if(0 to 0.4 * TIME_BEFORE_DNR)
+				stage = 1
+			if(0.4 * TIME_BEFORE_DNR to 0.8 * TIME_BEFORE_DNR)
+				stage = 2
+			if(0.8 * TIME_BEFORE_DNR to INFINITY)
+				stage = 3
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "defibbable[stage]")
 
 ///Change the minimap icon to a undefibbable icon
 /obj/item/radio/headset/mainship/proc/set_undefibbable_on_minimap()
@@ -312,7 +325,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		marker_flags = MINIMAP_FLAG_MARINE_REBEL
 	else if(hud_type == DATA_HUD_SQUAD_SOM)
 		marker_flags = MINIMAP_FLAG_MARINE_SOM
-	SSminimaps.add_marker(wearer, wearer.z, marker_flags, "undefibbable")
+	if(issynth(wearer))
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "undefibbable_synt")
+	else if(isrobot(wearer))
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "undefibbable_robo")
+	else
+		SSminimaps.add_marker(wearer, wearer.z, marker_flags, "undefibbable")
 
 ///Remove all action of type minimap from the wearer, and make him disappear from the minimap
 /obj/item/radio/headset/mainship/proc/remove_minimap()
