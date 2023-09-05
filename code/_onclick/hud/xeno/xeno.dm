@@ -61,9 +61,17 @@
 
 /atom/movable/screen/alien/maturehud
 	icon = 'icons/mob/screen/alien_better.dmi'
-	name = "Mature"
+	name = "Mature Status"
+	desc = "Click to open personal shop."
 	icon_state = "mature0"
 	screen_loc = ui_maturehud
+
+/atom/movable/screen/alien/maturehud/Click()
+	. = ..()
+	if(!.)
+		return
+	var/mob/living/carbon/xenomorph/X = usr
+	X.personal_blessings()
 
 /atom/movable/screen/alien/evolvehud
 	icon = 'icons/mob/screen/alien_better.dmi'
@@ -156,6 +164,10 @@
 	alien_evolve_display = new /atom/movable/screen/alien/evolvehud()
 	alien_evolve_display.alpha = ui_alpha
 	infodisplay += alien_evolve_display
+
+	alien_mature_display = new /atom/movable/screen/alien/maturehud()
+	alien_mature_display.alpha = ui_alpha
+	infodisplay += alien_mature_display
 
 	locate_leader = new /atom/movable/screen/alien/queen_locator()
 	locate_leader.alpha = ui_alpha

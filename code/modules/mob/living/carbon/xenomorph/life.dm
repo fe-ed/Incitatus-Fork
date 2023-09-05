@@ -213,8 +213,28 @@
 				hud_used.alien_evolve_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
 			else
 				hud_used.alien_evolve_display.overlays -= image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
+			update_overlays(hud_used.alien_evolve_display)
 		else
 			hud_used.alien_evolve_display.icon_state = "evolve_empty"
+
+	//Mature Hud
+	if(hud_used && hud_used.alien_mature_display)
+		if(stat != DEAD)
+			var/amount = round(upgrade_stored * 100 / xeno_caste.upgrade_threshold, 5)
+			hud_used.alien_mature_display.icon_state = "mature[amount]"
+			if(xeno_caste.upgrade == XENO_UPGRADE_ONE)
+				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_elder")
+			else if(xeno_caste.upgrade == XENO_UPGRADE_TWO)
+				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_mature")
+			else if(xeno_caste.upgrade == XENO_UPGRADE_THREE)
+				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_ancient")
+				if(amount == 100)
+					hud_used.alien_mature_display.icon_state = "mature_cant"
+			else if(xeno_caste.upgrade == XENO_UPGRADE_FOUR)
+				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_primordial")
+			update_overlays(hud_used.alien_mature_display)
+		else
+			hud_used.alien_mature_display.icon_state = "mature0"
 
 	interactee?.check_eye(src)
 
