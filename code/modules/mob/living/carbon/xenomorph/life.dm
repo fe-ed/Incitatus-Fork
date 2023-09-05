@@ -204,6 +204,15 @@
 		else
 			hud_used.alien_plasma_display.icon_state = "power_display_0"
 
+	// Evolve Hud
+	if(hud_used && hud_used.alien_evolve_display)
+		var/mob/living/carbon/xenomorph/X
+		if(stat != DEAD)
+			var/amount = round(evolution_stored * 100 / X.xeno_caste.evolution_threshold, 5)
+			hud_used.alien_evolve_display.icon_state = "evolve[amount]"
+		else
+			hud_used.alien_evolve_display.icon_state = "evolve_na"
+
 	interactee?.check_eye(src)
 
 	return TRUE

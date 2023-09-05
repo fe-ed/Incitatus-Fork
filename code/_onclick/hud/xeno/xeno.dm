@@ -17,6 +17,7 @@
 	closeToolTip(usr)
 
 /atom/movable/screen/alien/nightvision
+	icon = 'icons/mob/screen/alien_better.dmi'
 	name = "Toggle Night Vision"
 	icon_state = "nightvision2"
 	screen_loc = ui_alien_nightvision
@@ -39,6 +40,7 @@
 
 
 /atom/movable/screen/alien/queen_locator
+	icon = 'icons/mob/screen/alien_better.dmi'
 	icon_state = "trackoff"
 	name = "Queen Locator"
 	desc = "Click for hive status."
@@ -52,10 +54,21 @@
 	X.hive_status()
 
 /atom/movable/screen/alien/plasmadisplay
-	name = "Plasma Stored"
 	icon = 'icons/mob/screen/alien_better.dmi'
+	name = "Plasma Stored"
 	icon_state = "power_display2"
 	screen_loc = ui_alienplasmadisplay
+
+/atom/movable/screen/alien/maturehud
+	icon = 'icons/mob/screen/alien_better.dmi'
+	name = "Mature"
+	icon_state = "mature0"
+	screen_loc = ui_maturehud
+/atom/movable/screen/alien/evolvehud
+	icon = 'icons/mob/screen/alien_better.dmi'
+	name = "Evolve"
+	icon_state = "evolve80"
+	screen_loc = ui_evolvehud
 
 /datum/hud/alien/New(mob/living/carbon/xenomorph/owner, ui_style, ui_color, ui_alpha = 230)
 	..()
@@ -131,8 +144,13 @@
 	alien_plasma_display.alpha = ui_alpha
 	infodisplay += alien_plasma_display
 
+	alien_evolve_display = new /atom/movable/screen/alien/evolvehud()
+	alien_evolve_display.alpha = ui_alpha
+	infodisplay += alien_evolve_display
+
 	locate_leader = new /atom/movable/screen/alien/queen_locator()
 	locate_leader.alpha = ui_alpha
+	locate_leader.icon = 'icons/mob/screen/alien_better.dmi'
 	infodisplay += locate_leader
 
 	pull_icon = new /atom/movable/screen/pull()
