@@ -64,11 +64,20 @@
 	name = "Mature"
 	icon_state = "mature0"
 	screen_loc = ui_maturehud
+
 /atom/movable/screen/alien/evolvehud
 	icon = 'icons/mob/screen/alien_better.dmi'
-	name = "Evolve"
+	name = "Evolve Status"
+	desc = "Click for evolve panel."
 	icon_state = "evolve_empty"
 	screen_loc = ui_evolvehud
+
+/atom/movable/screen/alien/evolvehud/Click()
+	. = ..()
+	if(!.)
+		return
+	var/mob/living/carbon/xenomorph/X = usr
+	X.Evolve()
 
 /datum/hud/alien/New(mob/living/carbon/xenomorph/owner, ui_style, ui_color, ui_alpha = 230)
 	..()
