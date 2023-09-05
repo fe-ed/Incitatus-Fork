@@ -112,7 +112,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Place trap"
 	action_icon_state = "place_trap"
 	desc = "Place a hole on weeds that can be filled with a hugger or acid. Activates when a marine steps on it."
-	plasma_cost = 400
+	plasma_cost = 200
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_TRAP,
 	)
@@ -152,8 +152,8 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Spawn Facehugger"
 	action_icon_state = "spawn_hugger"
 	desc = "Spawn a facehugger that is stored on your body."
-	plasma_cost = 200
-	cooldown_timer = 10 SECONDS
+	plasma_cost = 100
+	cooldown_timer = 5 SECONDS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SPAWN_HUGGER,
 	)
