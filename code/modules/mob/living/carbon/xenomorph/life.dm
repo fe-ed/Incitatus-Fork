@@ -206,12 +206,15 @@
 
 	// Evolve Hud
 	if(hud_used && hud_used.alien_evolve_display)
-		var/mob/living/carbon/xenomorph/X
 		if(stat != DEAD)
-			var/amount = round(evolution_stored * 100 / X.xeno_caste.evolution_threshold, 5)
+			var/amount = round(evolution_stored * 100 / xeno_caste.evolution_threshold, 5)
 			hud_used.alien_evolve_display.icon_state = "evolve[amount]"
+			if(!hive.check_ruler())
+				hud_used.alien_evolve_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
+			else
+				hud_used.alien_evolve_display.overlays -= image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
 		else
-			hud_used.alien_evolve_display.icon_state = "evolve_na"
+			hud_used.alien_evolve_display.icon_state = "evolve_empty"
 
 	interactee?.check_eye(src)
 

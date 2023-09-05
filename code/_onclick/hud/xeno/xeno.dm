@@ -67,7 +67,7 @@
 /atom/movable/screen/alien/evolvehud
 	icon = 'icons/mob/screen/alien_better.dmi'
 	name = "Evolve"
-	icon_state = "evolve80"
+	icon_state = "evolve_empty"
 	screen_loc = ui_evolvehud
 
 /datum/hud/alien/New(mob/living/carbon/xenomorph/owner, ui_style, ui_color, ui_alpha = 230)
