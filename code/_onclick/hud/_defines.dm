@@ -97,6 +97,7 @@
 #define ui_alienplasmadisplay "EAST-1:45,8:13"
 #define ui_evolvehud "EAST-1:28,6:13"
 #define ui_maturehud "EAST-1:28,6:13"
+#define ui_sunderhud "EAST-1:28,10:13"
 
 //Pop-up inventory
 #define ui_shoes "WEST+1:8,1:5"

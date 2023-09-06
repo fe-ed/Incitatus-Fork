@@ -232,7 +232,7 @@
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_mature")
 			else if(xeno_caste.upgrade == XENO_UPGRADE_THREE)
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_ancient")
-				if(upgrade_stored >= xeno_caste.upgrade_threshold)
+				if(upgrade_stored >= xeno_caste.upgrade_threshold && xeno_caste.upgrade == XENO_UPGRADE_THREE)
 					hud_used.alien_mature_display.icon_state = "mature_cant"
 			else if(xeno_caste.upgrade == XENO_UPGRADE_FOUR)
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_primordial")
@@ -240,6 +240,30 @@
 			update_overlays(hud_used.alien_mature_display)
 		else
 			hud_used.alien_mature_display.icon_state = "mature0"
+
+	//Sunder Hud
+	if(hud_used && hud_used.alien_sunder_display)
+		if(stat != DEAD)
+			var/amount = round( 100 - sunder , 5)
+			hud_used.alien_sunder_display.icon_state = "sunder[amount]"
+			switch(amount)
+				if(80 to 100)
+					hud_used.alien_sunder_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "sunder_warn0")
+					update_overlays(hud_used.alien_sunder_display)
+				if(60 to 80)
+					hud_used.alien_sunder_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "sunder_warn1")
+					update_overlays(hud_used.alien_sunder_display)
+				if(40 to 60)
+					hud_used.alien_sunder_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "sunder_warn2")
+					update_overlays(hud_used.alien_sunder_display)
+				if(20 to 40)
+					hud_used.alien_sunder_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "sunder_warn3")
+					update_overlays(hud_used.alien_sunder_display)
+				if(0 to 20)
+					hud_used.alien_sunder_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "sunder_warn4")
+					update_overlays(hud_used.alien_sunder_display)
+		else
+			hud_used.alien_sunder_display.icon_state = "sunder0"
 
 	interactee?.check_eye(src)
 

@@ -87,6 +87,11 @@
 	var/mob/living/carbon/xenomorph/X = usr
 	X.Evolve()
 
+/atom/movable/screen/alien/sunderhud
+	icon = 'icons/mob/screen/alien_better.dmi'
+	icon_state = "sunder0"
+	screen_loc = ui_sunderhud
+
 /datum/hud/alien/New(mob/living/carbon/xenomorph/owner, ui_style, ui_color, ui_alpha = 230)
 	..()
 	var/atom/movable/screen/using
@@ -168,6 +173,10 @@
 	alien_mature_display = new /atom/movable/screen/alien/maturehud()
 	alien_mature_display.alpha = ui_alpha
 	infodisplay += alien_mature_display
+
+	alien_sunder_display = new /atom/movable/screen/alien/sunderhud()
+	alien_sunder_display.alpha = ui_alpha
+	infodisplay += alien_sunder_display
 
 	locate_leader = new /atom/movable/screen/alien/queen_locator()
 	locate_leader.alpha = ui_alpha
