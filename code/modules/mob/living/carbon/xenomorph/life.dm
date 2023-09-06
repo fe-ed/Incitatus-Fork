@@ -207,13 +207,17 @@
 	// Evolve Hud
 	if(hud_used && hud_used.alien_evolve_display)
 		if(stat != DEAD)
-			var/amount = round(evolution_stored * 100 / xeno_caste.evolution_threshold, 5)
-			hud_used.alien_evolve_display.icon_state = "evolve[amount]"
-			if(!hive.check_ruler() && !isxenolarva(src))
-				hud_used.alien_evolve_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
+			var/amount = 0
+			if(xeno_caste.evolution_threshold)
+				amount = round(evolution_stored * 100 / xeno_caste.evolution_threshold, 5)
+				hud_used.alien_evolve_display.icon_state = "evolve[amount]"
+				if(!hive.check_ruler() && !isxenolarva(src))
+					hud_used.alien_evolve_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
+				else
+					hud_used.alien_evolve_display.overlays -= image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
+				update_overlays(hud_used.alien_evolve_display)
 			else
-				hud_used.alien_evolve_display.overlays -= image('icons/mob/screen/alien_better.dmi', icon_state = "evolve_cant")
-			update_overlays(hud_used.alien_evolve_display)
+				hud_used.alien_evolve_display.icon_state = "evolve_empty"
 		else
 			hud_used.alien_evolve_display.icon_state = "evolve_empty"
 
@@ -228,10 +232,11 @@
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_mature")
 			else if(xeno_caste.upgrade == XENO_UPGRADE_THREE)
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_ancient")
-				if(amount == 100)
+				if(upgrade_stored >= xeno_caste.upgrade_threshold)
 					hud_used.alien_mature_display.icon_state = "mature_cant"
 			else if(xeno_caste.upgrade == XENO_UPGRADE_FOUR)
 				hud_used.alien_mature_display.overlays += image('icons/mob/screen/alien_better.dmi', icon_state = "mature_primordial")
+				hud_used.alien_mature_display.icon_state = "mature0"
 			update_overlays(hud_used.alien_mature_display)
 		else
 			hud_used.alien_mature_display.icon_state = "mature0"
