@@ -15,6 +15,7 @@
 #include "code\datums\jobs\job\marines.dm"
 #include "code\datums\jobs\job\xenomorph.dm"
 #include "code\datums\jobs\job\shipside.dm"
+#include "code\datums\jobs\job\survivor.dm"
 #include "code\datums\status_effects\xeno_buffs.dm"
 #include "code\datums\skills.dm"
 #include "code\game\atoms.dm"
