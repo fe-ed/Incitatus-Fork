@@ -7,22 +7,35 @@ GLOBAL_PROTECT(exp_to_update)
 		return FALSE
 	if(!CONFIG_GET(flag/use_exp_tracking))
 		return FALSE
+	//RUTGMC EDIT BEGIN
+	if(!CONFIG_GET(flag/use_exp_restrictions)) //ADDITION
+		return FALSE //ADDITION
+	//RUTGMC EDIT END
 	if(!SSdbcore.Connect())
 		return FALSE
 	if(!exp_requirements || !exp_type)
 		return FALSE
+	//RUTGMC EDIT BEGIN
+	/*
 	if(!job_is_xp_locked(src))
 		return FALSE
+	*/
 	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_other_rights(C, R_ADMIN, FALSE))
 		return FALSE
+	/* //ORIGINAL
 	var/my_exp = C.calc_exp_type(get_exp_req_type())
 	var/job_requirement = get_exp_req_amount()
+	*/
+
+	// Calc client exp and how much do we need
+	var/my_exp = C.calc_exp_type(exp_type)
+	var/job_requirement = exp_requirements
 	if(my_exp >= job_requirement)
 		return FALSE
 	else
 		return (job_requirement - my_exp)
 
-
+/*
 /datum/job/proc/get_exp_req_amount()
 	if(job_flags & JOB_FLAG_ISCOMMAND)
 		var/uerhh = CONFIG_GET(number/use_exp_restrictions_command_hours)
@@ -44,7 +57,8 @@ GLOBAL_PROTECT(exp_to_update)
 	if(!CONFIG_GET(flag/use_exp_restrictions_other) && !(job.job_flags & JOB_FLAG_ISCOMMAND))
 		return FALSE
 	return TRUE
-
+*/
+//RUTGMC EDIT END
 
 /client/proc/calc_exp_type(exptype)
 	var/list/explist = prefs.exp.Copy()
@@ -110,13 +124,22 @@ GLOBAL_PROTECT(exp_to_update)
 	for(var/j in SSjob.joinable_occupations)
 		var/datum/job/job = j
 		if(job.exp_requirements && job.exp_type)
+			//RUTGMC EDIT BEGIN
+			/*
 			if(!job_is_xp_locked(job))
 				continue
 			else if(!job.required_playtime_remaining(mob.client))
+			*/
+			if(!job.required_playtime_remaining(mob.client))
 				jobs_unlocked += job.title
 			else
+				/* ORIGINAL
 				var/xp_req = job.get_exp_req_amount()
 				jobs_locked += "[job.title] [get_exp_format(text2num(calc_exp_type(job.get_exp_req_type())))] / [get_exp_format(xp_req)] as [job.get_exp_req_type()])"
+				*/
+				var/xp_req = job.exp_requirements
+				jobs_locked += "[job.title] [get_exp_format(text2num(calc_exp_type(job.exp_type)))] / [get_exp_format(xp_req)] as [job.exp_type])"
+			//RUTGMC EDIT END
 	if(length(jobs_unlocked))
 		return_text += "<BR><BR>Jobs Unlocked:<UL><LI>"
 		return_text += jobs_unlocked.Join("</LI><LI>")
