@@ -139,7 +139,7 @@
 		user.balloon_alert(user, "Women can't use that")
 	else
 		activator.say("Tenno Heika Banzai!!")
-		//playsound(get_turf(user), 'sound/voice/banzai1.ogg', 30)
+		playsound(get_turf(user), 'modular_RUtgmc/sound/voice/banzai1.ogg', 30)
 
 /obj/item/clothing/head/tgmcberet/squad/black
 	name = "\improper Alpha squad black beret"
@@ -183,3 +183,6 @@
 /obj/item/clothing/head/beret/marine/techofficer
 	item_icons = list(
 		slot_head_str = 'modular_RUtgmc/icons/mob/clothing/headwear/marine_hats.dmi')
+
+/obj/item/clothing/head/beret/marine/captain
+	icon = 'modular_RUtgmc/icons/obj/clothing/headwear/hats.dmi'

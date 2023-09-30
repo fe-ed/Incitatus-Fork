@@ -1,4 +1,4 @@
 author: "ivanmixo"
 delete-after: True
 changes:
-  - admin: "Fix runtime on init"
+  - bugfix: "Fixed admin wall deletions"

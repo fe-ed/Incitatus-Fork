@@ -1,4 +1,4 @@
 author: "vvvv-vvvv"
 delete-after: True
 changes:
-  - bugfix: "Fix stray zeroes in prefs"
+  - bugfix: "Fix drawing on minimap tablets"
