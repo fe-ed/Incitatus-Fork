@@ -741,7 +741,7 @@
 
 //Head HUD's
 
-/obj/item/armor_module/module/headhud_nv
+/obj/item/armor_module/module/headhud_imager
 	name = "Optical Imager Helmet Module"
 	desc = "Designed for mounting on a modular helmet. Can be flipped down to use optical imager."
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
@@ -752,22 +752,14 @@
 	flags_attach_features = ATTACH_REMOVABLE|ATTACH_ACTIVATION|ATTACH_APPLY_ON_MOB
 	slot = ATTACHMENT_SLOT_HEAD_MODULE
 	prefered_slot = SLOT_HEAD
+	var/obj/item/clothing/glasses/night/P
 
-/obj/item/armor_module/module/headhud_nv/activate(mob/living/user)
-	darkness_view = 2
+/obj/item/armor_module/module/headhud_imager/activate(mob/living/user)
+	active = !active
+	if(active)
+		user.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	to_chat(user, span_notice("You toggle \the [src]. [active ? "enabling" : "disabling"] it."))
 	icon_state = initial(icon_state) + "[active ? "_active" : ""]"
 	item_state = icon_state + "_a"
 	parent.update_icon()
 	user.update_inv_head()
-	if(active)
-		RegisterSignal(user, COMSIG_MOB_MOUSEDOWN, PROC_REF(nv_item_turnoff))
-		return
-	UnregisterSignal(user, COMSIG_MOB_MOUSEDOWN)
-
-/obj/item/armor_module/module/headhud_nv/nv_item_turnoff(datum/source, mob/living/user)
-	if(isliving(source))
-		activate(source)
-	else
-		activate(user)
-	return COMSIG_MOB_CLICK_CANCELED

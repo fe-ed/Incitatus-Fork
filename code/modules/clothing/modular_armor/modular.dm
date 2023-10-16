@@ -414,6 +414,7 @@
 		/obj/item/armor_module/storage/helmet,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	///optional assoc list of colors we can color this armor
@@ -597,6 +598,7 @@
 		/obj/item/armor_module/armor/visor/marine,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine, /obj/item/armor_module/storage/helmet)
@@ -637,6 +639,7 @@
 		/obj/item/armor_module/armor/visor/marine/skirmisher,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/skirmisher, /obj/item/armor_module/storage/helmet)
@@ -661,6 +664,7 @@
 		/obj/item/armor_module/armor/visor/marine/assault,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/assault, /obj/item/armor_module/storage/helmet)
@@ -686,6 +690,7 @@
 		/obj/item/armor_module/armor/visor/marine/eva/skull,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/eva, /obj/item/armor_module/storage/helmet)
@@ -714,6 +719,7 @@
 		/obj/item/armor_module/armor/visor/marine/eod,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/eod, /obj/item/armor_module/storage/helmet)
@@ -738,6 +744,7 @@
 		/obj/item/armor_module/armor/visor/marine/scout,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/scout, /obj/item/armor_module/storage/helmet)
@@ -762,6 +769,7 @@
 		/obj/item/armor_module/armor/visor/marine/helljumper,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/helljumper, /obj/item/armor_module/storage/helmet)
 
@@ -784,6 +792,7 @@
 		/obj/item/armor_module/storage/helmet,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet)
 
@@ -820,6 +829,7 @@
 		/obj/item/armor_module/storage/helmet,
 		/obj/item/armor_module/armor/badge,
 		/obj/item/armor_module/module/motion_detector,
+		/obj/item/armor_module/module/headhud_imager,
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet)
 	visorless_offset_x = 0
