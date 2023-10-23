@@ -182,17 +182,17 @@
 	hud_set_pheromone()
 	..()
 
-/mob/living/carbon/xenomorph/handle_regular_hud_updates()
+/mob/living/carbon/xenomorph/handle_regular_health_hud_updates()
 	if(!client)
 		return FALSE
 
 	// Sanity checks
 	if(!maxHealth)
 		stack_trace("[src] called handle_regular_hud_updates() while having [maxHealth] maxHealth.")
-		return
+		return FALSE
 	if(!xeno_caste.plasma_max)
 		stack_trace("[src] called handle_regular_hud_updates() while having [xeno_caste.plasma_max] xeno_caste.plasma_max.")
-		return
+		return FALSE
 
 	// Health Hud
 	if(hud_used && hud_used.healths)
@@ -211,6 +211,12 @@
 			hud_used.alien_plasma_display.icon_state = "power_display_[amount]"
 		else
 			hud_used.alien_plasma_display.icon_state = "power_display_0"
+
+	return TRUE
+
+/mob/living/carbon/xenomorph/handle_regular_hud_updates()
+	if(!handle_regular_health_hud_updates())
+		return FALSE
 
 	// Evolve Hud
 	if(hud_used && hud_used.alien_evolve_display)
@@ -298,7 +304,7 @@
 		return
 	health = maxHealth - getFireLoss() - getBruteLoss() //Xenos can only take brute and fire damage.
 	med_hud_set_health()
-	handle_regular_hud_updates()
+	handle_regular_health_hud_updates()
 	update_stat()
 	update_wounds()
 
