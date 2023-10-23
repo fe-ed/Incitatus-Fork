@@ -182,7 +182,7 @@
 	hud_set_pheromone()
 	..()
 
-/mob/living/carbon/xenomorph/handle_regular_health_hud_updates()
+/mob/living/carbon/xenomorph/proc/handle_regular_health_hud_updates()
 	if(!client)
 		return FALSE
 
