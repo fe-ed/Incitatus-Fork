@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	action_icon_state = "spawn_hugger"
 	desc = "Spawn a facehugger that is stored on your body."
 	plasma_cost = 100
-	cooldown_timer = 5 SECONDS
+	cooldown_timer = 10 SECONDS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SPAWN_HUGGER,
 	)
