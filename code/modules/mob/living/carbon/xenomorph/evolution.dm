@@ -190,6 +190,8 @@
 	qdel(src)
 	INVOKE_ASYNC(new_xeno, TYPE_PROC_REF(/mob/living, do_jitter_animation), 1000)
 
+	new_xeno.overlay_fullscreen_timer(1 SECONDS, 20, "roundstart2", /atom/movable/screen/fullscreen/spawning_in)
+
 ///Check if the xeno is currently able to evolve
 /mob/living/carbon/xenomorph/proc/generic_evolution_checks()
 	if(do_actions)
