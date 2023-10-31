@@ -177,3 +177,4 @@
 #include "code\datums\keybinding\communication.dm"
 #include "code\__HELPERS\text.dm"
 #include "code\modules\projectiles\guns\specialist.dm"
+#include "code\game\objects\items\reagent_containers\glass\bottle.dm"

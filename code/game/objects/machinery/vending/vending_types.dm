@@ -197,6 +197,7 @@
 			/obj/item/reagent_containers/glass/bottle/oxycodone = 6,
 			/obj/item/reagent_containers/glass/bottle/sleeptoxin = 6,
 			/obj/item/reagent_containers/glass/bottle/polyhexanide = 6,
+			/obj/item/reagent_containers/glass/bottle/medicalnanites = 12, //RUTGMC ADDON
 		),
 		"Chemistry Equipment" = list(
 			/obj/item/reagent_containers/syringe = -1,
@@ -258,6 +259,7 @@
 			/obj/item/reagent_containers/glass/bottle/lemoline = -1,
 			/obj/item/reagent_containers/glass/bottle/nanoblood = -1,
 			/obj/item/reagent_containers/glass/bottle/doctor_delight = -1,
+			/obj/item/reagent_containers/glass/bottle/medicalnanites = -1, //RUTGMC ADDON
 		),
 		"Pill Bottle" = list(
 			/obj/item/storage/pill_bottle/bicaridine = -1,
