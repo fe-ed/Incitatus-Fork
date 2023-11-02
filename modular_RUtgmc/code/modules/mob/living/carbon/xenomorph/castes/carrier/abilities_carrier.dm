@@ -29,4 +29,4 @@
 	plasma_cost = 200
 
 /datum/action/xeno_action/spawn_hugger
-		plasma_cost = 100
+	plasma_cost = 100
