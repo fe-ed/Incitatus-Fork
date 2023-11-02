@@ -177,3 +177,4 @@
 #include "code\datums\keybinding\communication.dm"
 #include "code\__HELPERS\text.dm"
 #include "code\modules\projectiles\guns\specialist.dm"
+#include "code\modules\mob\living\carbon\xenomorph\castes\crusher\abilities_crusher.dm"
