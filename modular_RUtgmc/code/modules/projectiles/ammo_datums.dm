@@ -1,3 +1,6 @@
+/datum/ammo/bullet/smarttargetrifle
+	sundering = 2
+
 /datum/ammo/bullet/revolver/rifle
 	name = ".44 Long Special bullet"
 	hud_state = "revolver_impact"
@@ -36,8 +39,6 @@
 	penetration = 0
 	shrapnel_chance = 25
 
-/datum/ammo/bullet/smarttargetrifle
-	sundering = 1.5
 /datum/ammo/bullet/revolver/t500
 	name = ".500 Nigro Express revolver bullet"
 	handful_icon_state = "nigro"
