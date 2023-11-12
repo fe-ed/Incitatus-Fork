@@ -54,6 +54,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 GLOBAL_LIST_INIT(metal_radial_images, list(
 	"recipes" = image('icons/Marine/barricades.dmi', icon_state = "plus"),
 	"barricade" = image('icons/Marine/barricades.dmi', icon_state = "metal_0"),
+	"folding_barricade" = image('icons/Marine/barricades.dmi', icon_state = "folding_metal_0"),
 	"razorwire" = image('icons/obj/structures/barbedwire.dmi', icon_state = "barbedwire_assembly"),
 	"barbedwire" = image('icons/Marine/marine-items.dmi', icon_state = "barbed_wire")
 	))
@@ -101,10 +102,13 @@ GLOBAL_LIST_INIT(metal_radial_images, list(
 			return TRUE
 		if("barricade")
 			create_object(user, new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 8 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
+		if("folding_barricade")
+			create_object(user, new/datum/stack_recipe("folding metal barricade", /obj/structure/barricade/plasteel/metal, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("barbedwire")
 			create_object(user, new/datum/stack_recipe("barbed wire", /obj/item/stack/barbed_wire, 2, 1, 20, time = 1 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("razorwire")
 			create_object(user, new/datum/stack_recipe("razor wire", /obj/item/stack/razorwire, 4, 2, 20, time = 5 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
+
 
 	return FALSE
 
