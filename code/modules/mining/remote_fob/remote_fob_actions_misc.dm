@@ -121,7 +121,7 @@
 		return
 	fobdrone.balloon_alert(owner, "Barricade placed. [console.metal_remaining] metal sheets remaining.")
 
-/datum/action/innate/remote_fob/plateel_cade
+/datum/action/innate/remote_fob/plasteel_cade
 	name = "Place Plasteel Barricade"
 	action_icon_state = "plast_cade"
 

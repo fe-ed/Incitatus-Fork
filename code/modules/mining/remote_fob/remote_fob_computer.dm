@@ -166,6 +166,7 @@
 		plasteel_cade.give_action(user)
 		actions += plasteel_cade
 //RUTGMC ADDON END
+
 	if(plast_folding_cade)
 		plast_folding_cade.target = src
 		plast_folding_cade.give_action(user)
