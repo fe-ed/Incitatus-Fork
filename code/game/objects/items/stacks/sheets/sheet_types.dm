@@ -11,7 +11,8 @@
 * Metal
 */
 GLOBAL_LIST_INIT(metal_recipes, list ( \
-	new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 8 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), \
+	new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 6 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), \
+	new/datum/stack_recipe("metal folding barricade", /obj/structure/barricade/plasteel/metal, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), \
 	new/datum/stack_recipe("barbed wire", /obj/item/stack/barbed_wire, 2, 1, 20, time = 1 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), \
 	new/datum/stack_recipe("razor wire", /obj/item/stack/razorwire, 4, 2, 20, time = 5 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), \
 	null, \
@@ -50,13 +51,17 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	))
 
-
 GLOBAL_LIST_INIT(metal_radial_images, list(
 	"recipes" = image('icons/Marine/barricades.dmi', icon_state = "plus"),
-	"barricade" = image('icons/Marine/barricades.dmi', icon_state = "metal_0"),
-	"folding_barricade" = image('icons/Marine/barricades.dmi', icon_state = "folding_metal_0"),
+	"metal barricade" = image('icons/Marine/barricades.dmi', icon_state = "metal_0"),
+	"folding metal barricade" = image('icons/Marine/barricades.dmi', icon_state = "folding_metal_0"), //RUTGMC ADDON
 	"razorwire" = image('icons/obj/structures/barbedwire.dmi', icon_state = "barbedwire_assembly"),
 	"barbedwire" = image('icons/Marine/marine-items.dmi', icon_state = "barbed_wire")
+	))
+
+//RUTGMC GLOBAL LIST
+GLOBAL_LIST_INIT(plasteel_radial_images, list(
+	"folding barricade" = image('icons/Marine/barricades.dmi', icon_state = "plasteel_closed_0"),
 	))
 
 /obj/item/stack/sheet/metal
@@ -103,29 +108,33 @@ GLOBAL_LIST_INIT(metal_radial_images, list(
 		/* ORIGINAL
 		if("barricade")
 			create_object(user, new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 8 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
-		if("folding_barricade")
-			create_object(user, new/datum/stack_recipe("folding metal barricade", /obj/structure/barricade/plasteel/metal, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("barbedwire")
 			create_object(user, new/datum/stack_recipe("barbed wire", /obj/item/stack/barbed_wire, 2, 1, 20, time = 1 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("razorwire")
 			create_object(user, new/datum/stack_recipe("razor wire", /obj/item/stack/razorwire, 4, 2, 20, time = 5 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		*/
-		//TGMC EDIT BEGIN
-		if("barricade")
-			create_object(user, new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
-		if("folding_barricade")
-			create_object(user, new/datum/stack_recipe("folding metal barricade", /obj/structure/barricade/plasteel/metal, 6, time = 15 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
+		//RUTGMC EDIT BEGIN
+		if("metal barricade")
+			create_object(user, new/datum/stack_recipe("metal barricade", /obj/structure/barricade/metal, 4, time = 6 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
+		if("folding metal barricade") //RUTGMC ADDON
+			create_object(user, new/datum/stack_recipe("folding metal barricade", /obj/structure/barricade/plasteel/metal, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("barbedwire")
 			create_object(user, new/datum/stack_recipe("barbed wire", /obj/item/stack/barbed_wire, 2, 1, 20, time = 2 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
 		if("razorwire")
 			create_object(user, new/datum/stack_recipe("razor wire", /obj/item/stack/razorwire, 4, 2, 20, time = 6 SECONDS, skill_req = SKILL_CONSTRUCTION_METAL), 1)
-		//TGMC EDIT END
+		//RUTGMC EDIT END
 
 	return FALSE
 
 /*
 * Plasteel
 */
+
+//RUTGMC GLOBAL LIST
+GLOBAL_LIST_INIT(plasteel_recipes, list ( \
+	new/datum/stack_recipe("plasteel folding barricade", /obj/structure/barricade/plasteel, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), \
+	null, \
+	))
 
 /obj/item/stack/sheet/plasteel
 	name = "plasteel"
@@ -139,10 +148,11 @@ GLOBAL_LIST_INIT(metal_radial_images, list(
 	merge_type = /obj/item/stack/sheet/plasteel
 	number_of_extra_variants = 3
 
+/* RUTGMC EDIT
 /obj/item/stack/sheet/plasteel/attack_self(mob/user)
 	. = ..()
-	create_object(user, new/datum/stack_recipe("plasteel barricade", /obj/structure/barricade/plasteel, 5, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), 1)
-
+	create_object(user, new/datum/stack_recipe("plasteel barricade", /obj/structure/barricade/plasteel, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), 1) //RUTGMC EDIT
+*/
 
 /obj/item/stack/sheet/plasteel/small_stack
 	amount = 10
@@ -152,6 +162,30 @@ GLOBAL_LIST_INIT(metal_radial_images, list(
 
 /obj/item/stack/sheet/plasteel/large_stack
 	amount = 50
+
+//RUTGMC ADDON BEGIN
+/obj/item/stack/sheet/plasteel/Initialize(mapload, amount)
+	. = ..()
+	recipes = GLOB.plasteel_recipes
+
+/obj/item/stack/sheet/plasteel/select_radial(mob/user)
+	if(user.get_active_held_item() != src)
+		return
+	if(!can_interact(user))
+		return TRUE
+
+	add_fingerprint(usr, "topic")
+
+	var/choice = show_radial_menu(user, src, GLOB.plasteel_radial_images, require_near = TRUE)
+
+	switch (choice)
+		if("recipes")
+			return TRUE
+		if("folding barricade") //RUTGMC ADDON
+			create_object(user, new/datum/stack_recipe("folding plasteel barricade", /obj/structure/barricade/plasteel, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), 1)
+
+	return FALSE
+//RUTGMC ADDON END
 
 /*
 * Wood

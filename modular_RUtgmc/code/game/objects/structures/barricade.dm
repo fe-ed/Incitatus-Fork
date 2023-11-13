@@ -1,3 +1,6 @@
+/obj/structure/barricade/metal
+	max_integrity = 225 //4 sheets
+
 #define BARRICADE_PLASTEEL_LOOSE 0
 #define BARRICADE_PLASTEEL_ANCHORED 1
 #define BARRICADE_PLASTEEL_FIRM 2
@@ -6,11 +9,11 @@
 	name = "folding metal barricade"
 	desc = "A folding barricade made out of metal, making it slightly weaker than a normal metal barricade. Use a blowtorch to repair. Can be flipped down to create a path."
 	icon_state = "folding_metal_closed_0"
-	max_integrity = 350
-	soft_armor = list(MELEE = 0, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 0, BIO = 100, FIRE = 80, ACID = 20)
+	max_integrity = 350 //6 sheets
+	soft_armor = list(MELEE = 0, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 0, BIO = 100, FIRE = 80, ACID = 40)
 	stack_type = /obj/item/stack/sheet/metal
 	stack_amount = 6
-	destroyed_stack_amount = 2
+	destroyed_stack_amount = 3
 	barricade_type = "folding_metal"
 
 /obj/structure/barricade/plasteel/metal/welder_act(mob/living/user, obj/item/I)
@@ -59,7 +62,12 @@
 
 	switch(build_state)
 		if(BARRICADE_PLASTEEL_FIRM)
-			balloon_alert("You can't link metal barricades.")
+			balloon_alert_to_viewers("[linked ? "un" : "" ]linked")
+			linked = !linked
+			for(var/direction in GLOB.cardinals)
+				for(var/obj/structure/barricade/plasteel/metal/cade in get_step(src, direction))
+					cade.update_icon()
+			update_icon()
 		if(BARRICADE_PLASTEEL_LOOSE) //Anchor bolts loosened step. Apply crowbar to unseat the panel and take apart the whole thing.
 			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
@@ -84,6 +92,12 @@
 				deconstructed = FALSE
 				break
 			deconstruct(deconstructed)
+
+/obj/structure/barricade/plasteel
+	max_integrity = 550
+	soft_armor = list(MELEE = 0, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 30, BIO = 100, FIRE = 80, ACID = 40)
+	stack_amount = 6
+	destroyed_stack_amount = 3
 
 #undef BARRICADE_PLASTEEL_LOOSE
 #undef BARRICADE_PLASTEEL_ANCHORED
