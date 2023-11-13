@@ -17,6 +17,7 @@
 	var/datum/action/innate/remote_fob/metal_cade/metal_cade
 	var/datum/action/innate/remote_fob/metal_folding_cade/metal_folding_cade
 	var/metal_remaining = 240 //RUTGMC EDIT
+	var/datum/action/innate/remote_fob/plasteel_cade/plasteel_cade
 	var/datum/action/innate/remote_fob/plast_folding_cade/plast_folding_cade
 	var/plasteel_remaining = 120 //RUTGMC EDIT
 	var/datum/action/innate/remote_fob/toggle_wiring/toggle_wiring //whether or not new barricades will be wired
@@ -28,6 +29,7 @@
 	. = ..()
 	metal_cade = new()
 	metal_folding_cade = new() //RUTGMC ADDON
+	plasteel_cade = new() //RUTGMC ADDON
 	plast_folding_cade = new()
 	toggle_wiring = new()
 	/*sentry = new()*/
@@ -47,7 +49,8 @@
 /obj/machinery/computer/camera_advanced/remote_fob/Destroy()
 	spawn_spot = null
 	QDEL_NULL(metal_cade)
-	QDEL_NULL(metal_folding_cade) //RUTGM ADDON
+	QDEL_NULL(metal_folding_cade) //RUTGMC ADDON
+	QDEL_NULL(plasteel_cade) //RUTGMC ADDON
 	QDEL_NULL(plast_folding_cade)
 	QDEL_NULL(toggle_wiring)
 	/*QDEL_NULL(sentry)*/
@@ -157,6 +160,11 @@
 		metal_folding_cade.target = src
 		metal_folding_cade.give_action(user)
 		actions += metal_folding_cade
+
+	if(plasteel_cade)
+		plasteel_cade.target = src
+		plasteel_cade.give_action(user)
+		actions += plasteel_cade
 //RUTGMC ADDON END
 	if(plast_folding_cade)
 		plast_folding_cade.target = src

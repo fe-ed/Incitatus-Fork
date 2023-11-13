@@ -1,6 +1,49 @@
 /obj/structure/barricade/metal
 	max_integrity = 225 //4 sheets
 
+/obj/structure/barricade/metal/plasteel
+	name = "plasteel barricade"
+	desc = "A sturdy and heavily assembled barricade made of plasteel plates. Use a blowtorch to repair."
+	icon_state = "new_plasteel_0"
+	max_integrity = 350 //4 sheets
+	soft_armor = list(MELEE = 0, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 35, BIO = 100, FIRE = 80, ACID = 55)
+	stack_type = /obj/item/stack/sheet/plasteel
+	stack_amount = 4
+	destroyed_stack_amount = 2
+	hit_sound = "sound/effects/metalhit.ogg"
+	barricade_type = "new_plasteel"
+	can_wire = TRUE
+	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
+
+/obj/structure/barricade/metal/plasteel/attackby(obj/item/I, mob/user, params)
+	. = ..()
+
+	if(!istype(I, /obj/item/stack/sheet/plasteel))
+		return
+
+	if(obj_integrity >= max_integrity * 0.3)
+		return
+
+	var/obj/item/stack/sheet/plasteel/plasteel_sheets
+	if(plasteel_sheets.get_amount() < 2)
+		balloon_alert(user, "You need at least 2 plasteel")
+		return FALSE
+
+	if(LAZYACCESS(user.do_actions, src))
+		return
+
+	balloon_alert_to_viewers("Repairing base...")
+
+	if(!do_after(user, 2 SECONDS, TRUE, src, BUSY_ICON_FRIENDLY) || obj_integrity >= max_integrity * 0.3)
+		return FALSE
+
+	if(!plasteel_sheets.use(2))
+		return FALSE
+
+	repair_damage(max_integrity * 0.3, user)
+	balloon_alert_to_viewers("Base repaired")
+	update_icon()
+
 #define BARRICADE_PLASTEEL_LOOSE 0
 #define BARRICADE_PLASTEEL_ANCHORED 1
 #define BARRICADE_PLASTEEL_FIRM 2
@@ -94,8 +137,7 @@
 			deconstruct(deconstructed)
 
 /obj/structure/barricade/plasteel
-	max_integrity = 550
-	soft_armor = list(MELEE = 0, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 30, BIO = 100, FIRE = 80, ACID = 40)
+	soft_armor = list(MELEE = 0, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 30, BIO = 100, FIRE = 80, ACID = 55)
 	stack_amount = 6
 	destroyed_stack_amount = 3
 

@@ -61,7 +61,8 @@ GLOBAL_LIST_INIT(metal_radial_images, list(
 
 //RUTGMC GLOBAL LIST
 GLOBAL_LIST_INIT(plasteel_radial_images, list(
-	"folding barricade" = image('icons/Marine/barricades.dmi', icon_state = "plasteel_closed_0"),
+	"plasteel barricade" = image('icons/Marine/barricades.dmi', icon_state = "new_plasteel_0"),
+	"folding plasteel barricade" = image('icons/Marine/barricades.dmi', icon_state = "plasteel_closed_0"),
 	))
 
 /obj/item/stack/sheet/metal
@@ -132,6 +133,7 @@ GLOBAL_LIST_INIT(plasteel_radial_images, list(
 
 //RUTGMC GLOBAL LIST
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
+	new/datum/stack_recipe("plasteel barricade", /obj/structure/barricade/metal/plasteel, 4, time = 6 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), \
 	new/datum/stack_recipe("plasteel folding barricade", /obj/structure/barricade/plasteel, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), \
 	null, \
 	))
@@ -181,7 +183,9 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	switch (choice)
 		if("recipes")
 			return TRUE
-		if("folding barricade") //RUTGMC ADDON
+		if("plasteel barricade") //RUTGMC ADDON
+			create_object(user, new/datum/stack_recipe("folding plasteel barricade", /obj/structure/barricade/metal/plasteel, 4, time = 5 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), 1)
+		if("folding plasteel barricade") //RUTGMC ADDON
 			create_object(user, new/datum/stack_recipe("folding plasteel barricade", /obj/structure/barricade/plasteel, 6, time = 10 SECONDS, max_per_turf = STACK_RECIPE_ONE_DIRECTIONAL_PER_TILE, on_floor = TRUE, skill_req = SKILL_CONSTRUCTION_PLASTEEL), 1)
 
 	return FALSE
