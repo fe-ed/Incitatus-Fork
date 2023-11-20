@@ -174,6 +174,7 @@
 	if(. || !check_spot())
 		return
 
+	//if(console.plasteel_remaining < 5) //ORIGINAL
 	if(console.plasteel_remaining < 6) //RUTGMC EDIT
 		fobdrone.balloon_alert(owner, "Out of material")
 		return
@@ -192,6 +193,7 @@
 		return
 	if(!do_after(fobdrone, 1.5 SECONDS, FALSE, buildplace, BUSY_ICON_BUILD))
 		return
+	//console.plasteel_remaining -= 5 //ORIGINAL
 	console.plasteel_remaining -= 6 //RUTGMC EDIT
 	cade = new /obj/structure/barricade/plasteel(buildplace)
 	cade.setDir(fobdrone.dir)

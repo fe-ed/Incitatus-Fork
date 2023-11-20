@@ -442,6 +442,10 @@
 		return
 
 	var/obj/item/stack/sheet/metal/metal_sheets = I
+	/* ORIGINAL
+	if(obj_integrity >= max_integrity * 0.3)
+		return attempt_barricade_upgrade(I, user, params)
+	*/
 	//RUTGMC EDIT BEGIN
 	if(obj_integrity >= max_integrity * 0.3)
 		if(barricade_type == "metal")
