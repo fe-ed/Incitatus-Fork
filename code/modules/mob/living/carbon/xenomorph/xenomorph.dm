@@ -166,7 +166,6 @@
 			rank_name = "Elder"
 		if(10501 to INFINITY) //175 hours
 			rank_name = "Ancient"
-		switch(playtime_mins)
 		*/
 		//RUTGMC EDIT BEGIN
 		if(0 to 300)	 	 //0 hours
@@ -203,6 +202,19 @@
 /mob/living/carbon/xenomorph/proc/playtime_as_number()
 	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
 	switch(playtime_mins)
+		/* ORIGINAL
+		if(0 to 600)
+			return 0
+		if(601 to 1500)
+			return 1
+		if(1501 to 4200)
+			return 2
+		if(4201 to 10500)
+			return 3
+		if(10501 to INFINITY)
+			return 4
+		*/
+		//RUTGMC EDIT BEGIN
 		if(0 to 300)
 			return 0
 		if(301 to 900)
@@ -213,6 +225,7 @@
 			return 3
 		if(3001 to INFINITY)
 			return 4
+		//RUTGMC EDIT END
 		else
 			return 0
 
