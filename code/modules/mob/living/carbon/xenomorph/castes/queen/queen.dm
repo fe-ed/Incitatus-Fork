@@ -75,7 +75,6 @@
 	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
 	var/prefix = (hive.prefix || xeno_caste.upgrade_name) ? "[hive.prefix][xeno_caste.upgrade_name] " : ""
 	switch(playtime_mins)
-		/* ORIGINAL
 		if(0 to 600)
 			name = prefix + "Hatchling Queen ([nicknumber])"
 		if(601 to 1500)
@@ -86,19 +85,6 @@
 			name = prefix + "Elder Empress ([nicknumber])"
 		if(10501 to INFINITY)
 			name = prefix + "Ancient Empress ([nicknumber])"
-		*/
-		//RUTGMC EDIT BEGIN
-		if(0 to 300)
-			name = prefix + "Hatchling Queen ([nicknumber])"
-		if(301 to 900)
-			name = prefix + "Young Queen ([nicknumber])"
-		if(901 to 1800)
-			name = prefix + "Mature Empress ([nicknumber])"
-		if(1801 to 3000)
-			name = prefix + "Elder Empress ([nicknumber])"
-		if(3001 to INFINITY)
-			name = prefix + "Ancient Empress ([nicknumber])"
-		//RUTGMC EDIT END
 		else
 			name = prefix + "Hatchling Queen ([nicknumber])"
 

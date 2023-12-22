@@ -155,7 +155,6 @@
 	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
 	var/rank_name
 	switch(playtime_mins)
-		/*	ORIGINAL
 		if(0 to 600)
 			rank_name = "Hatchling"
 		if(601 to 1500) //10 hours
@@ -166,19 +165,6 @@
 			rank_name = "Elder"
 		if(10501 to INFINITY) //175 hours
 			rank_name = "Ancient"
-		*/
-		//RUTGMC EDIT BEGIN
-		if(0 to 300)	 	 //0 hours
-			rank_name = "Hatchling"
-		if(301 to 900)   	 //5 hours
-			rank_name = "Young"
-		if(901 to 1800)  	 //15 hours
-			rank_name = "Mature"
-		if(1801 to 3000) 	 //30 hours
-			rank_name = "Elder"
-		if(3001 to INFINITY) //50 hours
-			rank_name = "Ancient"
-		//RUTGMC EDIT END
 		else
 			rank_name = "Hatchling"
 	var/prefix = (hive.prefix || xeno_caste.upgrade_name) ? "[hive.prefix][xeno_caste.upgrade_name] " : ""
@@ -202,7 +188,6 @@
 /mob/living/carbon/xenomorph/proc/playtime_as_number()
 	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
 	switch(playtime_mins)
-		/* ORIGINAL
 		if(0 to 600)
 			return 0
 		if(601 to 1500)
@@ -213,19 +198,6 @@
 			return 3
 		if(10501 to INFINITY)
 			return 4
-		*/
-		//RUTGMC EDIT BEGIN
-		if(0 to 300)
-			return 0
-		if(301 to 900)
-			return 1
-		if(901 to 1800)
-			return 2
-		if(1801 to 3000)
-			return 3
-		if(3001 to INFINITY)
-			return 4
-		//RUTGMC EDIT END
 		else
 			return 0
 
