@@ -4,13 +4,13 @@
 	switch(playtime_mins)
 		if(0 to 300)
 			rank_name = "Young"
-		if(301 to 900)
+		if(301 to 1500)
 			rank_name = "Mature"
-		if(901 to 1800)
+		if(1501 to 4200)
 			rank_name = "Elder"
-		if(1801 to 3000)
+		if(4201 to 9000)
 			rank_name = "Ancient"
-		if(3001 to INFINITY)
+		if(9001 to INFINITY)
 			rank_name = "Prime"
 		else
 			rank_name = "Young"
