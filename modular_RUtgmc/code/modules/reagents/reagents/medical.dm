@@ -15,7 +15,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 1.5
 
 /datum/reagent/medicine/synaptizine/overdose_process(mob/living/L, metabolism)
-	L.apply_damage(3* effect_str, TOX)
+	L.apply_damage(2 * effect_str, TOX)
 
 /datum/reagent/medicine/synaptizine/overdose_crit_process(mob/living/L, metabolism)
 	L.apply_damages(2 * effect_str, 2 * effect_str, 3 * effect_str)
