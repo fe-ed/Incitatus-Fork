@@ -64,7 +64,6 @@
 /datum/reagent/medicine/fasygin
 	name = "Fasygin"
 	description = "Fasygin is a component medicine capable of extremely fast but short reagent purging."
-	color = "#c9c90f" // rgb: 201, 201, 15
 	custom_metabolism = 0.25 //u
 	color = COLOR_REAGENT_FASYGIN
 	overdose_threshold = REAGENTS_OVERDOSE/15 //1u
