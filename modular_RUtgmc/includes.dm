@@ -241,6 +241,7 @@
 #include "code\modules\projectiles\magazines\magazines.dm"
 #include "code\modules\projectiles\magazines\misc.dm"
 #include "code\modules\projectiles\magazines\specialist.dm"
+#include "code\modules\projectiles\gun_system.dm"
 #include "code\modules\reagents\machinery\chem_dispenser.dm"
 #include "code\modules\reagents\reactions\medical.dm"
 #include "code\modules\reagents\reagents\medical.dm"

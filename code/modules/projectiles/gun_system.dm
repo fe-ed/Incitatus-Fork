@@ -109,7 +109,8 @@
 	///Sound of unloading the gun.
 	var/unload_sound = 'sound/weapons/flipblade.ogg'
 	///Sound played when the gun auto ejects its magazine.
-	var/empty_sound = 'sound/weapons/guns/misc/empty_alarm.ogg'
+	//var/empty_sound = 'sound/weapons/guns/misc/empty_alarm.ogg' //ORIGINAL
+	var/empty_sound = null //RUTGMC EDIT
 	///Sound played for reloading.
 	var/reload_sound = null
 	///Sound for reloading by handfuls
@@ -643,6 +644,7 @@
 		return
 	to_chat(user, "[dat.Join(" ")]")
 
+/* MOVED TO MODULE
 /obj/item/weapon/gun/wield(mob/user)
 	if(CHECK_BITFIELD(flags_gun_features, GUN_DEPLOYED_FIRE_ONLY))
 		to_chat(user, span_notice("[src] cannot be fired by hand and must be deployed."))
@@ -669,7 +671,7 @@
 	do_wield(user, wdelay)
 	if(HAS_TRAIT(src, TRAIT_GUN_AUTO_AIM_MODE))
 		toggle_aim_mode(user)
-
+*/
 
 /obj/item/weapon/gun/unwield(mob/user)
 	. = ..()
