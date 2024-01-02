@@ -154,6 +154,13 @@
 	item_state = "t37"
 	greyscale_config = null
 	colorable_allowed = NONE
+	fire_sound =     'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37.ogg'
+	fire_rattle = null
+	unload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_clipout.ogg'
+	reload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_clipin.ogg'
+	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_boltpull.ogg'
+	silenced_sound = 'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_SIL.ogg'
+	wield_sound =    'modular_RUtgmc/sound/weapons/guns/dmr/Deploy_Wave_DMR.ogg'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items_lefthand_64.dmi',
 		slot_r_hand_str = 'icons/mob/items_righthand_64.dmi',
@@ -163,6 +170,13 @@
 //BR-64 BR
 
 /obj/item/weapon/gun/rifle/standard_br
+	fire_sound =     'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64.ogg'
+	fire_rattle = null
+	unload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_clipout.ogg'
+	reload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_clipin.ogg'
+	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_boltpull.ogg'
+	silenced_sound = 'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_SIL.ogg'
+	wield_sound =    'modular_RUtgmc/sound/weapons/guns/dmr/Deploy_Wave_DMR.ogg'
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/rifle/standard_br,
 		/obj/item/ammo_magazine/rifle/standard_br/ap,
@@ -308,6 +322,13 @@
 	item_state = "tl127"
 	greyscale_config = null
 	colorable_allowed = NONE
+	fire_sound =     'modular_RUtgmc/sound/weapons/guns/sniper/SR-127/SR127.ogg'
+	fire_rattle = null
+	unload_sound =   'modular_RUtgmc/sound/weapons/guns/sniper/SR-127/SR127_clipout.ogg'
+	reload_sound =   'modular_RUtgmc/sound/weapons/guns/sniper/SR-127/SR127_clipin.ogg'
+	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/sniper/SR-127/SR127_boltpull.ogg'
+	silenced_sound = 'modular_RUtgmc/sound/weapons/guns/sniper/SR-127/SR127_SIL.ogg'
+	wield_sound =    'modular_RUtgmc/sound/weapons/guns/dmr/Deploy_Wave_DMR.ogg'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items_lefthand_64.dmi',
 		slot_r_hand_str = 'icons/mob/items_righthand_64.dmi',
