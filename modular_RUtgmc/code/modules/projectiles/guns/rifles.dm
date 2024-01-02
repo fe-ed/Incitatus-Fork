@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/rifle
 	silenced_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_SIL.ogg'
-	wield_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/Deploy_Wave.ogg'
+	wield_sound =    'modular_RUtgmc/sound/weapons/guns/rifles/Deploy_Wave_RIFLES.ogg'
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////////////  T25, old version .///////////////////////////
@@ -13,10 +13,10 @@
 	icon_state = "T25"
 	item_state = "T25"
 	item_icons = list(
-		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
+		slot_l_hand_str =  'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
+		slot_r_hand_str =  'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
 		slot_s_store_str = 'modular_RUtgmc/icons/mob/suit_slot.dmi',
-		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_back_str =    'modular_RUtgmc/icons/mob/clothing/back.dmi',
 	)
 	caliber = CALIBER_10x26_CASELESS //codex
 	max_shells = 80 //codex
@@ -25,8 +25,8 @@
 	wield_delay = 0.9 SECONDS
 	fire_sound = "gun_smartgun"
 	dry_fire_sound = 'sound/weapons/guns/fire/m41a_empty.ogg'
-	unload_sound = 'sound/weapons/guns/interact/T42_unload.ogg'
-	reload_sound = 'sound/weapons/guns/interact/T42_reload.ogg'
+	unload_sound =   'sound/weapons/guns/interact/T42_unload.ogg'
+	reload_sound =   'sound/weapons/guns/interact/T42_reload.ogg'
 	default_ammo_type = /obj/item/ammo_magazine/rifle/T25
 	allowed_ammo_types = list(/obj/item/ammo_magazine/rifle/T25, /obj/item/ammo_magazine/rifle/T25/extended)
 	attachable_allowed = list(
@@ -68,11 +68,10 @@
 	item_state = "t18"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18.ogg'
-	unload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipout.ogg'
-	reload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipin.ogg'
-	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_boltpull.ogg'
-	wield_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_grab.ogg'
+	fire_sound =     'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18.ogg'
+	unload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipout.ogg'
+	reload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipin.ogg'
+	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_boltpull.ogg'
 	silenced_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-11/AR11_SIL.ogg'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
@@ -91,12 +90,11 @@
 	item_state = "t12"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12.ogg'
+	fire_sound =     'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12.ogg'
 	dry_fire_sound = 'sound/weapons/guns/fire/m41a_empty.ogg'
-	unload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipout.ogg'
-	reload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipin.ogg'
-	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_boltpull.ogg'
-	wield_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_grab.ogg'
+	unload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipout.ogg'
+	reload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipin.ogg'
+	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_boltpull.ogg'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
@@ -368,7 +366,7 @@
 	item_state = "t21"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21.ogg'
+	fire_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21.ogg'
 	unload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_clipout.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_clipin.ogg'
 	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_boltpull.ogg'
