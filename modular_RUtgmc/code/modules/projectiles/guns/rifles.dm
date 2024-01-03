@@ -402,6 +402,15 @@
 		)
 
 //-------------------------------------------------------
+//SH-15 AUTOMATIC SHOTGUN
+
+/obj/item/weapon/gun/rifle/standard_autoshotgun
+	fire_sound =   'modular_RUtgmc/sound/weapons/guns/shotgun/SH-15/SH15.ogg'
+	unload_sound = 'modular_RUtgmc/sound/weapons/guns/shotgun/SH-15/SH15_clipout.ogg'
+	reload_sound = 'modular_RUtgmc/sound/weapons/guns/shotgun/SH-15/SH15_clipin.ogg'
+	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/shotgun/SH-15/SH15_boltpull.ogg'
+
+//-------------------------------------------------------
 // AR-55 rifle
 
 /obj/item/weapon/gun/rifle/tx55
