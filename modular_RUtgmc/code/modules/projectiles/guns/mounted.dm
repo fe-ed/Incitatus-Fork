@@ -33,3 +33,9 @@
 	fire_sound =   'modular_RUtgmc/sound/weapons/guns/machineguns/HMG-08/HMG-08-1.ogg'
 	fire_rattle = 'modular_RUtgmc/sound/weapons/guns/machineguns/HMG-08/HMG-08-2.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/HMG-08/HMG-08_jam.ogg'
+
+///HSG-102, now with full auto. It is not a superclass of deployed guns, however there are a few varients.
+/obj/item/weapon/gun/tl102
+	fire_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/HSG-102/HSG-102-1.ogg'
+	fire_rattle = 'modular_RUtgmc/sound/weapons/guns/machineguns/HSG-102/HSG-102-2.ogg'
+	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/HMG-08/HMG-08_jam.ogg'
