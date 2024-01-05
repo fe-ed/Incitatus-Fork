@@ -222,6 +222,12 @@
 	colorable_allowed = NONE
 	icon_state = "t42"
 	item_state = "t42"
+	fire_sound =   'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42.ogg'
+	fire_rattle = null
+	unload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_clipout.ogg'
+	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_clipin.ogg'
+	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_boltpull.ogg'
+	wield_sound =  'modular_RUtgmc/sound/weapons/guns/machineguns/Deploy_Wave_MACHINEGUN.ogg'
 	item_icons = list(
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_64.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_64.dmi',
@@ -264,6 +270,12 @@
 	item_state = "t60"
 	fire_animation = "t60_fire"
 	greyscale_config = null
+	fire_sound =   'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60.ogg'
+	fire_rattle = null
+	unload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boxout.ogg'
+	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boxin.ogg'
+	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boltpull.ogg'
+	wield_sound =  'modular_RUtgmc/sound/weapons/guns/machineguns/Deploy_Wave_MACHINEGUN.ogg'
 	attachable_allowed = list(
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/flashlight,
