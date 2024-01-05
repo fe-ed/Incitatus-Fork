@@ -1,5 +1,15 @@
+/obj/item/explosive/grenade
+	arm_sound = 'modular_RUtgmc/sound/weapons/grenade/grenade_pinout.ogg'
+
+/obj/item/explosive/grenade/smokebomb
+	arm_sound = 'modular_RUtgmc/sound/weapons/grenade/grenade_pinout4.ogg'
+
+/obj/item/explosive/grenade/phosphorus
+	arm_sound = 'modular_RUtgmc/sound/weapons/grenade/grenade_pinout4.ogg'
+
 /obj/item/explosive/grenade/sticky
 	icon_state_mini = "grenade_sticky"
+	arm_sound = 'modular_RUtgmc/sound/weapons/grenade/grenade_pinout4.ogg'
 
 /obj/item/explosive/grenade/sticky/trailblazer
 	icon_state_mini = "grenade_trailblazer"
