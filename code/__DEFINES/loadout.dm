@@ -98,6 +98,7 @@ GLOBAL_LIST_INIT(engineer_gear_listed_products, list(
 	))
 */
 
+/* RUTGMC DELETION
 GLOBAL_LIST_INIT(medic_gear_listed_products, list(
 		/obj/effect/vendor_bundle/medic = list(CAT_ESS, "Essential Medic Set", 0, "white"),
 		/obj/item/storage/pill_bottle/meralyne = list(CAT_MEDSUP, "Meralyne pills", 16, "orange"),
@@ -130,6 +131,7 @@ GLOBAL_LIST_INIT(medic_gear_listed_products, list(
 		/obj/item/stack/medical/heal_pack/advanced/burn_pack/combat = list(CAT_MEDSUP, "Combat Burn Kit", 3, "black"),
 		//RUTGMC EDIT ADDITION  END
 	))
+*/
 
 /* GLOBAL_LIST_INIT(leader_gear_listed_products, list(
 		/obj/effect/vendor_bundle/leader = list(CAT_ESS, "Essential SL Set", 0, "white"),
@@ -180,6 +182,7 @@ GLOBAL_LIST_INIT(medic_gear_listed_products, list(
 		/obj/item/reagent_containers/hypospray/autoinjector/combat_advanced = list(CAT_FCSUP, "Injector (Advanced)", 15, "orange"),
 	)) */
 
+/* RUTGMC DELETION
 //A way to give them everything at once that still works with loadouts would be nice, but barring that make sure that your point calculation is set up so they don't get more than what they're supposed to
 GLOBAL_LIST_INIT(smartgunner_gear_listed_products, list(
 	/obj/item/clothing/glasses/night/m56_goggles = list(CAT_ESS, "KLTD Smart Goggles", 0, "white"),
@@ -206,7 +209,7 @@ GLOBAL_LIST_INIT(smartgunner_gear_listed_products, list(
 	/obj/item/ammo_magazine/packet/T25_rifle = list(CAT_SGSUP, "T-25 Smartrifle ammo box", 5, "black"),
 	//RUTGMC EDIT ADDITION END
 	))
-
+*/
 
 ///Assoc list linking the job title with their specific points vendor
 GLOBAL_LIST_INIT(job_specific_points_vendor, list(
