@@ -143,7 +143,7 @@ const ItemLine = (props, context) => {
               Essential
             </Box>
           )}
-          {prod_color === 'green' && (
+          {prod_color === 'orange' && (
             <Box inline mr="6px" ml="6px" color="green">
               Recommended
             </Box>
@@ -153,7 +153,7 @@ const ItemLine = (props, context) => {
               Munition
             </Box>
           )}
-          {prod_color === 'orange' && (
+          {prod_color === 'orange3' && (
             <Box inline mr="6px" ml="6px" color="orange">
               Explosive
             </Box>
