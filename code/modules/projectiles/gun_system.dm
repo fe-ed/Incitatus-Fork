@@ -109,8 +109,7 @@
 	///Sound of unloading the gun.
 	var/unload_sound = 'sound/weapons/flipblade.ogg'
 	///Sound played when the gun auto ejects its magazine.
-	//var/empty_sound = 'sound/weapons/guns/misc/empty_alarm.ogg' //ORIGINAL
-	var/empty_sound = null //RUTGMC EDIT
+	var/empty_sound = 'sound/weapons/guns/misc/empty_alarm.ogg'
 	///Sound played for reloading.
 	var/reload_sound = null
 	///Sound for reloading by handfuls

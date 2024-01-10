@@ -68,7 +68,6 @@
 	item_state = "t18"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound =     'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18.ogg'
 	unload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipout.ogg'
 	reload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_clipin.ogg'
 	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-18/AR18_boltpull.ogg'
@@ -90,7 +89,6 @@
 	item_state = "t12"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound =     'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12.ogg'
 	dry_fire_sound = 'sound/weapons/guns/fire/m41a_empty.ogg'
 	unload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipout.ogg'
 	reload_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-12/AR12_clipin.ogg'
@@ -154,8 +152,6 @@
 	item_state = "t37"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound =     'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37.ogg'
-	fire_rattle = null
 	unload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_clipout.ogg'
 	reload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_clipin.ogg'
 	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/DMR-37/DMR37_boltpull.ogg'
@@ -170,8 +166,6 @@
 //BR-64 BR
 
 /obj/item/weapon/gun/rifle/standard_br
-	fire_sound =     'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64.ogg'
-	fire_rattle = null
 	unload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_clipout.ogg'
 	reload_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_clipin.ogg'
 	cocked_sound =   'modular_RUtgmc/sound/weapons/guns/dmr/BR-64/BR64_boltpull.ogg'
@@ -222,8 +216,6 @@
 	colorable_allowed = NONE
 	icon_state = "t42"
 	item_state = "t42"
-	fire_sound =   'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42.ogg'
-	fire_rattle = null
 	unload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_clipout.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_clipin.ogg'
 	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-42/MG42_boltpull.ogg'
@@ -270,8 +262,6 @@
 	item_state = "t60"
 	fire_animation = "t60_fire"
 	greyscale_config = null
-	fire_sound =   'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60.ogg'
-	fire_rattle = null
 	unload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boxout.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boxin.ogg'
 	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/machineguns/MG-60/MG60_boltpull.ogg'
@@ -382,7 +372,6 @@
 	item_state = "tx11"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-11/AR11.ogg'
 	unload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-11/AR11_clipout.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-11/AR11_clipin.ogg'
 	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-11/AR11_boltpull.ogg'
@@ -399,7 +388,6 @@
 	item_state = "t21"
 	greyscale_config = null
 	colorable_allowed = NONE
-	fire_sound =   'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21.ogg'
 	unload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_clipout.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_clipin.ogg'
 	cocked_sound = 'modular_RUtgmc/sound/weapons/guns/rifles/AR-21/AR21_boltpull.ogg'
