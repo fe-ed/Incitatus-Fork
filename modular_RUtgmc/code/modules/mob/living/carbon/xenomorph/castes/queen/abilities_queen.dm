@@ -22,7 +22,7 @@
 	name = "Heal Screech"
 	action_icon_state = "heal_screech"
 	desc = "Screech that heals nearby xenos."
-	ability_cost = 400
+	ability_cost = 300
 	cooldown_duration = 45 SECONDS
 	var/screech_range = 5
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
@@ -56,7 +56,7 @@
 	name = "Plasma Screech"
 	action_icon_state = "plasma_screech"
 	desc = "Screech that increases plasma regeneration for nearby xenos."
-	ability_cost = 400
+	ability_cost = 300
 	cooldown_duration = 45 SECONDS
 	var/screech_range = 5
 	var/bonus_regen = 0.5
@@ -72,7 +72,7 @@
 	for(var/mob/living/carbon/xenomorph/affected_xeno in cheap_get_xenos_near(X, screech_range))
 		if(!(affected_xeno.xeno_caste.can_flags & CASTE_CAN_BE_GIVEN_PLASMA))
 			continue
-		affected_xeno.apply_status_effect(/datum/status_effect/plasma_surge, affected_xeno.xeno_caste.plasma_max / 2, bonus_regen, duration)
+		affected_xeno.apply_status_effect(/datum/status_effect/plasma_surge, affected_xeno.xeno_caste.plasma_max / 3, bonus_regen, duration)
 
 	playsound(X.loc, 'modular_RUtgmc/sound/voice/alien_plasma_screech.ogg', 75, 0)
 	X.visible_message(span_xenohighdanger("\The [X] emits an ear-splitting guttural roar!"))
@@ -94,7 +94,7 @@
 	name = "Frenzy Screech"
 	action_icon_state = "frenzy_screech"
 	desc = "Screech that increases damage for nearby xenos."
-	ability_cost = 400
+	ability_cost = 300
 	cooldown_duration = 45 SECONDS
 	var/screech_range = 5
 	var/buff_duration = 20 SECONDS
