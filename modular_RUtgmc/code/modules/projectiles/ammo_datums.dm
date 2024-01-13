@@ -117,9 +117,9 @@
 	hud_state_empty = "pepperball_empty"
 	handful_amount = 3
 	flags_ammo_behavior = AMMO_BALLISTIC
-	damage = 140
+	damage = 175
 	penetration = 50
-	sundering = 10
+	sundering = 15
 	accurate_range_min = 0
 	///shatter effection duration when hitting mobs
 	var/shatter_duration = 5 SECONDS
