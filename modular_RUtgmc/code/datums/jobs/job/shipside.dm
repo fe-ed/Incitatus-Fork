@@ -31,8 +31,9 @@
 /datum/outfit/job/command/captain
 	belt = /obj/item/storage/holster/blade/officer/sabre/full
 	glasses = /obj/item/clothing/glasses/sunglasses/aviator/yellow
+	back = /obj/item/weapon/gun/shotgun/double/musket
+	r_hand = /obj/item/ammo_magazine/rifle/musket
 	head = null
-	back = FALSE
 
 //Staff officer
 /datum/job/terragov/command/staffofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -63,6 +64,8 @@
 	head = null
 	w_uniform = /obj/item/clothing/under/marine/whites/blacks
 	shoes = /obj/item/clothing/shoes/laceup
+	r_store = /obj/item/weapon/gun/shotgun/double/musketoon
+	r_hand = /obj/item/ammo_magazine/rifle/musket/small
 
 /datum/job/terragov/engineering/tech
 	exp_type = EXP_TYPE_REGULAR_ALL

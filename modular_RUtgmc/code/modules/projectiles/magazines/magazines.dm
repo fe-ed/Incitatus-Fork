@@ -18,6 +18,26 @@
 	max_rounds = 80
 	icon_state_mini = "mag_rifle_big"
 
+/obj/item/ammo_magazine/rifle/musket
+	name = "box of musket lead rounds"
+	desc = "A box filled with lead bullets."
+	icon_state = "musket_sack_m"
+	default_ammo = /datum/ammo/bullet/sniper/musket
+	max_rounds = 45
+	caliber = CALIBER_557
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state_mini = "musket_sack_m"
+
+/obj/item/ammo_magazine/rifle/musket/small
+	name = "box of musket lead rounds"
+	desc = "A box filled with lead bullets."
+	icon_state = "musket_sack_s"
+	default_ammo = /datum/ammo/bullet/sniper/musket
+	max_rounds = 18
+	caliber = CALIBER_557
+	w_class = WEIGHT_CLASS_TINY
+	icon_state_mini = "musket_sack_s"
+
 /obj/item/ammo_magazine/smg/vector
 	name = "\improper Vector drum magazine (.45ACP)"
 	desc = "A .45ACP HP caliber drum magazine for the Vector, with even more dakka."

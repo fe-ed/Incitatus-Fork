@@ -109,6 +109,24 @@
 	hitscan_effect_icon = "beam_heavy_charge"
 	bullet_color = COLOR_DISABLER_BLUE
 
+/datum/ammo/bullet/sniper/musket
+	name = "musket lead bullet"
+	icon_state = "musket"
+	handful_icon_state = "musket"
+	hud_state = "pepperball"
+	hud_state_empty = "pepperball_empty"
+	handful_amount = 3
+	flags_ammo_behavior = AMMO_BALLISTIC
+	damage = 140
+	penetration = 50
+	sundering = 10
+	accurate_range_min = 0
+	///shatter effection duration when hitting mobs
+	var/shatter_duration = 5 SECONDS
+
+/datum/ammo/bullet/sniper/musket/on_hit_mob(mob/M,obj/projectile/P)
+	staggerstun(M, P, stagger = 0, slowdown = 1, knockback = 1)
+
 /*
 //================================================
 					Xeno Spits
