@@ -142,7 +142,7 @@
 	max_range = 15
 	damage = 100
 	penetration = 25
-	sundering = 3
+	sundering = 1.5
 	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
@@ -157,7 +157,7 @@
 	max_range = 15
 	damage = 70
 	penetration = 15
-	sundering = 2
+	sundering = 1
 	bullet_color = COLOR_TAN_ORANGE
 
 /datum/ammo/bullet/shotgun/incendiary/shq6/on_hit_mob(mob/M, obj/projectile/P)
@@ -178,7 +178,7 @@
 	damage = 50
 	damage_falloff = 1
 	penetration = 15
-	sundering = 5
+	sundering = 3.5
 
 
 /*
