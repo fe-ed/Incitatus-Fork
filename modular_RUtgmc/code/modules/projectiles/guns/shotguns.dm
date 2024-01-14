@@ -35,7 +35,9 @@
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
 		)
-	fire_sound = 'sound/weapons/guns/fire/tgmc/kinetic/gun_sh39.ogg'
+	fire_sound = 		'modular_RUtgmc/sound/weapons/guns/shotgun/SH-46/SH46.ogg'
+	hand_reload_sound = 'modular_RUtgmc/sound/weapons/guns/shotgun/SH-46/SH46_shell.ogg'
+	cocked_sound = 		'modular_RUtgmc/sound/weapons/guns/shotgun/SH-46/SH46_boltpull.ogg'
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES|GUN_WIELDED_FIRING_ONLY
 	max_chamber_items = 5
 	default_ammo_type = /datum/ammo/bullet/shotgun/buckshot
@@ -56,6 +58,7 @@
 		/obj/item/attachable/motiondetector,
 	)
 
+	starting_attachment_types = null
 	attachable_offset = list("muzzle_x" = 52, "muzzle_y" = 20,"rail_x" = 24, "rail_y" = 22, "under_x" = 35, "under_y" = 14, "stock_x" = 13, "stock_y" = 13)
 
 	fire_delay = 3 //one shot every 0.3 seconds.

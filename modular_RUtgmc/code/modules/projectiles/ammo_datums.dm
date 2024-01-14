@@ -140,7 +140,7 @@
 	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
 	shell_speed = 3
 	max_range = 15
-	damage = 90
+	damage = 100
 	penetration = 25
 	sundering = 3
 	damage_falloff = 3
@@ -177,7 +177,7 @@
 	max_range = 15
 	damage = 50
 	damage_falloff = 1
-	penetration = 30
+	penetration = 15
 	sundering = 5
 
 
