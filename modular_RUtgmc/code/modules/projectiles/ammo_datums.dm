@@ -128,7 +128,7 @@
 	accurate_range = 4
 	max_range = 10
 	damage = 40
-	penetration = 25
+	penetration = 20
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
@@ -144,7 +144,7 @@
 	damage = 100
 	penetration = 30
 	sundering = 3
-	damage_falloff = 3
+	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, knockback = 1, slowdown = 1, max_range = 6)
@@ -186,7 +186,7 @@
 	damage = 40
 	penetration = 50
 	sundering = 1.5
-	damage_falloff = 5
+	damage_falloff = 4
 
 /*
 //================================================
