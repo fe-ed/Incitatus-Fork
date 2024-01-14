@@ -125,9 +125,10 @@
 	bonus_projectiles_scatter = 3
 	accuracy_var_low = 9
 	accuracy_var_high = 9
-	accurate_range = 3
+	accurate_range = 4
 	max_range = 10
 	damage = 40
+	penetration = 25
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
@@ -141,8 +142,8 @@
 	shell_speed = 3
 	max_range = 15
 	damage = 100
-	penetration = 25
-	sundering = 1.5
+	penetration = 30
+	sundering = 3
 	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
@@ -169,17 +170,23 @@
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
 	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
-	bonus_projectiles_type = /datum/ammo/bullet/shotgun/flechette/flechette_spread
+	bonus_projectiles_type = /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
 	bonus_projectiles_amount = 2
 	bonus_projectiles_scatter = 3
 	accuracy_var_low = 8
 	accuracy_var_high = 8
 	max_range = 15
 	damage = 50
-	damage_falloff = 1
-	penetration = 15
+	damage_falloff = 5
+	penetration = 50
 	sundering = 3.5
 
+/datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
+	name = "additional flechette"
+	damage = 40
+	penetration = 50
+	sundering = 1.5
+	damage_falloff = 5
 
 /*
 //================================================
