@@ -20,7 +20,7 @@
 		)
 
 //-------------------------------------------------------
-//SH-Q6 semi automatic shotgun.
+//SH-46 semi automatic shotgun.
 
 /obj/item/weapon/gun/shotgun/combat/shq6
 	name = "\improper SH-46 combat shotgun"
@@ -31,6 +31,7 @@
 	icon_state = "shq6"
 	item_state = "shq6"
 	item_icons = list(
+		slot_s_store_str = 'modular_RUtgmc/icons/mob/suit_slot.dmi',
 		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
@@ -67,6 +68,7 @@
 	damage_mult = 0.6  //40% less damage.
 	recoil = 0.5
 	wield_delay = 0.6 SECONDS
+	aim_slowdown = 0.1
 
 //It's very fast shogun, it's made to prevent stagger/weaken spam.
 /obj/item/weapon/gun/shotgun/combat/shq6/get_ammo()
