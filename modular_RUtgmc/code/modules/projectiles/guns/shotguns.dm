@@ -64,7 +64,7 @@
 	fire_delay = 3 //one shot every 0.3 seconds.
 	accuracy_mult = 1.05
 	scatter = 3
-	damage_mult = 0.55  //45% less damage.
+	damage_mult = 0.6  //40% less damage.
 	recoil = 0.5
 	wield_delay = 0.6 SECONDS
 

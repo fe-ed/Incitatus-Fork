@@ -128,8 +128,9 @@
 	accurate_range = 4
 	max_range = 10
 	damage = 40
-	penetration = 20
-	damage_falloff = 4
+	penetration = 25
+	sundering = 2
+	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, stagger = 1 SECONDS, knockback = 1, slowdown = 1, max_range = 3)
@@ -144,7 +145,7 @@
 	damage = 100
 	penetration = 30
 	sundering = 3
-	damage_falloff = 4
+	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, knockback = 1, slowdown = 1, max_range = 6)
@@ -176,17 +177,17 @@
 	accuracy_var_low = 8
 	accuracy_var_high = 8
 	max_range = 15
-	damage = 50
-	damage_falloff = 5
+	damage = 46
+	damage_falloff = 3
 	penetration = 50
-	sundering = 3.5
+	sundering = 5
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
 	name = "additional flechette"
-	damage = 40
+	damage = 38
 	penetration = 50
-	sundering = 1.5
-	damage_falloff = 4
+	sundering = 3
+	damage_falloff = 3
 
 /*
 //================================================
