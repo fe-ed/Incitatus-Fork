@@ -180,13 +180,13 @@
 	damage = 50
 	damage_falloff = 3
 	penetration = 40
-	sundering = 5
+	sundering = 4
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
 	name = "additional flechette"
 	damage = 40
 	penetration = 40
-	sundering = 3
+	sundering = 2
 	damage_falloff = 3
 
 /*
