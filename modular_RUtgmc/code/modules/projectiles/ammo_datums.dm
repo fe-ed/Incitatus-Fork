@@ -128,9 +128,8 @@
 	accurate_range = 4
 	max_range = 10
 	damage = 40
-	penetration = 25
 	sundering = 2
-	damage_falloff = 3
+	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
 	staggerstun(M, P, knockback = 1, slowdown = 1, max_range = 3)
