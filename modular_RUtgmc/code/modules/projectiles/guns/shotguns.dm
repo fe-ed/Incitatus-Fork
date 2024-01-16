@@ -24,7 +24,7 @@
 
 /obj/item/weapon/gun/shotgun/combat/shq6
 	name = "\improper SH-46 combat shotgun"
-	desc = "The SH-46, also known as SH-Q6, is a semi-automatic, 12 Gauge, gas piston-operated TGMC shotgun."
+	desc = "The SH-46, is a semi-automatic, 12 Gauge, gas piston-operated shotgun, released for TGMC by CAU."
 	force = 20 //Has a stock already
 	flags_equip_slot = ITEM_SLOT_BACK
 	icon = 'modular_RUtgmc/icons/Marine/gun64.dmi'
