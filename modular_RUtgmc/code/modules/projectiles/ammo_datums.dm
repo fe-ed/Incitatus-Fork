@@ -133,7 +133,7 @@
 	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, stagger = 2 SECONDS, knockback = 1, slowdown = 0.5, max_range = 3)
+	staggerstun(M, P, knockback = 1, slowdown = 1, max_range = 3)
 
 /datum/ammo/bullet/shotgun/slug/shq6
 	name = "shotgun slug"
@@ -148,7 +148,7 @@
 	damage_falloff = 3
 
 /datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, stagger = 0.5 SECONDS, knockback = 1, slowdown = 2, max_range = 5)
+	staggerstun(M, P, slowdown = 2, max_range = 5)
 
 /datum/ammo/bullet/shotgun/incendiary/shq6
 	name = "incendiary slug"
