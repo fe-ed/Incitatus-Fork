@@ -177,15 +177,15 @@
 	accuracy_var_low = 8
 	accuracy_var_high = 8
 	max_range = 15
-	damage = 46
+	damage = 50
 	damage_falloff = 3
-	penetration = 50
+	penetration = 40
 	sundering = 5
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
 	name = "additional flechette"
-	damage = 38
-	penetration = 50
+	damage = 40
+	penetration = 40
 	sundering = 3
 	damage_falloff = 3
 

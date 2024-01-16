@@ -68,7 +68,7 @@
 	damage_mult = 0.6  //40% less damage.
 	recoil = 0.5
 	wield_delay = 0.6 SECONDS
-	aim_slowdown = 0.2
+	aim_slowdown = 0.1
 
 //It's very fast shogun, it's made to prevent stagger/weaken spam.
 /obj/item/weapon/gun/shotgun/combat/shq6/get_ammo()
