@@ -102,7 +102,7 @@
 	flags_equip_slot = ITEM_SLOT_BELT|ITEM_SLOT_BACK
 	force = 70
 	attack_speed = 8
-	throwforce = 95 //throw_dmg = throwforce * (throw_speed * 0.2)
+	throwforce = 130 //throw_dmg = throwforce * (throw_speed * 0.2)
 	throw_range = 9
 	throw_speed = 5
 	sharp = IS_SHARP_ITEM_BIG
