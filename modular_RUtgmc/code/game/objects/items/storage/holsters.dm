@@ -138,6 +138,10 @@
 		/obj/item/hud_tablet/artillery,
 	)
 
+/obj/item/storage/holster/blade //new sounds
+	draw_sound = 'modular_RUtgmc/sound/weapons/melee/knife_out.ogg'
+	sheathe_sound = 'modular_RUtgmc/sound/weapons/melee/knife_in.ogg'
+
 // Tactical Tomahawk Holster
 
 /obj/item/storage/holster/blade/tomahawk
