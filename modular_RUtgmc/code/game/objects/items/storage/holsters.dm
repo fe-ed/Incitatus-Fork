@@ -137,3 +137,29 @@
 		/obj/item/mortar_kit,
 		/obj/item/hud_tablet/artillery,
 	)
+
+// Tactical Tomahawk Holster
+
+/obj/item/storage/holster/blade/tomahawk
+	name = "\improper Tactical H23 Tomahawk scabbard"
+	desc = "A large leather scabbard used to carry a H23 tomahawk. It can be strapped to the back, waist or armor."
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+	icon_state = "tomahawk_holster"
+	item_state = "tomahawk_holster"
+	item_icons = list(
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_belt_str = 'modular_RUtgmc/icons/mob/clothing/belt.dmi',
+		slot_s_store_str = 'modular_RUtgmc/icons/mob/suit_slot.dmi'
+	)
+	flags_equip_slot = ITEM_SLOT_BELT|ITEM_SLOT_BACK
+	holsterable_allowed = list(
+		/obj/item/weapon/claymore/tomahawk
+	)
+	can_hold = list(
+		/obj/item/weapon/claymore/tomahawk
+	)
+
+/obj/item/storage/holster/blade/tomahawk/full/Initialize(mapload)
+	. = ..()
+	var/obj/item/new_item = new /obj/item/weapon/claymore/tomahawk(src)
+	INVOKE_ASYNC(src, PROC_REF(handle_item_insertion), new_item)
