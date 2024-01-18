@@ -100,11 +100,11 @@
 	inhand_y_dimension = 32
 	flags_atom = CONDUCT
 	flags_equip_slot = ITEM_SLOT_BELT|ITEM_SLOT_BACK
-	force = 65
+	force = 70
 	attack_speed = 8
 	throwforce = 95 //throw_dmg = throwforce * (throw_speed * 0.2)
 	throw_range = 9
-	throw_speed = 3
+	throw_speed = 5
 	sharp = IS_SHARP_ITEM_BIG
 	edge = 1
 	w_class = WEIGHT_CLASS_BULKY
