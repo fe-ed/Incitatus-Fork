@@ -142,6 +142,9 @@
 	draw_sound = 'modular_RUtgmc/sound/weapons/melee/knife_out.ogg'
 	sheathe_sound = 'modular_RUtgmc/sound/weapons/melee/knife_in.ogg'
 
+/obj/item/storage/holster/blade/machete
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+
 // Tactical Tomahawk Holster
 
 /obj/item/storage/holster/blade/tomahawk

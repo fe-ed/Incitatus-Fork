@@ -19,6 +19,13 @@
 	force = 90
 	penetration = 15
 	icon = 'modular_RUtgmc/icons/obj/items/weapons.dmi'
+	item_icons = list(
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_l_hand_str = 'modular_RUtgmc/icons/mob/inhands/weapons/melee_left.dmi',
+		slot_r_hand_str = 'modular_RUtgmc/icons/mob/inhands/weapons/melee_right.dmi',
+		slot_belt_str = 'modular_RUtgmc/icons/mob/suit_slot.dmi'
+	)
+	flags_equip_slot = ITEM_SLOT_BELT|ITEM_SLOT_BACK
 
 /obj/item/weapon/claymore/mercsword/officersword
 	icon_state = "officer_sword"
