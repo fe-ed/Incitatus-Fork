@@ -260,6 +260,10 @@
 		return TRUE
 
 	var/perceived_health = round(health * 100 / maxHealth)
+	if(!(species.species_flags & NO_PAIN))
+		perceived_health -= PAIN_RATIO_PAIN_HUD * traumatic_shock
+	if(!(species.species_flags & NO_STAMINA) && staminaloss > 0)
+		perceived_health -= STAMINA_RATIO_PAIN_HUD * staminaloss
 
 	switch(perceived_health)
 		if(100 to INFINITY)
