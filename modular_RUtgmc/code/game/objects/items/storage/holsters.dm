@@ -145,6 +145,9 @@
 /obj/item/storage/holster/blade/machete
 	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
 
+/obj/item/storage/holster/blade/machete/full_harvester
+	icon = 'icons/obj/items/storage/storage.dmi'
+
 // Tactical Tomahawk Holster
 
 /obj/item/storage/holster/blade/tomahawk
