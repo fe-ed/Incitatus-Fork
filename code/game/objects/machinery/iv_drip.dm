@@ -12,10 +12,16 @@
 	var/datum/beam/current_beam
 
 /obj/machinery/iv_drip/update_icon()
+	/* СМ КОСТЫЛЬ
 	if(src.attached)
 		icon_state = "hooked"
 	else
 		icon_state = ""
+	*/
+
+	icon_state = "" //КОСТЫЛЬ
+	//У нас нет системы которая позволила бы изменить pixel x/y вары у начальной и конечной точек beam'а
+	//Поэтому оставляю 1 айкон стейт, чтобы не выглядело всё слишком плохо
 
 	overlays = null
 
