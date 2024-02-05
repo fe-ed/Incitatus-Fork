@@ -69,7 +69,7 @@ GLOBAL_LIST_INIT(surgery_steps, init_surgery())
 /datum/surgery_step/proc/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(!preop_sound)
 		return
-	playsound(get_turf(target), preop_sound, vol = 75, sound_range = 1)
+	playsound(get_turf(target), preop_sound, vol = 40, sound_range = 1)
 
 //Does stuff to begin the step, usually just printing messages. Moved germs transfering and bloodying here too
 /datum/surgery_step/proc/begin_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
@@ -86,7 +86,7 @@ GLOBAL_LIST_INIT(surgery_steps, init_surgery())
 /datum/surgery_step/proc/play_success_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(!success_sound)
 		return
-	playsound(get_turf(target), success_sound, vol = 75, sound_range = 1)
+	playsound(get_turf(target), success_sound, vol = 40, sound_range = 1)
 
 //Does stuff to end the step, which is normally print a message + do whatever this step changes
 /datum/surgery_step/proc/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(surgery_steps, init_surgery())
 /datum/surgery_step/proc/play_failure_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(!failure_sound)
 		return
-	playsound(get_turf(target), failure_sound, vol = 75, sound_range = 1)
+	playsound(get_turf(target), failure_sound, vol = 40, sound_range = 1)
 
 //Stuff that happens when the step fails
 /datum/surgery_step/proc/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
