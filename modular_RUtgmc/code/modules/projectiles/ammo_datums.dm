@@ -117,7 +117,7 @@
 	hud_state_empty = "pepperball_empty"
 	handful_amount = 3
 	flags_ammo_behavior = AMMO_BALLISTIC
-	damage = 175
+	damage = 220
 	penetration = 50
 	sundering = 15
 	accurate_range_min = 0
@@ -125,7 +125,7 @@
 	var/shatter_duration = 5 SECONDS
 
 /datum/ammo/bullet/sniper/musket/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, stagger = 0, slowdown = 1, knockback = 1)
+	staggerstun(M, P, slowdown = 1, knockback = 1)
 
 /*
 //================================================

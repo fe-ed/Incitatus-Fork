@@ -53,13 +53,12 @@
 		/obj/item/attachable/magnetic_harness,
 	)
 
-	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
+	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES|GUN_WIELDED_FIRING_ONLY
 	attachable_offset = list("muzzle_x" = 45, "muzzle_y" = 23,"rail_x" = 17, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
-	aim_slowdown = 0.35
-	aim_time = 0.5 SECONDS
 
 	accuracy_mult = 1
 	fire_delay = 3 SECONDS
+	accuracy_mult_unwielded = 0.5
 
 	scatter = -25
 	scatter_unwielded = 10
@@ -67,8 +66,8 @@
 	recoil = 1
 	recoil_unwielded = 5
 
-	damage_falloff_mult = 1
-	wield_delay = 0.6 SECONDS
+	damage_falloff_mult = 2
+	wield_delay = 1.2 SECONDS
 	movement_acc_penalty_mult = 2
 
 /obj/item/weapon/gun/shotgun/double/musketoon
@@ -91,17 +90,15 @@
 	reload_sound = 'sound/weapons/guns/interact/martini_reload.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/martini_cocked.ogg'
 	opened_sound = 'sound/weapons/guns/interact/martini_open.ogg'
-  attachable_allowed = list(
+	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
 		/obj/item/attachable/bayonetknife/som,
-    /obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/magnetic_harness,
 	)
-  
+
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	attachable_offset = list("muzzle_x" = 45, "muzzle_y" = 23,"rail_x" = 12, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
-	aim_time = 0.5 SECONDS
-	w_class = WEIGHT_CLASS_SMALL
 
 	accuracy_mult_unwielded = 1
 	fire_delay = 1 SECONDS
@@ -113,11 +110,11 @@
 	recoil = -1
 	recoil_unwielded = 1
 
-	damage_mult = 0.65 //35% less damage.
+	damage_mult = 0.4 //60% less damage.
 	aim_slowdown = 1
 	wield_delay = 0.3 SECONDS
 	movement_acc_penalty_mult = 1
-=======
+
 //-------------------------------------------------------
 //SH-46 semi automatic shotgun.
 
@@ -161,7 +158,7 @@
 	aim_slowdown = 1
 	wield_delay = 0.3 SECONDS
 	movement_acc_penalty_mult = 1
-  attachable_allowed = list(
+	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
 		/obj/item/attachable/bayonetknife/som,

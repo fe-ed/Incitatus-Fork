@@ -23,7 +23,7 @@
 	desc = "A box filled with lead bullets."
 	icon_state = "musket_sack_m"
 	default_ammo = /datum/ammo/bullet/sniper/musket
-	max_rounds = 45
+	max_rounds = 48
 	caliber = CALIBER_557
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state_mini = "musket_sack_m"
@@ -33,7 +33,7 @@
 	desc = "A box filled with lead bullets."
 	icon_state = "musket_sack_s"
 	default_ammo = /datum/ammo/bullet/sniper/musket
-	max_rounds = 18
+	max_rounds = 32
 	caliber = CALIBER_557
 	w_class = WEIGHT_CLASS_TINY
 	icon_state_mini = "musket_sack_s"
