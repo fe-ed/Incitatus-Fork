@@ -98,7 +98,8 @@
 	)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
-	attachable_offset = list("muzzle_x" = 45, "muzzle_y" = 23,"rail_x" = 12, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
+	attachable_offset = list("muzzle_x" = 35, "muzzle_y" = 23,"rail_x" = 12, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
+	w_class = WEIGHT_CLASS_SMALL
 
 	accuracy_mult_unwielded = 1
 	fire_delay = 1 SECONDS
@@ -139,25 +140,6 @@
 	max_chamber_items = 5
 	default_ammo_type = /datum/ammo/bullet/shotgun/buckshot
 
-	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
-	attachable_offset = list("muzzle_x" = 45, "muzzle_y" = 23,"rail_x" = 12, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
-	aim_time = 0.5 SECONDS
-	w_class = WEIGHT_CLASS_SMALL
-
-	accuracy_mult_unwielded = 1
-	fire_delay = 1 SECONDS
-
-	scatter = -25
-	scatter_unwielded = -1
-
-	damage_falloff_mult = 3
-	recoil = -1
-	recoil_unwielded = 1
-
-	damage_mult = 0.65 //35% less damage.
-	aim_slowdown = 1
-	wield_delay = 0.3 SECONDS
-	movement_acc_penalty_mult = 1
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
@@ -179,7 +161,7 @@
 	attachable_offset = list("muzzle_x" = 52, "muzzle_y" = 20,"rail_x" = 24, "rail_y" = 22, "under_x" = 35, "under_y" = 14, "stock_x" = 13, "stock_y" = 13)
 
 	fire_delay = 3 //one shot every 0.3 seconds.
-	accuracy_mult = 1.05
+	accuracy_mult = 1
 	scatter = 3
 	damage_mult = 0.6  //40% less damage.
 	recoil = 0.5
