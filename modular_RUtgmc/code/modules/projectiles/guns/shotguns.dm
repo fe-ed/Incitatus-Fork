@@ -54,7 +54,7 @@
 	)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES|GUN_WIELDED_FIRING_ONLY
-	attachable_offset = list("muzzle_x" = 45, "muzzle_y" = 23,"rail_x" = 17, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
+	attachable_offset = list("muzzle_x" = 55, "muzzle_y" = 19,"rail_x" = 35, "rail_y" = 20, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
 
 	accuracy_mult = 1
 	fire_delay = 3 SECONDS
@@ -98,7 +98,7 @@
 	)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
-	attachable_offset = list("muzzle_x" = 35, "muzzle_y" = 23,"rail_x" = 12, "rail_y" = 25, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
+	attachable_offset = list("muzzle_x" = 40, "muzzle_y" = 20,"rail_x" = 16, "rail_y" = 20, "under_x" = 19, "under_y" = 14, "stock_x" = 15, "stock_y" = 12)
 	w_class = WEIGHT_CLASS_SMALL
 
 	accuracy_mult_unwielded = 1
