@@ -67,7 +67,7 @@
 	recoil_unwielded = 5
 
 	damage_falloff_mult = 2
-	wield_delay = 1.2 SECONDS
+	wield_delay = 2 SECONDS
 	movement_acc_penalty_mult = 2
 
 /obj/item/weapon/gun/shotgun/double/musketoon
@@ -104,8 +104,8 @@
 	accuracy_mult_unwielded = 1
 	fire_delay = 1 SECONDS
 
-	scatter = -25
-	scatter_unwielded = -1
+	scatter = -10
+	scatter_unwielded = 1
 
 	damage_falloff_mult = 3
 	recoil = -1
@@ -113,7 +113,7 @@
 
 	damage_mult = 0.4 //60% less damage.
 	aim_slowdown = 1
-	wield_delay = 0.3 SECONDS
+	wield_delay = 0.5 SECONDS
 	movement_acc_penalty_mult = 1
 
 //-------------------------------------------------------
