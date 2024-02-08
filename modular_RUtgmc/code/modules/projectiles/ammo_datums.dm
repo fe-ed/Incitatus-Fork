@@ -119,8 +119,8 @@
 	flags_ammo_behavior = AMMO_BALLISTIC
 	damage = 220
 	penetration = 50
-	sundering = 15
-	accurate_range_min = 0
+	sundering = 10
+	accurate_range_min = 2
 	///shatter effection duration when hitting mobs
 	var/shatter_duration = 5 SECONDS
 
