@@ -146,18 +146,18 @@
 /datum/reagent/medicine/oxycodone/on_mob_add(mob/living/L, metabolism)
 	if(TIMER_COOLDOWN_CHECK(L, name))
 		return
-	L.adjustStaminaLoss(-20*effect_str)
 	to_chat(L, span_userdanger("You feel a burst of energy revitalize you all of a sudden! You can do anything!"))
 
 /datum/reagent/medicine/oxycodone/on_mob_life(mob/living/L, metabolism)
 	L.reagent_pain_modifier += PAIN_REDUCTION_SUPER_HEAVY
-	L.apply_damage(0.2*effect_str, TOX)
+	L.apply_damage(0.5*effect_str, TOX)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		C.setShock_Stage(min(C.shock_stage - 1*effect_str, 150)) //you can still paincrit if under ludicrous situations, but you can't go into deep shock
 	return ..()
 
 /datum/reagent/medicine/oxycodone/overdose_process(mob/living/L, metabolism)
+	L.apply_damage(effect_str, TOX)
 	L.adjustStaminaLoss(5*effect_str)
 	L.set_drugginess(10)
 	L.jitter(3)
@@ -442,7 +442,7 @@
 
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
-	description = "Synaptizine is a commonly used performance-enhancing drug with minimal side effects."
+	description = "Synaptizine is a commonly used performance-enhancing drug with minor side effects."
 	color = COLOR_REAGENT_SYNAPTIZINE
 	overdose_threshold = REAGENTS_OVERDOSE/5
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL/5
@@ -455,6 +455,7 @@
 	if(TIMER_COOLDOWN_CHECK(L, name))
 		return
 	L.adjustStaminaLoss(-30*effect_str)
+	L.adjustToxLoss(5*effect_str)
 	to_chat(L, span_userdanger("You feel a burst of energy as the stimulants course through you! Time to go!"))
 
 /datum/reagent/medicine/synaptizine/on_mob_life(mob/living/L, metabolism)
@@ -464,7 +465,6 @@
 	L.AdjustStun(-2 SECONDS)
 	L.AdjustParalyzed(-2 SECONDS)
 	L.adjustToxLoss(effect_str)
-	L.hallucination = max(0, L.hallucination - 10)
 	switch(current_cycle)
 		if(1 to 10)
 			L.adjustStaminaLoss(-7.5*effect_str)

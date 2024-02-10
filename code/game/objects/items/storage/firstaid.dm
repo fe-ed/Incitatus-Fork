@@ -481,6 +481,78 @@
 	greyscale_config = /datum/greyscale_config/pillbottleround
 	description_overlay = "Ti"
 
+/obj/item/storage/pill_bottle/ryetalyn
+	name = "ryetalyn pill bottle"
+	desc = "Contains pills capable of long-duration protection against toxic chemicals."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/ryetalyn
+	greyscale_colors = "#FF8C00#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Ry"
+
+/obj/item/storage/pill_bottle/hyronalin
+	name = "hyronalin pill bottle"
+	desc = "Contains pills used to counter the effect of toxin poisoning."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/hyronalin
+	greyscale_colors = "#9ACD32#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Hn"
+
+/obj/item/storage/pill_bottle/medicalnanites
+	name = "nanites pill bottle"
+	desc = "Contains pills used to counter the effect of toxin poisoning."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/medicalnanites
+	greyscale_colors = "#6A5ACD#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Na"
+
+/obj/item/storage/pill_bottle/synaptizine
+	name = "synaptizine pill bottle"
+	desc = "Contains pills used to boost your perfomance."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/synaptizine
+	greyscale_colors = "#5C2680#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Sy"
+
+/obj/item/storage/pill_bottle/doctor_delight
+	name = "doctor's delight pill bottle"
+	desc = "Contains pills used to heal slowly."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/doctor_delight
+	greyscale_colors = "#A3295C#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Dd"
+
+/obj/item/storage/pill_bottle/sugar
+	name = "sugar pill bottle"
+	desc = "Contains pills used to prevent hunger, yum!"
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/sugar
+	greyscale_colors = "#ECFC00#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Su"
+
+/obj/item/storage/pill_bottle/oxycodone
+	name = "oxycodone pill bottle"
+	desc = "Contains pills used to kill pain. Really addictive and toxic. Don't take more than one pill."
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/oxycodone
+	greyscale_colors = "#0F0F0F#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Ox"
+
+/obj/item/storage/pill_bottle/imidalk
+	name = "imidalk pill bottle"
+	desc = "Contains pills used to fix brain, ear and eye damage"
+	icon_state = "pill_canistercomplete"
+	pill_type_to_fill = /obj/item/reagent_containers/pill/imidalk
+	greyscale_colors = "#E467B3#ffffff"
+	greyscale_config = /datum/greyscale_config/pillbottleround
+	description_overlay = "Id"
+
 /obj/item/storage/pill_bottle/happy
 	name = "happy pill bottle"
 	desc = "Contains highly illegal drugs. When you want to see the rainbow."

@@ -8,11 +8,9 @@
 
 ///RYETALYN
 /datum/reagent/medicine/ryetalyn
-	purge_rate = 3
+	purge_rate = 2
 
 ///SYNAPTIZINE
-/datum/reagent/medicine/synaptizine
-	custom_metabolism = REAGENTS_METABOLISM * 1.5
 
 /datum/reagent/medicine/synaptizine/overdose_process(mob/living/L, metabolism)
 	L.apply_damage(2 * effect_str, TOX)
@@ -32,7 +30,7 @@
 ///DEXALIN
 
 /datum/reagent/medicine/dexalin
-	custom_metabolism = REAGENTS_METABOLISM * 2.5
+	custom_metabolism = REAGENTS_METABOLISM * 2
 	overdose_threshold = REAGENTS_OVERDOSE * 0.5 // 15
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL * 0.6 // 30
 	purge_list = list(/datum/reagent/medicine/synaptizine)
@@ -40,24 +38,16 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/dexalin/on_mob_life(mob/living/L,metabolism)
+	L.reagent_shock_modifier += PAIN_REDUCTION_LIGHT
 	L.adjustOxyLoss(-3*effect_str)
 	L.adjustStaminaLoss(-2*effect_str)
+	if(prob(15))
+		L.adjustToxLoss(effect_str)
 	holder.remove_reagent("lexorin", effect_str)
 	return ..()
 
 /datum/reagent/medicine/dexalin/overdose_process(mob/living/L, metabolism)
 	L.apply_damage(2 * effect_str, BURN)
-
-///DEXALIN PLUS
-
-/datum/reagent/medicine/dexalinplus/on_mob_add(mob/living/L, metabolism)
-	if(TIMER_COOLDOWN_CHECK(L, name))
-		return
-	L.adjustStaminaLoss(-100*effect_str)
-	to_chat(L, span_userdanger("You feel a complete lack of fatigue, so relaxing!"))
-
-/datum/reagent/medicine/dexalinplus/on_mob_delete(mob/living/L, metabolism)
-	TIMER_COOLDOWN_START(L, name, 180 SECONDS)
 
 ///FASYGIN
 
@@ -68,8 +58,8 @@
 	color = COLOR_REAGENT_FASYGIN
 	overdose_threshold = REAGENTS_OVERDOSE/30 //1u
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL/25 //2u
-	purge_list = list(/datum/reagent/toxin, /datum/reagent/zombium, /datum/reagent/medicine/ryetalyn, /datum/reagent/medicine/synaptizine) //Nu-uh
-	purge_rate = 8
+	purge_list = list(/datum/reagent/toxin, /datum/reagent/zombium, /datum/reagent/medicine/ryetalyn)
+	purge_rate = 6
 	scannable = TRUE
 
 /datum/reagent/medicine/fasygin/on_mob_life(mob/living/L)
@@ -79,12 +69,13 @@
 	return ..()
 
 /datum/reagent/medicine/fasygin/overdose_process(mob/living/L, metabolism)
+	L.adjustOxyLoss(-5*effect_str)
 	L.adjustStaminaLoss(15* effect_str)
 	L.apply_damages(1, 1, 2) //Brute Burn Tox
 
 /datum/reagent/medicine/fasygin/overdose_crit_process(mob/living/L, metabolism)
 	L.adjustStaminaLoss(15 * effect_str)
-	L.apply_damages(2, 2, 3) //Brute Burn Tox
+	L.apply_damages(1, 1, 2) //Brute Burn Tox
 
 ///MEDICAL NANITES
 
@@ -92,4 +83,4 @@
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL * 1.7
 
 /datum/reagent/medicine/research/medicalnanites/overdose_crit_process(mob/living/L, metabolism)
-	L.adjustCloneLoss(1) //YUM!
+	L.adjustCloneLoss(0.5) //YUM!

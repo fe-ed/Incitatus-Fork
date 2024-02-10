@@ -232,6 +232,46 @@
 	list_reagents = list(/datum/reagent/medicine/tricordrazine = 15)
 	pill_id = 9
 
+/obj/item/reagent_containers/pill/ryetalyn
+	pill_desc = "A ryetalyn pill. A long-duration shield against toxic chemicals."
+	list_reagents = list(/datum/reagent/medicine/ryetalyn = 15)
+	pill_id = 7
+
+/obj/item/reagent_containers/pill/hyronalin
+	pill_desc = "A hyronalin pill. Medicinal drug used to counter the effect of toxin poisoning."
+	list_reagents = list(/datum/reagent/medicine/hyronalin = 15)
+	pill_id = 11
+
+/obj/item/reagent_containers/pill/medicalnanites
+	pill_desc = "A nanites pill. Used to heal wounds using the iron present in the bloodstream."
+	list_reagents = list(/datum/reagent/medicine/research/medicalnanites = 15)
+	pill_id = 21
+
+/obj/item/reagent_containers/pill/synaptizine
+	pill_desc = "A synaptizine pill. Used with hyronalin to enhance your performance with minimal side effects."
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 3, /datum/reagent/medicine/hyronalin = 7)
+	pill_id = 10
+
+/obj/item/reagent_containers/pill/oxycodone
+	pill_desc = "A sugar pill. Used to prevent hunger"
+	list_reagents = list(/datum/reagent/medicine/oxycodone = 15)
+	pill_id = 18
+
+/obj/item/reagent_containers/pill/imidalk
+	pill_desc = "A imidal pill. Used to fix brain, ear and eye damage."
+	list_reagents = list(/datum/reagent/medicine/alkysine = 3.5, /datum/reagent/medicine/imidazoline = 11.5)
+	pill_id = 18
+
+/obj/item/reagent_containers/pill/doctor_delight
+	pill_desc = "A doctor's delight pill. Used to heal wounds slowly at cost of your hunger and stamina, can't be overdosed."
+	list_reagents = list(/datum/reagent/consumable/drink/doctor_delight = 15)
+	pill_id = 15
+
+/obj/item/reagent_containers/pill/sugar
+	pill_desc = "A sugar pill. Used to prevent hunger"
+	list_reagents = list(/datum/reagent/consumable/sugar = 15)
+	pill_id = 18
+
 /obj/item/reagent_containers/pill/leporazine
 	pill_desc = "A leporazine pill. Helps handle extreme body temperatures rapidly."
 	list_reagents = list(/datum/reagent/medicine/leporazine = 10)
