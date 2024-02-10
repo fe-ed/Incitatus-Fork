@@ -37,6 +37,11 @@
 	purge_rate = 1
 	scannable = TRUE
 
+/datum/reagent/medicine/dexalin/on_mob_add(mob/living/L, metabolism)
+	if(TIMER_COOLDOWN_CHECK(L, name))
+		return
+	L.adjustStaminaLoss(-10*effect_str)
+
 /datum/reagent/medicine/dexalin/on_mob_life(mob/living/L,metabolism)
 	L.reagent_shock_modifier += PAIN_REDUCTION_LIGHT
 	L.adjustOxyLoss(-3*effect_str)
@@ -45,6 +50,9 @@
 		L.adjustToxLoss(effect_str)
 	holder.remove_reagent("lexorin", effect_str)
 	return ..()
+
+/datum/reagent/medicine/dexalin/on_mob_delete(mob/living/L, metabolism)
+	TIMER_COOLDOWN_START(L, name, 60 SECONDS)
 
 /datum/reagent/medicine/dexalin/overdose_process(mob/living/L, metabolism)
 	L.apply_damage(2 * effect_str, BURN)
