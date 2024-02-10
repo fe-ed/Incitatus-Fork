@@ -41,6 +41,7 @@
 	if(TIMER_COOLDOWN_CHECK(L, name))
 		return
 	L.adjustStaminaLoss(-10*effect_str)
+	return ..()
 
 /datum/reagent/medicine/dexalin/on_mob_life(mob/living/L,metabolism)
 	L.reagent_shock_modifier += PAIN_REDUCTION_LIGHT
@@ -53,6 +54,7 @@
 
 /datum/reagent/medicine/dexalin/on_mob_delete(mob/living/L, metabolism)
 	TIMER_COOLDOWN_START(L, name, 60 SECONDS)
+	return ..()
 
 /datum/reagent/medicine/dexalin/overdose_process(mob/living/L, metabolism)
 	L.apply_damage(2 * effect_str, BURN)
@@ -70,10 +72,18 @@
 	purge_rate = 6
 	scannable = TRUE
 
+/datum/reagent/medicine/fasygin/on_mob_add(mob/living/L, metabolism)
+	L.add_stamina_regen_modifier(name, -0.5)
+	return ..()
+
 /datum/reagent/medicine/fasygin/on_mob_life(mob/living/L)
 	L.adjustOxyLoss(-5*effect_str)
 	L.adjustStaminaLoss(7.5 * effect_str)
 	ADD_TRAIT(L, TRAIT_INTOXICATION_RESISTANT, REAGENT_TRAIT(src))
+	return ..()
+
+/datum/reagent/medicine/fasygin/on_mob_delete(mob/living/L, metabolism)
+	L.remove_stamina_regen_modifier(name)
 	return ..()
 
 /datum/reagent/medicine/fasygin/overdose_process(mob/living/L, metabolism)
