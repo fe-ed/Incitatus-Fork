@@ -249,16 +249,16 @@
 
 /obj/item/reagent_containers/pill/synaptizine
 	pill_desc = "A synaptizine pill. Used with hyronalin to enhance your performance with minimal side effects."
-	list_reagents = list(/datum/reagent/medicine/synaptizine = 3, /datum/reagent/medicine/hyronalin = 7)
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 1.9, /datum/reagent/medicine/hyronalin = 4.8)
 	pill_id = 10
 
 /obj/item/reagent_containers/pill/oxycodone
-	pill_desc = "A sugar pill. Used to prevent hunger"
+	pill_desc = "A oxycodone pill. Used to kill pain. Really addictive and toxic."
 	list_reagents = list(/datum/reagent/medicine/oxycodone = 15)
 	pill_id = 18
 
 /obj/item/reagent_containers/pill/imidalk
-	pill_desc = "A imidal pill. Used to fix brain, ear and eye damage."
+	pill_desc = "A imidalk pill. Used to fix brain, ear and eye damage."
 	list_reagents = list(/datum/reagent/medicine/alkysine = 3.5, /datum/reagent/medicine/imidazoline = 11.5)
 	pill_id = 18
 
