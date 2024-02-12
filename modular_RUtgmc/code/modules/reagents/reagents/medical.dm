@@ -30,7 +30,7 @@
 ///DEXALIN
 
 /datum/reagent/medicine/dexalin
-	custom_metabolism = REAGENTS_METABOLISM * 2
+	custom_metabolism = REAGENTS_METABOLISM * 1.25
 	overdose_threshold = REAGENTS_OVERDOSE * 0.5 // 15
 	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL * 0.6 // 30
 	purge_list = list(/datum/reagent/medicine/synaptizine)
@@ -47,8 +47,6 @@
 	L.reagent_shock_modifier += PAIN_REDUCTION_LIGHT
 	L.adjustOxyLoss(-3*effect_str)
 	L.adjustStaminaLoss(-2*effect_str)
-	if(prob(15))
-		L.adjustToxLoss(effect_str)
 	holder.remove_reagent("lexorin", effect_str)
 	return ..()
 
