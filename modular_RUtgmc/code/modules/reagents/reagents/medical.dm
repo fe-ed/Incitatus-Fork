@@ -8,6 +8,7 @@
 
 ///RYETALYN
 /datum/reagent/medicine/ryetalyn
+	purge_list = list(/datum/reagent/toxin, /datum/reagent/zombium, /datum/reagent/medicine/fasygin)
 	purge_rate = 3
 
 ///SYNAPTIZINE
