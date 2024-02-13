@@ -8,7 +8,7 @@
 
 ///RYETALYN
 /datum/reagent/medicine/ryetalyn
-	purge_rate = 2
+	purge_rate = 3
 
 ///SYNAPTIZINE
 
