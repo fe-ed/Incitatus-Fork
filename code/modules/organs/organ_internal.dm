@@ -311,10 +311,7 @@
 		to_chat(owner, span_warning("All the different drugs in you are starting to make you feel off..."))
 		old_overflow = TRUE
 
-//RAINBOW EFFECT + [0.5 TOX + 1 STAMINA] DAMAGE WITH EVERY REAGENT AFTER CAP (5)
 	owner.set_drugginess(3)
-	owner.apply_damage(overflow * 0.5, TOX)
-	owner.adjustStaminaLoss(overflow)
 
 	if(prob(overflow * (organ_status + 1) * 10))
 		owner.Confused(2 SECONDS * (organ_status + 1))
