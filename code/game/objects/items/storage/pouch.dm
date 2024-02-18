@@ -820,7 +820,7 @@
 	desc = "A pouch specialized for holding shotgun ammo."
 	icon_state = "shotshells"
 	sprite_slots = 4
-	storage_slots = 7
+	storage_slots = 7 //RUTGMC EDIT
 	draw_mode = 0
 	can_hold = list(/obj/item/ammo_magazine/handful)
 
