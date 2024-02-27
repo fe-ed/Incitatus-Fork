@@ -147,7 +147,7 @@
 			/obj/item/armor_module/module/pt_belt = -1,
 		),
 		"Gloves" = list(
-			/obj/item/clothing/gloves/marine/black = -1,
+			/obj/item/clothing/gloves/marine = -1,
 			/obj/item/clothing/gloves/marine/fingerless = -1,
 			/obj/item/clothing/gloves/marine/veteran/marine = -1,
 			/obj/item/clothing/gloves/marine/separatist = -1,
@@ -185,6 +185,7 @@
 			/obj/item/storage/belt/utility/full =-1,
 			/obj/item/storage/belt/medical_small = -1,
 			/obj/item/storage/belt/gun/revolver/t500 = -1,
+			/obj/item/storage/belt/mortar_belt = 4,
 		),
 		"Pouches" = list(
 			/obj/item/storage/pouch/pistol = -1,
@@ -423,6 +424,7 @@
 			/obj/item/stack/medical/splint = -1,
 		),
 		"Misc" = list(
+			/obj/item/defibrillator = -1,
 			/obj/item/healthanalyzer = -1,
 			/obj/item/healthanalyzer/gloves = -1,
 			/obj/item/bodybag/cryobag = -1,
@@ -570,6 +572,8 @@
 			/obj/item/ammo_magazine/flamer_tank/water = -1,
 			/obj/item/jetpack_marine = 3,
 			/obj/item/bodybag/tarp = 10,
+			/obj/item/mortar_kit/knee = 4,
+			/obj/item/mortal_shell/knee = 40,
 		),
 		"Heavy Weapons" = list(
 			/obj/structure/closet/crate/mortar_ammo/mortar_kit = 1,
@@ -1003,6 +1007,8 @@
 			/obj/item/ammo_magazine/flamer_tank/backtank = -1,
 			/obj/item/jetpack_marine = -1,
 			/obj/item/bodybag/tarp = -1,
+			/obj/item/mortar_kit/knee = 4,
+			/obj/item/mortal_shell/knee = 40,
 		),
 		"Heavy Weapons" = list(
 			/obj/structure/closet/crate/mortar_ammo/mortar_kit = -1,

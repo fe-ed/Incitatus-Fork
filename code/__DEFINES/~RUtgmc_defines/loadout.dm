@@ -173,8 +173,8 @@ GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclotplus = list(CAT_FCSUP, "Injector (Quick-Clot Plus)", 4, "cyan"),
 		/obj/item/reagent_containers/hypospray/autoinjector/synaptizine = list(CAT_FCSUP, "Injector (Synaptizine)", 3, "cyan"),
 		/obj/item/reagent_containers/hypospray/autoinjector/combat_advanced = list(CAT_FCSUP, "Injector (Advanced)", 3, "cyan"),
-		/obj/item/stack/medical/heal_pack/advanced/bruise_pack/combat = list(CAT_FCSUP, "Combat Trauma Kit", 2, "cyan"),
-		/obj/item/stack/medical/heal_pack/advanced/burn_pack/combat = list(CAT_FCSUP, "Combat Burn Kit", 2, "cyan"),
+		/obj/item/stack/medical/heal_pack/advanced/bruise_combat_pack = list(CAT_FCSUP, "Combat Trauma Kit", 2, "cyan"),
+		/obj/item/stack/medical/heal_pack/advanced/burn_combat_pack = list(CAT_FCSUP, "Combat Burn Kit", 2, "cyan"),
 	))
 
 GLOBAL_LIST_INIT(medic_gear_listed_products, list(
@@ -182,8 +182,8 @@ GLOBAL_LIST_INIT(medic_gear_listed_products, list(
 		/obj/item/storage/pill_bottle/meralyne = list(CAT_MEDSUP, "Meralyne pills", 16, "orange"),
 		/obj/item/storage/pill_bottle/dermaline = list(CAT_MEDSUP, "Dermaline pills", 16, "orange"),
 		/obj/item/tool/surgery/solderingtool = list(CAT_MEDSUP, "Soldering tool", 2, "orange"),
-		/obj/item/stack/medical/heal_pack/advanced/bruise_pack/combat = list(CAT_MEDSUP, "Combat Trauma Kit", 3, "orange"),
-		/obj/item/stack/medical/heal_pack/advanced/burn_pack/combat = list(CAT_MEDSUP, "Combat Burn Kit", 3, "orange"),
+		/obj/item/stack/medical/heal_pack/advanced/bruise_combat_pack = list(CAT_MEDSUP, "Combat Trauma Kit", 3, "orange"),
+		/obj/item/stack/medical/heal_pack/advanced/burn_combat_pack = list(CAT_MEDSUP, "Combat Burn Kit", 3, "orange"),
 		/obj/item/reagent_containers/hypospray/advanced = list(CAT_MEDSUP, "Hypospray", 1, "yellow"),
 		/obj/item/reagent_containers/hypospray/advanced/big = list(CAT_MEDSUP, "Big hypospray", 2, "yellow"),
 		/obj/item/storage/syringe_case/meralyne = list(CAT_MEDSUP, "syringe Case (120u Meralyne)", 14, "blue"),
@@ -230,3 +230,13 @@ GLOBAL_LIST_INIT(smartgunner_gear_listed_products, list(
 	/obj/item/ammo_magazine/rifle/standard_spottingrifle/incendiary = list(CAT_SGSUP, "SG-153 Spotting Rifle Incendiary Magazine", 3, "orange2"),
 	/obj/item/ammo_magazine/pistol/standard_pistol/smart_pistol = list(CAT_SGSUP, "SP-13 smart pistol ammo", 2, "orange2"),
 	))
+
+///Assoc list linking the job title with their specific points vendor
+GLOBAL_LIST_INIT(job_specific_points_vendor, list(
+	SQUAD_MARINE = GLOB.marine_gear_listed_products,
+	SQUAD_ENGINEER = GLOB.engineer_gear_listed_products,
+	SQUAD_CORPSMAN = GLOB.medic_gear_listed_products,
+	SQUAD_LEADER = GLOB.leader_gear_listed_products,
+	FIELD_COMMANDER = GLOB.commander_gear_listed_products,
+	SQUAD_SMARTGUNNER = GLOB.smartgunner_gear_listed_products,
+))
