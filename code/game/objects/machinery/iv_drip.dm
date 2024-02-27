@@ -5,11 +5,10 @@
 	density = FALSE
 	drag_delay = 1
 
-
 	var/mob/living/carbon/human/attached = null
 	var/mode = 1 // 1 is injecting, 0 is taking blood.
 	var/obj/item/reagent_containers/beaker = null
-	var/datum/beam/current_beam
+	var/datum/beam/current_beam //RUTGMC ADDON
 
 /obj/machinery/iv_drip/update_icon()
 	/* СМ КОСТЫЛЬ
@@ -43,17 +42,6 @@
 			filling.color = mix_color_from_reagents(reagents.reagent_list)
 			overlays += filling
 
-/obj/machinery/iv_drip/proc/update_beam()
-	if(current_beam && !attached)
-		QDEL_NULL(current_beam)
-	else if(!current_beam && attached && !QDELETED(src))
-		current_beam = beam(attached, "iv_tube", 'modular_RUtgmc/icons/effects/beam.dmi')
-
-/obj/machinery/iv_drip/Destroy()
-	attached = null
-	update_beam()
-	. = ..()
-
 /obj/machinery/iv_drip/MouseDrop(over_object, src_location, over_location)
 	..()
 
@@ -66,7 +54,7 @@
 			H.visible_message("[H] detaches \the [src] from \the [attached].", \
 			"You detach \the [src] from \the [attached].")
 			attached = null
-			update_beam()
+			update_beam() //RUTGMC ADDON
 			update_icon()
 			STOP_PROCESSING(SSobj, src)
 			return
@@ -75,7 +63,7 @@
 			H.visible_message("[H] attaches \the [src] to \the [over_object].", \
 			"You attach \the [src] to \the [over_object].")
 			attached = over_object
-			update_beam()
+			update_beam() //RUTGMC ADDON
 			update_icon()
 			START_PROCESSING(SSobj, src)
 
@@ -103,7 +91,7 @@
 
 		to_chat(user, "You attach \the [I] to \the [src].")
 		update_icon()
-		update_beam()
+		update_beam() //RUTGMC ADDON
 
 
 /obj/machinery/iv_drip/process()
@@ -114,7 +102,7 @@
 		visible_message("The needle is ripped out of [attached], doesn't that hurt?")
 		attached.apply_damage(3, BRUTE, pick("r_arm", "l_arm"))
 		attached = null
-		update_beam()
+		update_beam() //RUTGMC ADDON
 		update_icon()
 		STOP_PROCESSING(SSobj, src)
 		return
