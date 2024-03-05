@@ -635,18 +635,120 @@
 		QDEL_NULL(beacon_datum)
 		user.show_message(span_warning("The [src] beeps and states, \"Your last position is no longer accessible by the supply console"), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
 		return
-	if(!is_ground_level(user.z))
-		to_chat(user, span_warning("You have to be on the planet to use this or it won't transmit."))
-		return FALSE
-	var/area/A = get_area(user)
-	if(A && istype(A) && A.ceiling >= CEILING_DEEP_UNDERGROUND)
-		to_chat(user, span_warning("This won't work if you're standing deep underground."))
-		return FALSE
-	beacon_datum = new /datum/supply_beacon(user.name, user.loc, user.faction, 4 MINUTES)
-	RegisterSignal(beacon_datum, COMSIG_QDELETING, PROC_REF(clean_beacon_datum))
-	user.show_message(span_notice("The [src] beeps and states, \"Your current coordinates were registered by the supply console. LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
+	if(comms_setup == COMMS_SETUP)
+		var/turf/location = get_turf(user)
+		user.show_message(span_notice("The [src] beeps and states, \"Uplink data: LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
+		return
 
-/// Signal handler to nullify beacon datum
-/obj/item/armor_module/module/antenna/proc/clean_beacon_datum()
+///Begins the startup sequence.
+/obj/item/armor_module/module/antenna/proc/start_sync(mob/living/user)
+	if(comms_setup != COMMS_OFF) //Guh?
+		return
+	to_chat(user, span_notice("Setting up Antenna communication relay. Please wait."))
+	comms_setup = COMMS_SETTING
+	startup_timer_id = addtimer(CALLBACK(src, PROC_REF(finish_startup), user), ANTENNA_SYNCING_TIME, TIMER_STOPPABLE)
+
+///Finishes startup, rendering the module effective.
+/obj/item/armor_module/module/antenna/proc/finish_startup(mob/living/user)
+	comms_setup = COMMS_SETUP
+	user.show_message(span_notice("[src] beeps twice and states: \"Antenna configuration complete. Relay system active.\""), EMOTE_AUDIBLE, span_notice("[src] vibrates twice."))
+	startup_timer_id = null
+
+
+#undef COMMS_OFF
+#undef COMMS_SETTING
+#undef COMMS_SETUP
+
+/obj/item/armor_module/module/night_vision
+	name = "\improper BE-35 night vision kit"
+	desc = "Installation kit for the BE-35 night vision system. Slightly impedes movement."
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "night_vision"
+	flags_attach_features = ATTACH_REMOVABLE|ATTACH_NO_HANDS
+	slot = ATTACHMENT_SLOT_HEAD_MODULE
+	prefered_slot = SLOT_HEAD
+	slowdown = 0.1
+	///The goggles this module deploys
+	var/obj/item/clothing/glasses/night_vision/mounted/attached_goggles
+
+/obj/item/armor_module/module/night_vision/Initialize(mapload)
+	. = ..()
+	attached_goggles = new /obj/item/clothing/glasses/night_vision/mounted(src)
+
+/obj/item/armor_module/module/night_vision/examine(mob/user)
+	. = ..()
+	. += attached_goggles.battery_status()
+	. += "To eject the battery, [span_bold("click")] [src] with an empty hand. To insert a battery, [span_bold("click")] [src] with a compatible cell."
+
+///Called when the parent is examined; relays battery info
+/obj/item/armor_module/module/night_vision/proc/on_examine(datum/source, mob/user, list/examine_text)
 	SIGNAL_HANDLER
-	beacon_datum = null
+	examine_text += attached_goggles.battery_status()
+	examine_text += "To eject the battery, [span_bold("CTRL + SHIFT + left-click")] [src] with an empty hand. To insert a battery, [span_bold("click")] [src] with a compatible cell."
+
+/obj/item/armor_module/module/night_vision/on_attach(obj/item/attaching_to, mob/user)
+	. = ..()
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(on_click))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(on_attackby))
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(deploy))
+	RegisterSignal(parent, COMSIG_ITEM_UNEQUIPPED, PROC_REF(undeploy))
+
+/obj/item/armor_module/module/night_vision/on_detach(obj/item/detaching_from, mob/user)
+	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
+	UnregisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT)
+	UnregisterSignal(parent, COMSIG_ATOM_ATTACKBY)
+	UnregisterSignal(parent, COMSIG_ITEM_EQUIPPED)
+	UnregisterSignal(parent, COMSIG_ITEM_UNEQUIPPED)
+	return ..()
+
+///Called when the parent is clicked on with an open hand; to take out the battery
+/obj/item/armor_module/module/night_vision/proc/on_click(datum/source, mob/user)
+	SIGNAL_HANDLER
+	attached_goggles.eject_battery(user)
+
+///Called when the parent is hit by object; to insert a battery
+/obj/item/armor_module/module/night_vision/proc/on_attackby(datum/source, obj/item/I, mob/user)
+	SIGNAL_HANDLER
+	if(attached_goggles.insert_battery(I, user))
+		return COMPONENT_NO_AFTERATTACK
+
+/obj/item/armor_module/module/night_vision/attack_hand(mob/living/user)
+	if(user.get_inactive_held_item() == src && attached_goggles.eject_battery(user))
+		return
+	return ..()
+
+/obj/item/armor_module/module/night_vision/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(attached_goggles.insert_battery(I, user))
+		return COMPONENT_NO_AFTERATTACK
+
+///Called when the parent is equipped; deploys the goggles
+/obj/item/armor_module/module/night_vision/proc/deploy(datum/source, mob/user, slot)
+	SIGNAL_HANDLER
+	if(!ishuman(user) || prefered_slot != slot)	//Must be human for the following procs to work
+		return
+
+	var/mob/living/carbon/human/wearer = user
+	if(wearer.glasses && !wearer.dropItemToGround(wearer.glasses))
+		//This only happens if the wearer has a head item that can't be dropped
+		to_chat(wearer, span_warning("Could not deploy night vision system due to [wearer.head]!"))
+		return
+
+	INVOKE_ASYNC(wearer, TYPE_PROC_REF(/mob/living/carbon/human, equip_to_slot), attached_goggles, SLOT_GLASSES)
+
+///Called when the parent is unequipped; undeploys the goggles
+/obj/item/armor_module/module/night_vision/proc/undeploy(datum/source, mob/user, slot)
+	SIGNAL_HANDLER
+	//See if goggles are deployed
+	if(attached_goggles.loc == src)
+		return
+
+	//The goggles should not be anywhere but on the wearer's face; but if it's not, just yoink it back to the module
+	if(attached_goggles.loc == user)
+		user.temporarilyRemoveItemFromInventory(attached_goggles, TRUE)
+	attached_goggles.forceMove(src)
+
+/obj/item/armor_module/module/night_vision/Destroy()
+	QDEL_NULL(attached_goggles)
+	return ..()
