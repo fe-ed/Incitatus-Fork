@@ -90,9 +90,7 @@
 		if(!silent)
 			to_chat(owner, span_xenodanger("We can't [initial(name)] at that!"))
 		return FALSE
-
-	var/mob/living/living_target = A
-	if(living_target.stat == DEAD)
+	if(get_dist_euclidean_square(living_target, owner) > WARRIOR_LUNGE_RANGE * 5)
 		if(!silent)
 			to_chat(owner, span_xenodanger("We can't [initial(name)] at that!"))
 		return FALSE
