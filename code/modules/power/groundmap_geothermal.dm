@@ -58,6 +58,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 /obj/machinery/power/geothermal/update_icon()
 	. = ..()
 	//RUTGMC ADDITION BEGIN
+	SSminimaps.remove_marker(src)
 	if(!corrupted && !is_on)
 		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('modular_RUtgmc/icons/UI_icons/map_blips.dmi', null, "generator_off"))
 	if(corrupted)
@@ -337,7 +338,6 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	power_gen_percent = 0
 	cur_tick = 0
 	icon_state = "off"
-	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('modular_RUtgmc/icons/UI_icons/map_blips.dmi', null, "generator_corrupt")) //RU TGMC edit - map blips
 	update_icon()
 	start_processing()
 
