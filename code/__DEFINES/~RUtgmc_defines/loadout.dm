@@ -98,6 +98,8 @@ GLOBAL_LIST_INIT(smartgunner_gear_listed_products, list(
 
 GLOBAL_LIST_INIT(leader_gear_listed_products, list(
 	/obj/effect/vendor_bundle/leader = list(CAT_ESS, "Essential SL Set", 0, "white"),
+	/obj/item/armor_module/module/night_vision = list(CAT_LEDSUP, "BE-35 night vision kit", 25, "blue"),
+	/obj/item/clothing/glasses/night_vision = list(CAT_LEDSUP, "BE-47 night vision goggles", 35, "blue"),
 	/obj/item/storage/backpack/lightpack = list(CAT_LEDSUP, "Combat Backpack", 5, "orange"),
 	/obj/item/storage/backpack/marine/radiopack = list(CAT_LEDSUP, "Radio Pack", 5, "orange"),
 	/obj/item/fulton_extraction_pack = list(CAT_LEDSUP, "Fulton Extraction Pack", 5, "orange"),
@@ -158,6 +160,8 @@ GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 	/obj/item/stack/sheet/plasteel/small_stack = list(CAT_FCSUP, "Plasteel x10", PLASTEEL_PRICE_IN_GEAR_VENDOR, "yellow"),
 	/obj/item/stack/sandbags_empty/half = list(CAT_FCSUP, "Sandbags x25", SANDBAG_PRICE_IN_GEAR_VENDOR, "yellow"),
 	/obj/structure/closet/bodybag/tarp = list(CAT_FCSUP, "V1 thermal-dampening tarp", 2, "yellow"),
+	/obj/item/armor_module/module/night_vision = list(CAT_FCSUP, "BE-35 night vision kit", 20, "blue"),
+	/obj/item/clothing/glasses/night_vision = list(CAT_FCSUP, "BE-47 night vision goggles", 30, "blue"),
 	/obj/item/explosive/plastique = list(CAT_FCSUP, "Plastique explosive", 2, "orange3"),
 	/obj/item/detpack = list(CAT_FCSUP, "Detonation pack", 2, "orange3"),
 	/obj/item/storage/box/visual/grenade/sticky = list(CAT_FCSUP, "M40 adhesive charge grenade box", 15, "blue"),

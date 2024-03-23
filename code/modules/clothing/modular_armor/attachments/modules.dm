@@ -635,29 +635,17 @@
 		QDEL_NULL(beacon_datum)
 		user.show_message(span_warning("The [src] beeps and states, \"Your last position is no longer accessible by the supply console"), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
 		return
-	if(comms_setup == COMMS_SETUP)
-		var/turf/location = get_turf(user)
-		user.show_message(span_notice("The [src] beeps and states, \"Uplink data: LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
-		return
+	if(!is_ground_level(user.z))
+		to_chat(user, span_warning("You have to be on the planet to use this or it won't transmit."))
+		return FALSE
+	beacon_datum = new /datum/supply_beacon(user.name, user.loc, user.faction, 4 MINUTES)
+	RegisterSignal(beacon_datum, COMSIG_QDELETING, PROC_REF(clean_beacon_datum))
+	user.show_message(span_notice("The [src] beeps and states, \"Your current coordinates were registered by the supply console. LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
 
-///Begins the startup sequence.
-/obj/item/armor_module/module/antenna/proc/start_sync(mob/living/user)
-	if(comms_setup != COMMS_OFF) //Guh?
-		return
-	to_chat(user, span_notice("Setting up Antenna communication relay. Please wait."))
-	comms_setup = COMMS_SETTING
-	startup_timer_id = addtimer(CALLBACK(src, PROC_REF(finish_startup), user), ANTENNA_SYNCING_TIME, TIMER_STOPPABLE)
-
-///Finishes startup, rendering the module effective.
-/obj/item/armor_module/module/antenna/proc/finish_startup(mob/living/user)
-	comms_setup = COMMS_SETUP
-	user.show_message(span_notice("[src] beeps twice and states: \"Antenna configuration complete. Relay system active.\""), EMOTE_AUDIBLE, span_notice("[src] vibrates twice."))
-	startup_timer_id = null
-
-
-#undef COMMS_OFF
-#undef COMMS_SETTING
-#undef COMMS_SETUP
+/// Signal handler to nullify beacon datum
+/obj/item/armor_module/module/antenna/proc/clean_beacon_datum()
+	SIGNAL_HANDLER
+	beacon_datum = null
 
 /obj/item/armor_module/module/night_vision
 	name = "\improper BE-35 night vision kit"
