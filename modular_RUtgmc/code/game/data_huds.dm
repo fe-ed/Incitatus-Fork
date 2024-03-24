@@ -16,7 +16,7 @@
 	var/static/image/transvitox_high_image = image('icons/mob/hud.dmi', icon_state = "transvitox_high")
 	var/static/image/hunter_silence_image = image('icons/mob/hud.dmi', icon_state = "silence_debuff")
 	var/static/image/sanguinal_high_image = image('icons/mob/hud.dmi', icon_state = "sanguinal_high")
-	var/static/image/intoxicated_high_image = image('icons/mob/hud.dmi', icon_state = "intoxicated_high")
+	var/static/image/intoxicated_high_image = image('modular_RUtgmc/icons/mob/hud.dmi', icon_state = "intoxicated_high")
 	var/static/image/hive_target_image = image('modular_RUtgmc/icons/mob/hud.dmi', icon_state = "hive_target")
 	var/static/image/medicalnanites_high_image = image('modular_RUtgmc/icons/mob/hud.dmi', icon_state = "nanites")
 	var/static/image/medicalnanites_medium_image = image('modular_RUtgmc/icons/mob/hud.dmi', icon_state = "nanites_medium")
