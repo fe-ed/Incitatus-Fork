@@ -146,9 +146,9 @@
 			if(HAS_TRAIT(src, TRAIT_UNDEFIBBABLE ))
 				hud_list[HEART_STATUS_HUD].icon_state = "still_heart"
 				if(species.species_flags & ROBOTIC_LIMBS)
-					status_hud.icon_state = "huddead_robot_animated"
+					status_hud.icon_state = "huddead_robot"
 				else
-					status_hud.icon_state = "huddead_marine_animated"
+					status_hud.icon_state = "huddead"
 				return TRUE
 			if(!client)
 				var/mob/dead/observer/ghost = get_ghost()
