@@ -26,7 +26,7 @@
 	maptext = "<span class='maptext' style=font-size:8px>ВЫ: [player.ready ? "" : "НЕ "]ГОТОВЫ</span>"
 
 /atom/movable/screen/text/lobby/clickable/manifest
-	maptext = "<span class='maptext' style=font-size:8px>МАНИФЕСТ ТГМС</span>"
+	maptext = "<span class='maptext' style=font-size:8px>МАНИФЕСТ МОРПЕХОВ</span>"
 
 /atom/movable/screen/text/lobby/clickable/xenomanifest
 	maptext = "<span class='maptext' style=font-size:8px>МАНИФЕСТ УЛЬЯ</span>"
