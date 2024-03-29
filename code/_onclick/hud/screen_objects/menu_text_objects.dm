@@ -12,7 +12,7 @@
 	screen_loc = "CENTER"
 	maptext_height = 480
 	maptext_width = 480
-	maptext_x = 24
+	maptext_x = 28
 	maptext_y = 9
 
 

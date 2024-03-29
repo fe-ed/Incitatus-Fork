@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(ticker)
 	var/list/round_start_events
 	var/list/round_end_events
 
-	var/tipped = FALSE
+	var/tipped = 0
 	var/selected_tip
 
 	var/graceful = FALSE //Will this server gracefully shut down?
@@ -88,9 +88,12 @@ SUBSYSTEM_DEF(ticker)
 			if(start_immediately)
 				time_left = 0
 
-			if(time_left <= 300 && !tipped)
+			if(time_left <= 1500 && tipped == 0)
 				send_tip_of_the_round()
-				tipped = TRUE
+				tipped += 1
+			if(time_left <= 600 && tipped == 1)
+				send_tip_of_the_round()
+				tipped += 1
 
 			//countdown
 			if(time_left < 0)
@@ -337,12 +340,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/send_tip_of_the_round()
 	var/tip
 
-	if(selected_tip)
-		tip = selected_tip
-	else if(prob(95) && length(ALLTIPS))
-		tip = pick(ALLTIPS)
-	else if(length(SSstrings.get_list_from_file("tips/meme")))
-		tip = pick(SSstrings.get_list_from_file("tips/meme"))
+	tip = pick(SSstrings.get_list_from_file("tips/meme"))
 
 	if(tip)
 		to_chat(world, "<br>[span_tip(examine_block("[html_encode(tip)]"))]<br>")
