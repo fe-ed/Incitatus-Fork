@@ -412,7 +412,7 @@
 	var/atom/tracked
 
 	///Are we the roony version of this xeno
-	var/is_a_rouny = FALSE
+	var/is_a_rouny = TRUE
 
 	/// The type of footstep this xeno has.
 	var/footstep_type = FOOTSTEP_XENO_MEDIUM
