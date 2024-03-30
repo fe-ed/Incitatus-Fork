@@ -1,3 +1,66 @@
+/obj/item/armor_module/module/cat1
+	name = "\improper Crunchy cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "crunchy_cat"
+	item_state = "crunchy_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat2
+	name = "\improper Blundir cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "blundir_cat"
+	item_state = "blundir_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat3
+	name = "\improper Blundir dark cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "blundir_dark_cat"
+	item_state = "blundir_dark_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat4
+	name = "\improper Blundir huh cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "blundir_huh_cat"
+	item_state = "blundir_huh_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat5
+	name = "\improper Laugh cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "laugh_cat"
+	item_state = "laugh_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat6
+	name = "\improper Devil cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "devil_cat"
+	item_state = "devil_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
+/obj/item/armor_module/module/cat7
+	name = "\improper Stare cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "stare_cat"
+	item_state = "stare_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
 /obj/item/armor_module/module/style/light_armor
 	soft_armor = list(MELEE = 40, BULLET = 60, LASER = 60, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 45, ACID = 50)
 

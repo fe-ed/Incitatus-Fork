@@ -25,6 +25,13 @@
 		/obj/item/armor_module/module/ballistic_armor,
 		/obj/item/armor_module/module/chemsystem,
 		/obj/item/armor_module/module/eshield,
+		/obj/item/armor_module/module/cat1,
+		/obj/item/armor_module/module/cat2,
+		/obj/item/armor_module/module/cat3,
+		/obj/item/armor_module/module/cat4,
+		/obj/item/armor_module/module/cat5,
+		/obj/item/armor_module/module/cat6,
+		/obj/item/armor_module/module/cat7,
 // Storage Modules
 		/obj/item/armor_module/storage/general,
 		/obj/item/armor_module/storage/ammo_mag,
