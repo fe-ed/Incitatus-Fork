@@ -71,17 +71,17 @@
 	color = hive.color
 
 	if(stat == DEAD)
-		icon_state = "[bloody][base_icon_state] Dead"
+		icon_state = "[bloody][base_icon_state][is_a_rouny ? " rouny" : ""] Dead"
 	else if(handcuffed)
-		icon_state = "[bloody][base_icon_state] Cuff"
+		icon_state = "[bloody][base_icon_state][is_a_rouny ? " rouny" : ""] Cuff"
 
 	else if(lying_angle)
 		if((resting || IsSleeping()) && (!IsParalyzed() && !IsUnconscious() && health > 0))
-			icon_state = "[bloody][base_icon_state] Sleeping"
+			icon_state = "[bloody][base_icon_state][is_a_rouny ? " rouny" : ""] Sleeping"
 		else
-			icon_state = "[bloody][base_icon_state] Stunned"
+			icon_state = "[bloody][base_icon_state][is_a_rouny ? " rouny" : ""] Stunned"
 	else
-		icon_state = "[bloody][base_icon_state]"
+		icon_state = "[bloody][base_icon_state][is_a_rouny ? " rouny" : ""]"
 
 // ***************************************
 // *********** Death
