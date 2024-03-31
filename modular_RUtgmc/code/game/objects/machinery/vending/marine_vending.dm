@@ -2,7 +2,7 @@
 	vend_delay = 10
 /obj/machinery/vending/armor_supply
 	products = list(
-		"FUNNY MODULES!!1" = list(
+		"FUNNY ARMOR MODULES!!1" = list(
 			/obj/item/armor_module/module/cat1 = -1,
 			/obj/item/armor_module/module/cat2 = -1,
 			/obj/item/armor_module/module/cat3 = -1,
@@ -10,6 +10,7 @@
 			/obj/item/armor_module/module/cat5 = -1,
 			/obj/item/armor_module/module/cat6 = -1,
 			/obj/item/armor_module/module/cat7 = -1,
+			/obj/item/armor_module/module/cat8 = -1,
 		),
 		"Xenonauten" = list(
 			/obj/item/clothing/suit/modular/xenonauten/light = -1,

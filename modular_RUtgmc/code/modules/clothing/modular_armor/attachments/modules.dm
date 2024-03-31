@@ -61,6 +61,15 @@
 	item_state = "stare_cat_a"
 	slot = ATTACHMENT_SLOT_MODULE
 
+/obj/item/armor_module/module/cat8
+	name = "\improper Blundir sad cat"
+	desc = "Meow"
+	attachment_layer = KAMA_LAYER
+	icon = 'icons/mob/modular/modular_armor_modules.dmi'
+	icon_state = "sad_cat"
+	item_state = "sad_cat_a"
+	slot = ATTACHMENT_SLOT_MODULE
+
 /obj/item/armor_module/module/style/light_armor
 	soft_armor = list(MELEE = 40, BULLET = 60, LASER = 60, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 45, ACID = 50)
 

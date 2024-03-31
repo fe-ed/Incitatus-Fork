@@ -32,6 +32,7 @@
 		/obj/item/armor_module/module/cat5,
 		/obj/item/armor_module/module/cat6,
 		/obj/item/armor_module/module/cat7,
+		/obj/item/armor_module/module/cat8,
 // Storage Modules
 		/obj/item/armor_module/storage/general,
 		/obj/item/armor_module/storage/ammo_mag,
