@@ -338,6 +338,7 @@
 
 /mob/living/carbon/xenomorph/shrike
 	upgrade = XENO_UPGRADE_NORMAL
+	is_a_rouny = TRUE
 
 /mob/living/carbon/xenomorph/shrike/primordial
 	upgrade = XENO_UPGRADE_PRIMO

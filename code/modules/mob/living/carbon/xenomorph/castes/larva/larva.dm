@@ -3,7 +3,7 @@
 	speak_emote = list("hisses")
 	icon_state = "Bloody Larva"
 	bubble_icon = "alien"
-
+	is_a_rouny = TRUE
 	a_intent = INTENT_HELP //Forces help intent for all interactions.
 
 	maxHealth = 35

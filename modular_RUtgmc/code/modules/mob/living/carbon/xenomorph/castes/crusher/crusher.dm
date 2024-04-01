@@ -1,5 +1,6 @@
 /mob/living/carbon/xenomorph/crusher
 	bubble_icon = "alien"
+	is_a_rouny = TRUE
 
 // ***************************************
 // *********** Front Armor

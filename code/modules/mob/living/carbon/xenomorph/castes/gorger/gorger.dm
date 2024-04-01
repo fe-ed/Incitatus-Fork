@@ -13,6 +13,7 @@
 	upgrade = XENO_UPGRADE_NORMAL
 	mob_size = MOB_SIZE_BIG
 	bubble_icon = "alienroyal"
+	is_a_rouny = TRUE
 
 /mob/living/carbon/xenomorph/gorger/Initialize(mapload)
 	. = ..()

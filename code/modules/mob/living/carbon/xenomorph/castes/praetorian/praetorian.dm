@@ -14,4 +14,5 @@
 	tier = XENO_TIER_THREE
 	upgrade = XENO_UPGRADE_NORMAL
 	bubble_icon = "alienroyal"
+	is_a_rouny = TRUE
 

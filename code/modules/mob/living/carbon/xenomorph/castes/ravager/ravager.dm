@@ -14,6 +14,7 @@
 	pixel_x = -16
 	old_x = -16
 	bubble_icon = "alienroyal"
+	is_a_rouny = TRUE
 
 /mob/living/carbon/xenomorph/ravager/Initialize(mapload)
 	. = ..()

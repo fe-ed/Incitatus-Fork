@@ -19,6 +19,7 @@
 	//Boiler ammo
 	var/corrosive_ammo = 0
 	var/neuro_ammo = 0
+	is_a_rouny = TRUE
 
 /mob/living/carbon/xenomorph/boiler/get_liquid_slowdown()
 	return BOILER_WATER_SLOWDOWN

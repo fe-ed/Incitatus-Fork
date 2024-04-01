@@ -15,7 +15,7 @@
 	tier = XENO_TIER_TWO
 	upgrade = XENO_UPGRADE_NORMAL
 	var/list/tunnels = list() //list of active tunnels
-
+	is_a_rouny = TRUE
 // ***************************************
 // *********** Init
 // ***************************************
