@@ -36,6 +36,18 @@
 	penetration = 0
 	shrapnel_chance = 25
 
+/datum/ammo/bullet/smg/acp40
+	name = "submachinegun ACP bullet"
+	hud_state = "smg"
+	hud_state_empty = "smg_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	damage = 20
+	accurate_range = 5
+	damage_falloff = 1
+	sundering = 1.5
+	penetration = 7.5
+	shrapnel_chance = 33
+
 /datum/ammo/bullet/revolver/t500
 	name = ".500 Nigro Express revolver bullet"
 	icon_state = "nigro"
