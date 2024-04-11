@@ -100,7 +100,7 @@
 ////////////// UMP45 based on.. UMP45 ///////////////////
 
 /obj/item/weapon/gun/smg/ump45
-	name = "\improper UMP45 submachinegun"
+	name = "\improper UMP-45 submachinegun"
 	desc = "UMP45 is lightweight and simple to use. It features decend armor peneration and accuracy. Ideal weapon for defence. Uses .40 ACP HP magazines"
 	fire_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/UMP45/ump45.ogg'
 	reload_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/UMP45/Magin.ogg'
@@ -115,15 +115,15 @@
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
 	)
 	caliber = CALIBER_40ACP //codex
-	flags_equip_slot = ITEM_SLOT_BACK
-	force = 20
+	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	force = 25
 	type_of_casings = null
 	default_ammo_type = /obj/item/ammo_magazine/smg/ump45
 	allowed_ammo_types = list(
-		/obj/item/ammo_magazine/smg/ump45
+		/obj/item/ammo_magazine/smg/ump45,
+		/obj/item/ammo_magazine/smg/ump45/ext,
 	)
 	attachable_allowed = list(
-		/obj/item/attachable/suppressor,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/compensator,
 		/obj/item/attachable/lasersight,
@@ -137,28 +137,90 @@
 		/obj/item/attachable/buildasentry,
 		/obj/item/attachable/shoulder_mount,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
-		/obj/item/weapon/gun/shotgun/combat/masterkey,
 		/obj/item/weapon/gun/flamer/mini_flamer,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
 	)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
-	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 16, "rail_x" = 22, "rail_y" = 19, "under_x" = 26, "under_y" = 14, "stock_x" = 24, "stock_y" = 10)
+	attachable_offset = list("muzzle_x" = 40, "muzzle_y" = 16, "rail_x" = 19, "rail_y" = 20, "under_x" = 31, "under_y" = 12, "stock_x" = 24, "stock_y" = 10)
 
-	fire_delay = 0.08 SECONDS
-	recoil = -5  // Recoil blowback system
-	recoil_unwielded = 0.5
-	wield_delay = 0.4 SECONDS
+	fire_delay = 0.1 SECONDS
+	recoil = 0  // Recoil blowback system
+	recoil_unwielded = 1
+	wield_delay = 0.6 SECONDS
+	aim_slowdown = 0.2
 
 	akimbo_additional_delay = 0.5
-	aim_speed_modifier = 0 //no slowdown
-	aim_slowdown = 0
 
 	accuracy_mult = 1
-	accuracy_mult_unwielded = 0.75 //moving or akimbo yield lower acc
-	scatter = -2
-	scatter_unwielded = 6 // Not exactly small weapon, and recoil blowback is only for vertical recoil
+	accuracy_mult_unwielded = 0.75
+	scatter = 3
+	scatter_unwielded = 16
+
+	movement_acc_penalty_mult = 0.1
+	upper_akimbo_accuracy = 5
+	lower_akimbo_accuracy = 5
+
+////////////// MP7 based on.. MP7 ///////////////////
+/obj/item/weapon/gun/smg/mp7_new
+	name = "\improper MP-7 submachinegun"
+	desc = "MP-7 is lightweight and very effective self-defence gun with very high firerate. Uses .40 ACP HP magazines"
+	fire_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/MP7/mp7.ogg'
+	reload_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/MP7/mp7_clipin.ogg'
+	unload_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/MP7/mp7_clipout.ogg'
+	wield_sound = 'modular_RUtgmc/sound/weapons/guns/smgs/MP7/mp7_grab.ogg'
+
+	icon = 'modular_RUtgmc/icons/Marine/gun64.dmi'
+	icon_state = "mp7"
+	item_state = "mp7"
+	item_icons = list(
+		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_64.dmi',
+		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_64.dmi',
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+	)
+	caliber = CALIBER_40ACPL //codex
+	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	force = 15
+	type_of_casings = null
+	default_ammo_type = /obj/item/ammo_magazine/smg/mp7_new
+	allowed_ammo_types = list(
+		/obj/item/ammo_magazine/smg/mp7_new
+	)
+	attachable_allowed = list(
+		/obj/item/attachable/reddot,
+		/obj/item/attachable/compensator,
+		/obj/item/attachable/extended_barrel,
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/verticalgrip,
+		/obj/item/attachable/flashlight,
+		/obj/item/attachable/flashlight/under,
+		/obj/item/attachable/bayonet,
+		/obj/item/attachable/bayonetknife,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/buildasentry,
+		/obj/item/attachable/foldable/mp7stock,
+	)
+
+	starting_attachment_types = list(/obj/item/attachable/foldable/mp7stock)
+
+	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER
+	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
+	attachable_offset = list("muzzle_x" = 32, "muzzle_y" = 21, "rail_x" = 12, "rail_y" = 26, "under_x" = 21, "under_y" = 17, "stock_x" = -7, "stock_y" = 14)
+
+	fire_delay = 0.05 SECONDS
+	recoil = 0.5 // Recoil blowback system
+	recoil_unwielded = 1
+	wield_delay = 0.3 SECONDS
+	aim_slowdown = 0
+
+	akimbo_additional_delay = 0.5
+
+	accuracy_mult = 1
+	accuracy_mult_unwielded = 0.75
+	scatter = 4
+	scatter_unwielded = 5
 
 	movement_acc_penalty_mult = 0.1
 	upper_akimbo_accuracy = 5

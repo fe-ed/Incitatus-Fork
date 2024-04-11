@@ -28,14 +28,30 @@
 	max_rounds = 40 // HI-Point .45 ACP Drum mag
 
 /obj/item/ammo_magazine/smg/ump45
-	name = "\improper UMP45 magazine (.40ACP)"
-	desc = "A .40ACP HP magazine for the UMP45."
+	name = "\improper UMP-45 magazine (.40ACP)"
+	desc = "A .40ACP magazine for the UMP45."
 	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
 	default_ammo = /datum/ammo/bullet/smg/acp40
 	w_class = WEIGHT_CLASS_SMALL
 	caliber = CALIBER_40ACP
 	icon_state = "ump45"
+	max_rounds = 25
+
+/obj/item/ammo_magazine/smg/mp7_new
+	name = "\improper MP-7 magazine (.40ACPL)"
+	desc = "A .40ACPL magazine for the MP7 with light ammo."
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	default_ammo = /datum/ammo/bullet/smg/acp40/low
+	w_class = WEIGHT_CLASS_SMALL
+	caliber = CALIBER_40ACPL
+	icon_state = "mp7"
 	max_rounds = 35
+
+/obj/item/ammo_magazine/smg/ump45/ext
+	name = "\improper UMP-45 extended magazine (.40ACP)"
+	desc = "An extended .40ACP magazine for the UMP45. Capacity x2, awesome!"
+	icon_state = "ump45_ext"
+	max_rounds = 50
 
 /obj/item/ammo_magazine/revolver/t500
 	name = "\improper R-500 speed loader (.500)"

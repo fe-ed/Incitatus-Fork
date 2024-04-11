@@ -45,8 +45,18 @@
 	accurate_range = 5
 	damage_falloff = 1
 	sundering = 1.5
-	penetration = 7.5
-	shrapnel_chance = 33
+	penetration = 8
+
+/datum/ammo/bullet/smg/acp40/low
+	name = "submachinegun ACP bullet"
+	hud_state = "smg"
+	hud_state_empty = "smg_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	damage = 12
+	accurate_range = 5
+	damage_falloff = 1
+	sundering = 0.5
+	penetration = 5
 
 /datum/ammo/bullet/revolver/t500
 	name = ".500 Nigro Express revolver bullet"

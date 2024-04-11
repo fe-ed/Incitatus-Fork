@@ -469,6 +469,9 @@
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
 			/obj/item/weapon/gun/smg/ump45 = 3,
 			/obj/item/ammo_magazine/smg/ump45 = -1,
+			/obj/item/ammo_magazine/smg/ump45/ext = 5,
+			/obj/item/weapon/gun/smg/mp7_new = 3,
+			/obj/item/ammo_magazine/smg/mp7_new = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
@@ -696,6 +699,9 @@
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
 			/obj/item/weapon/gun/smg/ump45 = 3,
 			/obj/item/ammo_magazine/smg/ump45 = -1,
+			/obj/item/ammo_magazine/smg/ump45/ext = 5,
+			/obj/item/weapon/gun/smg/mp7_new = 3,
+			/obj/item/ammo_magazine/smg/mp7_new = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
@@ -922,6 +928,9 @@
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
 			/obj/item/weapon/gun/smg/ump45 = -1,
 			/obj/item/ammo_magazine/smg/ump45 = -1,
+			/obj/item/ammo_magazine/smg/ump45/ext = -1,
+			/obj/item/weapon/gun/smg/mp7_new = -1,
+			/obj/item/ammo_magazine/smg/mp7_new = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
