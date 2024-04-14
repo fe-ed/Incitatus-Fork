@@ -108,6 +108,7 @@
 #include "code\game\objects\structures\window.dm"
 #include "code\game\objects\structures\xeno.dm"
 #include "code\game\objects\structures\crates_lockers\closets.dm"
+#include "code\game\objects\structures\crates_lockers\crates.dm"
 #include "code\game\objects\structures\stool_bed_chair_nest\bed.dm"
 #include "code\game\objects\structures\stool_bed_chair_nest\xeno_nest.dm"
 #include "code\game\objects\explosives\grenades\grenade.dm"
