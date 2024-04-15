@@ -60,3 +60,10 @@
 	name = "\improper Combat uniform TU-32"
 	desc = "Protective, reinforced with Kevlar fiber with rubberized metal inserts, this 'separatist' combat kit has proven its reliability in many situations of unrest among the civilian population after the capture of the colonies of Terra. In memory of the victims of the militia, this set was delivered to the Marine Corps ship TerraGov."
 	icon_state = "separatist"
+
+//////////
+////////// ERT
+//////////
+
+/obj/item/clothing/under/marine/veteran/pmc
+	icon = 'modular_RUtgmc/icons/obj/clothing/ert_uniforms.dmi'

@@ -70,3 +70,26 @@
 	icon_state = "white_com"
 	item_icons = list(
 		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+
+/obj/item/storage/backpack/marine/standard/pmc
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+	icon_state = "pmc_backpack"
+	item_icons = list(
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+	access_delay = 0
+
+/obj/item/storage/backpack/marine/engineerpack/pmc
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+	icon_state = "pmc_backpack"
+	item_icons = list(
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+	access_delay = 0
+
+/obj/item/storage/backpack/marine/satchel/pmc
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+	icon_state = "pmc_satchel"
+	item_icons = list(
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+
+/obj/item/storage/backpack/marine/satchel/medic
+	icon_state = "pmc_medic_satchel"
