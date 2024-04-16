@@ -162,6 +162,37 @@
 	upper_akimbo_accuracy = 5
 	lower_akimbo_accuracy = 5
 
+/obj/item/weapon/gun/smg/ump45/pmc
+	name = "\improper UMP-45-PMC submachinegun"
+	icon_state = "ump45_pmc"
+	item_state = "ump45_pmc"
+
+	attachable_allowed = list(
+		/obj/item/attachable/reddot,
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/verticalgrip,
+		/obj/item/attachable/flashlight,
+		/obj/item/attachable/flashlight/under,
+		/obj/item/attachable/bayonet,
+		/obj/item/attachable/bayonetknife,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/buildasentry,
+		/obj/item/attachable/shoulder_mount,
+		/obj/item/weapon/gun/pistol/plasma_pistol,
+		/obj/item/weapon/gun/flamer/mini_flamer,
+		/obj/item/weapon/gun/grenade_launcher/underslung,
+	)
+	starting_attachment_types = list(
+		/obj/item/weapon/gun/pistol/plasma_pistol,
+		/obj/item/attachable/magnetic_harness,
+	)
+
+	default_ammo_type = /obj/item/ammo_magazine/smg/ump45/pmc
+	allowed_ammo_types = list(
+		/obj/item/ammo_magazine/smg/ump45/pmc,
+	)
+
 ////////////// MP7 based on.. MP7 ///////////////////
 /obj/item/weapon/gun/smg/mp7_new
 	name = "\improper MP-7 submachinegun"
@@ -210,7 +241,7 @@
 	attachable_offset = list("muzzle_x" = 32, "muzzle_y" = 21, "rail_x" = 12, "rail_y" = 26, "under_x" = 21, "under_y" = 17, "stock_x" = -7, "stock_y" = 14)
 
 	fire_delay = 0.05 SECONDS
-	recoil = 0.5 // Recoil blowback system
+	recoil = 0.5
 	recoil_unwielded = 1
 	wield_delay = 0.3 SECONDS
 	aim_slowdown = 0
@@ -225,3 +256,34 @@
 	movement_acc_penalty_mult = 0.1
 	upper_akimbo_accuracy = 5
 	lower_akimbo_accuracy = 5
+
+/obj/item/weapon/gun/smg/mp7_new/pmc
+	icon_state = "mp7_pmc"
+	item_state = "mp7_pmc"
+
+	recoil = 0
+	recoil_unwielded = 0.5
+
+	attachable_allowed = list(
+		/obj/item/attachable/reddot,
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/verticalgrip,
+		/obj/item/attachable/flashlight,
+		/obj/item/attachable/flashlight/under,
+		/obj/item/attachable/bayonet,
+		/obj/item/attachable/bayonetknife,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/buildasentry,
+		/obj/item/attachable/foldable/mp7stock,
+	)
+	starting_attachment_types = list(
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/foldable/mp7stock,
+	)
+
+	default_ammo_type = /obj/item/ammo_magazine/smg/mp7_new/pmc
+	allowed_ammo_types = list(
+		/obj/item/ammo_magazine/smg/mp7_new/pmc,
+	)

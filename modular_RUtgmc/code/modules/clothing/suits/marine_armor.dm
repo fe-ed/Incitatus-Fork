@@ -37,6 +37,6 @@
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 /obj/item/clothing/suit/storage/marine/veteran/pmc/sniper
-	icon_state = "pmc_medium_armor"
+	icon_state = "pmc_sniper_armor"
 	soft_armor = list(MELEE = 55, BULLET = 70, LASER = 70, ENERGY = 40, BOMB = 50, BIO = 35, FIRE = 45, ACID = 75)
 	slowdown = SLOWDOWN_ARMOR_MEDIUM

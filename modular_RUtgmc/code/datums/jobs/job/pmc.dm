@@ -23,13 +23,13 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew/d
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/cap
 	mask = /obj/item/clothing/mask/gas/pmc/leader
-	suit_store = /obj/item/weapon/gun/smg/m25/elite/pmc
+	suit_store = /obj/item/weapon/gun/smg/mp7_new/pmc
 	r_store = /obj/item/storage/pouch/grenade
 	l_store = /obj/item/storage/pouch/medical_injectors/firstaid
 	back = /obj/item/storage/backpack/marine/satchel/pmc
@@ -53,12 +53,12 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/vp70, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/vp70/tactical(H), SLOT_IN_ACCESSORY)
 
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/mp7_new/pmc, SLOT_IN_BELT)
 
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/pmc, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/pmc, SLOT_IN_R_POUCH)
@@ -86,13 +86,13 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/medium
 	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/medium
 	mask = /obj/item/clothing/mask/gas/pmc/leader
-	suit_store = /obj/item/weapon/gun/smg/m25/elite/pmc
+	suit_store = /obj/item/weapon/gun/smg/ump45/pmc
 	r_store = /obj/item/storage/pouch/grenade
 	l_store = /obj/item/storage/pouch/medical_injectors/firstaid
 	back = /obj/item/storage/backpack/marine/standard/pmc
@@ -116,12 +116,12 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/vp70, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/vp70/tactical(H), SLOT_IN_ACCESSORY)
 
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/m25/ap, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ump45/pmc, SLOT_IN_BELT)
 
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/pmc, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/pmc, SLOT_IN_R_POUCH)
@@ -151,7 +151,7 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/belt_harness/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/heavy
 	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
@@ -210,10 +210,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/medic
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/healthanalyzer/gloves
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/medic
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/pmc
@@ -257,7 +257,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/enrg_bar, SLOT_IN_HEAD)
 
-//PMC Medic
+//PMC Engineer
 /datum/job/pmc/engineer
 	title = "PMC Engineer"
 	paygrade = "PMC4"
@@ -273,7 +273,7 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew/engineer
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/engineer
 	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
@@ -338,10 +338,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/pistol/m4a3/vp70_pmc
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/sniper
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/sniper
 	mask = /obj/item/clothing/mask/gas/pmc
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles
@@ -391,10 +391,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew/leader
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/leader
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = gloves = /obj/item/clothing/gloves/marine/veteran/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles
@@ -457,10 +457,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/marine
 	ears = /obj/item/radio/headset/mainship
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew/leader/d
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/leader_light
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles

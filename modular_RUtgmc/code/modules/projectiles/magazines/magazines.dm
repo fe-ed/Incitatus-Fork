@@ -37,6 +37,11 @@
 	icon_state = "ump45"
 	max_rounds = 25
 
+/obj/item/ammo_magazine/smg/ump45/pmc
+	icon_state = "ump45_pmc"
+	max_rounds = 30
+	default_ammo = /datum/ammo/bullet/smg/acp40/pmc
+
 /obj/item/ammo_magazine/smg/mp7_new
 	name = "\improper MP-7 magazine (.40ACPL)"
 	desc = "A .40ACPL magazine for the MP7 with light ammo."
@@ -46,6 +51,11 @@
 	caliber = CALIBER_40ACPL
 	icon_state = "mp7"
 	max_rounds = 35
+
+/obj/item/ammo_magazine/smg/mp7_new/pmc
+	icon_state = "mp7_pmc"
+	max_rounds = 40
+	default_ammo = /datum/ammo/bullet/smg/acp40/low/pmc
 
 /obj/item/ammo_magazine/smg/ump45/ext
 	name = "\improper UMP-45 extended magazine (.40ACP)"

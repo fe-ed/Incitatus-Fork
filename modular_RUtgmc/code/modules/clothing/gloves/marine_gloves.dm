@@ -30,3 +30,12 @@
 		icon_state = "veteran_2"
 	else
 		icon_state = "veteran_1"
+
+/obj/item/clothing/gloves/pmc
+	name = "PMC nitrile gloves"
+	desc = "Pair of modern and clean gloves, you can feel how durable and light they are."
+	icon_state = "pmc"
+	siemens_coefficient = 0
+	flags_item = SYNTH_RESTRICTED
+	soft_armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 30, BIO = 20, FIRE = 20, ACID = 15)
+
