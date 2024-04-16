@@ -394,7 +394,7 @@
 	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew/leader
 	shoes = /obj/item/clothing/shoes/veteran/pmc
 	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/leader
-	gloves = gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles
