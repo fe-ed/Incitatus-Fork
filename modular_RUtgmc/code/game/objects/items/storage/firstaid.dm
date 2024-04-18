@@ -1,5 +1,5 @@
 /obj/item/storage/ai2 //УРААААААААААААААА
-	name = "AI 2"
+	name = "\"АИ-2\" first aid kit"
 	desc = "It's an individual medical kit with rare and useful reagents."
 	icon = 'modular_RUtgmc/icons/obj/items/storage/firstaidkit.dmi'
 	icon_state = "firstaidkit"

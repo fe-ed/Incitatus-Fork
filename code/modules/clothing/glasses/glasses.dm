@@ -451,7 +451,10 @@
 	///The battery inside
 	var/obj/item/cell/night_vision_battery/battery
 	///How much energy this module needs when activated
+	/* ORIGINAL
 	var/active_energy_cost = 4	//Little over 4 minutes of use
+	*/
+	var/active_energy_cost = 1.5	//RUTGMC EDIT
 	///Looping sound to play
 	var/datum/looping_sound/active_sound = /datum/looping_sound/scan_pulse
 	///How loud the looping sound should be

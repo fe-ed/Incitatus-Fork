@@ -25,6 +25,26 @@ WEAPONS
 	contains = list(/obj/item/ammo_magazine/smg/vector)
 	cost = 5
 
+/datum/supply_packs/weapons/ump45
+	name = "UMP-45"
+	contains = list(/obj/item/weapon/gun/smg/ump45)
+	cost = 75
+
+/datum/supply_packs/weapons/ammo_magazine/ump45/ex
+	name = "UMP-45 extended magazine"
+	contains = list(/obj/item/ammo_magazine/smg/ump45/ext)
+	cost = 12
+
+/datum/supply_packs/weapons/mp7
+	name = "MP-7"
+	contains = list(/obj/item/weapon/gun/smg/mp7_new)
+	cost = 75
+
+/datum/supply_packs/weapons/p19
+	name = "P-19 \"Bizon\""
+	contains = list(/obj/item/weapon/gun/smg/p19bizon)
+	cost = 75
+
 /datum/supply_packs/weapons/valihalberd
 	name = "VAL-HAL-A"
 	contains = list(/obj/item/weapon/twohanded/glaive/halberd/harvester)
@@ -311,6 +331,13 @@ MEDICAL
 	cost = 60
 	containertype = /obj/structure/closet/crate/secure/surgery
 	access = ACCESS_MARINE_MEDBAY
+
+/datum/supply_packs/medical/ai2
+	name = "\"АИ-2\" first aid kit"
+	notes = "Contains cheap individual medical kit with rare and useful reagents."
+	contains = list(/obj/item/storage/ai2)
+	cost = 125
+	containertype = /obj/structure/closet/crate/secure/surgery
 
 /datum/supply_packs/medical/advanced_medical_kits
 	name = "Advanced medical kits"

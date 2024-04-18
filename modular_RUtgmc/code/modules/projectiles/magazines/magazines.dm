@@ -42,6 +42,16 @@
 	max_rounds = 30
 	default_ammo = /datum/ammo/bullet/smg/acp40/pmc
 
+/obj/item/ammo_magazine/smg/p19
+	name = "\improper P-19 \"Bizon\" helical magazine (9x18mm)"
+	desc = "A 9x18mm magazine for the P-19 \"Bizon\"."
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	default_ammo = /datum/ammo/bullet/smg/mm9
+	w_class = WEIGHT_CLASS_SMALL
+	caliber = CALIBER_9X18
+	icon_state = "p19"
+	max_rounds = 64
+
 /obj/item/ammo_magazine/smg/mp7_new
 	name = "\improper MP-7 magazine (.40ACPL)"
 	desc = "A .40ACPL magazine for the MP7 with light ammo."
@@ -137,3 +147,90 @@
 	max_rounds = 50
 	icon_state_mini = "mag_rifle_big_green"
 
+/obj/item/ammo_magazine/rifle/tx15_buckshot
+	name = "\improper SH-15 buckshot mag (16g)"
+	desc = "A magazine of 16 gauge buckshot rounds, for the SH-15."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "tx15_buckshot"
+	icon_state_mini = "mag_tx15_buckshot"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_buckshot
+	max_rounds = 12
+	bonus_overlay = "tx15_buckshot"
+
+/obj/item/ammo_magazine/rifle/tx15_flechette
+	name = "\improper SH-15 flechette mag (16g)"
+	desc = "A magazine of 16 gauge flechette rounds, for the SH-15."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "tx15_flechette"
+	icon_state_mini = "mag_tx15_flechette"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_flechette
+	max_rounds = 12
+	bonus_overlay = "tx15_flech"
+
+/obj/item/ammo_magazine/rifle/tx15_slug
+	name = "\improper SH-15 slug mag (16g)"
+	desc = "A magazine of 16 gauge slugs, for the SH-15."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "tx15_slug"
+	icon_state_mini = "mag_tx15_slug"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_slug
+	max_rounds = 12
+	bonus_overlay = "tx15_slug"
+
+/obj/item/ammo_magazine/rifle/tx15_incendiary
+	name = "\improper SH-15 dragonbreath mag (16g)"
+	desc = "A magazine of 16 gauge incendiary rounds, for the SH-15."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "tx15_dragons_breath"
+	icon_state_mini = "mag_tx15_incendiary"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_incendiary
+	max_rounds = 12
+	bonus_overlay = "tx15_dragons_breath"
+
+/obj/item/ammo_magazine/rifle/tx24_buckshot
+	name = "\improper SH-24 buckshot cylinder (16g)"
+	desc = "A revolving cylinder of 16 gauge buckshot rounds, for the SH-24."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "jaw_buck"
+	icon_state_mini = "mag_jaw_buckshot"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_buckshot
+	max_rounds = 24
+	bonus_overlay = "jaw_buckshot"
+
+/obj/item/ammo_magazine/rifle/tx24_slug
+	name = "\improper SH-24 slug cylinder (16g)"
+	desc = "A revolving cylinder of 16 gauge slug rounds, for the SH-24."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "jaw_slug"
+	icon_state_mini = "mag_jaw_slug"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_slug
+	max_rounds = 24
+	bonus_overlay = "jaw_slug"
+
+/obj/item/ammo_magazine/rifle/tx24_flechette
+	name = "\improper SH-24 flechette cylinder (16g)"
+	desc = "A revolving cylinder of 16 gauge flechette rounds, for the SH-24."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "jaw_flech"
+	icon_state_mini = "mag_jaw_flechette"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_flechette
+	max_rounds = 24
+	bonus_overlay = "jaw_flechette"
+
+/obj/item/ammo_magazine/rifle/tx24_incendiary
+	name = "\improper SH-24 dragonbreath cylinder (16g)"
+	desc = "A revolving cylinder of 16 gauge incendiary rounds, for the SH-24."
+	caliber = CALIBER_16G
+	icon = 'modular_RUtgmc/icons/obj/items/ammo.dmi'
+	icon_state = "jaw_ign"
+	icon_state_mini = "mag_jaw_incendiary"
+	default_ammo = /datum/ammo/bullet/shotgun/g16_incendiary
+	max_rounds = 24
+	bonus_overlay = "jaw_incendiary"

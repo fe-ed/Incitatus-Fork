@@ -45,7 +45,7 @@
 	accurate_range = 5
 	damage_falloff = 1
 	sundering = 1.5
-	penetration = 8
+	penetration = 5
 
 /datum/ammo/bullet/smg/acp40/pmc
 	damage = 21
@@ -69,6 +69,17 @@
 	penetration = 8
 	sundering = 0.8
 	accurate_range = 6
+
+/datum/ammo/bullet/smg/mm9
+	name = "submachinegun 9mm bullet"
+	hud_state = "smg"
+	hud_state_empty = "smg_empty"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	damage = 16
+	accurate_range = 5
+	damage_falloff = 1
+	sundering = 0.5
+	penetration = 5
 
 /datum/ammo/bullet/revolver/t500
 	name = ".500 Nigro Express revolver bullet"
@@ -148,84 +159,6 @@
 
 /datum/ammo/bullet/sniper/martini/on_hit_mob(mob/M, obj/projectile/P)
 	staggerstun(M, P, weaken = 0.5 SECONDS, stagger = 1 SECONDS, knockback = 2, slowdown = 0.5, max_range = 10)
-/*
-//================================================
-					SH-Q6 AMMO DATUMS
-//================================================
-*/
-
-/datum/ammo/bullet/shotgun/buckshot/shq6
-	name = "shotgun buckshot shell"
-	handful_icon_state = "shotgun buckshot shell"
-	icon_state = "buckshot"
-	hud_state = "shotgun_buckshot"
-	bonus_projectiles_type = /datum/ammo/bullet/shotgun/spread
-	bonus_projectiles_amount = 5
-	bonus_projectiles_scatter = 3
-	accuracy_var_low = 9
-	accuracy_var_high = 9
-	accurate_range = 4
-	max_range = 10
-	damage = 40
-	sundering = 2
-	damage_falloff = 4
-
-/datum/ammo/bullet/shotgun/buckshot/shq6/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, knockback = 1, slowdown = 1, max_range = 3)
-
-/datum/ammo/bullet/shotgun/slug/shq6
-	name = "shotgun slug"
-	handful_icon_state = "shotgun slug"
-	hud_state = "shotgun_slug"
-	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
-	shell_speed = 3
-	max_range = 15
-	damage = 100
-	penetration = 30
-	sundering = 3
-	damage_falloff = 3
-
-/datum/ammo/bullet/shotgun/slug/shq6/on_hit_mob(mob/M,obj/projectile/P)
-	staggerstun(M, P, slowdown = 2, max_range = 5)
-
-/datum/ammo/bullet/shotgun/incendiary/shq6
-	name = "incendiary slug"
-	handful_icon_state = "incendiary slug"
-	hud_state = "shotgun_fire"
-	damage_type = BRUTE
-	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_INCENDIARY|AMMO_SUNDERING
-	max_range = 15
-	damage = 70
-	penetration = 15
-	sundering = 1
-	bullet_color = COLOR_TAN_ORANGE
-
-/datum/ammo/bullet/shotgun/incendiary/shq6/on_hit_mob(mob/M, obj/projectile/P)
-	staggerstun(M, P, knockback = 1)
-
-/datum/ammo/bullet/shotgun/flechette/shq6
-	name = "shotgun flechette shell"
-	handful_icon_state = "shotgun flechette shell"
-	icon_state = "flechette"
-	hud_state = "shotgun_flechette"
-	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
-	bonus_projectiles_type = /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
-	bonus_projectiles_amount = 2
-	bonus_projectiles_scatter = 3
-	accuracy_var_low = 8
-	accuracy_var_high = 8
-	max_range = 15
-	damage = 50
-	damage_falloff = 3
-	penetration = 40
-	sundering = 4
-
-/datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
-	name = "additional flechette"
-	damage = 40
-	penetration = 40
-	sundering = 2
-	damage_falloff = 3
 
 /datum/ammo/bullet/minigun
 	sundering = 1.5
@@ -246,6 +179,92 @@
 
 /datum/ammo/bullet/shotgun/incendiary/on_hit_mob(mob/M, obj/projectile/P)
 	staggerstun(M, P, weaken = 1 SECONDS, knockback = 1, slowdown = 1)
+
+/datum/ammo/bullet/shotgun/g16_buckshot
+	name = "shotgun buckshot shell"
+	handful_icon_state = "shotgun buckshot shell"
+	icon_state = "buckshot"
+	hud_state = "shotgun_buckshot"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	bonus_projectiles_type = /datum/ammo/bullet/shotgun/g16_b_spread
+	bonus_projectiles_amount = 5
+	bonus_projectiles_scatter = 3
+	max_range = 11
+	damage = 10
+	damage_falloff = 0.5
+	penetration = 0
+	sundering = 0
+	shell_speed = 2
+
+/datum/ammo/bullet/shotgun/g16_b_spread //New parent cause on_hit_mob() will stack if parent is /g16_buckshot
+	name = "additional buckshot"
+	handful_icon_state = "shotgun buckshot shell"
+	icon_state = "buckshot"
+	hud_state = "shotgun_buckshot"
+	flags_ammo_behavior = AMMO_BALLISTIC
+	max_range = 7
+	damage = 10
+	damage_falloff = 0.5
+	penetration = 0
+	sundering = 0
+
+/datum/ammo/bullet/shotgun/g16_buckshot/on_hit_mob(mob/M, obj/projectile/P)
+	if(prob(50))
+		staggerstun(M, P, knockback = 1)
+
+/datum/ammo/bullet/shotgun/g16_flechette
+	name = "shotgun flechette shell"
+	handful_icon_state = "shotgun flechette shell"
+	icon_state = "flechette"
+	hud_state = "shotgun_flechette"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	bonus_projectiles_type = /datum/ammo/bullet/shotgun/g16_flechette/spread
+	bonus_projectiles_amount = 4
+	bonus_projectiles_scatter = 3
+	max_range = 15
+	damage = 9
+	damage_falloff = 0.25
+	penetration = 15
+	sundering = 1.5
+
+/datum/ammo/bullet/shotgun/g16_flechette/spread
+	name = "additional flechette"
+
+/datum/ammo/bullet/shotgun/g16_slug
+	name = "shotgun slug"
+	handful_icon_state = "shotgun slug"
+	hud_state = "shotgun_slug"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_SUNDERING
+	shell_speed = 3
+	max_range = 15
+	damage = 30
+	penetration = 30
+	sundering = 3.5
+
+/datum/ammo/bullet/shotgun/g16_slug/on_hit_mob(mob/M, obj/projectile/P)
+	if(prob(50))
+		staggerstun(M, P, slowdown = 2)
+
+/datum/ammo/bullet/shotgun/g16_incendiary
+	name = "shotgun incendiary shell"
+	handful_icon_state = "shotgun incendiary shell"
+	icon = 'modular_RUtgmc/icons/obj/items/projectiles.dmi'
+	icon_state = "incendiary"
+	hud_state = "shotgun_fire"
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_INCENDIARY|AMMO_SUNDERING
+	bonus_projectiles_type = /datum/ammo/bullet/shotgun/g16_incendiary/spread
+	shell_speed = 1
+	bonus_projectiles_amount = 5
+	bonus_projectiles_scatter = 4
+	max_range = 9
+	incendiary_strength = 1
+	damage = 7
+	damage_falloff = 0.5
+	penetration = 10
+	sundering = 0.5
+
+/datum/ammo/bullet/shotgun/g16_incendiary/spread
+	name = "additional incendiary"
 
 /*
 //================================================
