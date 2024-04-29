@@ -74,6 +74,7 @@
 		slot_w_uniform_str = 'modular_RUtgmc/icons/mob/clothing/ert_uniforms.dmi',
 	)
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/veteran/pmcnew/d
 	icon_state = "pmc_jumpsuit_d"

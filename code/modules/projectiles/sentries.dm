@@ -19,6 +19,8 @@
 
 	///Time of last alert
 	var/last_alert = 0
+	///Time of last fire
+	var/last_fire = 0
 	///Time of last damage alert
 	var/last_damage_alert = 0
 
@@ -336,25 +338,25 @@
 		if(SENTRY_ALERT_HOSTILE)
 			if(world.time < (last_alert + SENTRY_ALERT_DELAY))
 				return
-			notice = "<b>ALERT! [src] detected Hostile/Unknown: [mob.name] at: [AREACOORD_NO_Z(src)].</b>"
+			notice = "<b>ALERT /// [src] /// [get_area_name(src, TRUE)] /// HOSTILE DETECTED</b>"
 			last_alert = world.time
 		if(SENTRY_ALERT_AMMO)
 			if(world.time < (last_damage_alert + SENTRY_ALERT_DELAY))
 				return
-			notice = "<b>ALERT! [src]'s ammo depleted at: [AREACOORD_NO_Z(src)].</b>"
+			notice = "<b>ALERT /// [src] /// [get_area_name(src, TRUE)] /// NO AMMO</b>"
 			last_damage_alert = world.time
 		if(SENTRY_ALERT_FALLEN)
-			notice = "<b>ALERT! [src] has been knocked over at: [AREACOORD_NO_Z(src)].</b>"
+			notice = "<b>ALERT /// [src] /// [get_area_name(src, TRUE)] /// KNOCKED OVER</b>"
 		if(SENTRY_ALERT_DAMAGE)
 			if(world.time < (last_damage_alert + SENTRY_DAMAGE_ALERT_DELAY))
 				return
-			notice = "<b>ALERT! [src] has taken damage at: [AREACOORD_NO_Z(src)]. Remaining Structural Integrity: ([obj_integrity]/[max_integrity])[obj_integrity < 50 ? " CONDITION CRITICAL!!" : ""]</b>"
+			playsound(loc, 'modular_RUtgmc/sound/machines/alarm.ogg', 100, 1)
+			notice = "<b>ALERT /// [src] /// [get_area_name(src, TRUE)]. /// DAMAGED ([obj_integrity]/[max_integrity])</b>"
 			last_damage_alert = world.time
 		if(SENTRY_ALERT_DESTROYED)
-			notice = "<b>ALERT! [src] at: [AREACOORD_NO_Z(src)] has been destroyed!</b>"
+			notice = "<b>ALERT /// [src] /// [get_area_name(src, TRUE)] /// DESTROYED</b>"
 
-	playsound(loc, 'sound/machines/warning-buzzer.ogg', 50, FALSE)
-	radio.talk_into(src, "[notice]", FREQ_COMMON)
+	radio.talk_into(src, "[notice]", RADIO_CHANNEL_ENGINEERING)
 
 
 /obj/machinery/deployable/mounted/sentry/process()
@@ -365,7 +367,6 @@
 		firing = FALSE
 		update_minimap_icon()
 		return
-	playsound(loc, 'sound/items/detector.ogg', 25, FALSE)
 
 	sentry_start_fire()
 
@@ -424,6 +425,11 @@
 		gun.stop_fire()
 		firing = FALSE
 		update_minimap_icon()
+
+	if(world.time >= (last_fire + 30 SECONDS))
+		playsound(loc, 'modular_RUtgmc/sound/machines/sentry_warn.ogg', 75, FALSE)
+		sleep(5)
+
 	if(!gun.rounds)
 		sentry_alert(SENTRY_ALERT_AMMO)
 		return
@@ -432,6 +438,7 @@
 	if(HAS_TRAIT(gun, TRAIT_GUN_BURST_FIRING))
 		gun.set_target(target)
 		return
+	last_fire = world.time
 	gun.start_fire(src, target, bypass_checks = TRUE)
 	firing = TRUE
 	update_minimap_icon()
@@ -519,7 +526,7 @@
 	var/obj/item/internal_sentry = get_internal_item()
 	if(internal_sentry)
 		name = "Deployed " + internal_sentry.name
-	icon = 'icons/Marine/sentry.dmi'
+	icon = 'modular_ruTGMC/icons/Marine/sentry.dmi'
 	default_icon_state = "build_a_sentry"
 	update_icon()
 
@@ -527,7 +534,7 @@
 	. = ..()
 	var/obj/item/weapon/gun/internal_gun = get_internal_item()
 	if(internal_gun)
-		. += image('icons/Marine/sentry.dmi', src, internal_gun.placed_overlay_iconstate, dir = dir)
+		. += image('modular_ruTGMC/icons/Marine/sentry.dmi', src, internal_gun.placed_overlay_iconstate, dir = dir)
 
 
 //Throwable turret

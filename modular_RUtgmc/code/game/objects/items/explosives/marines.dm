@@ -19,7 +19,7 @@
 /obj/item/explosive/grenade/impact
 	icon = 'modular_RUtgmc/icons/obj/items/grenade.dmi'
 
-	overlay_type = "cyan"
+	overlay_type = "blue"
 
 /obj/item/explosive/grenade/incendiary
 	icon = 'modular_RUtgmc/icons/obj/items/grenade.dmi'
@@ -59,6 +59,7 @@
 
 /obj/item/explosive/grenade/smokebomb/neuro
 	icon = 'icons/obj/items/grenade.dmi'
+
 	overlay_type = "orange"
 
 /obj/item/explosive/grenade/smokebomb/satrapine
@@ -66,14 +67,18 @@
 
 /obj/item/explosive/grenade/smokebomb/som
 	icon = 'icons/obj/items/grenade.dmi'
+
 	overlay_type = "cyan"
 
 /obj/item/explosive/grenade/smokebomb/acid
 	icon = 'modular_RUtgmc/icons/obj/items/grenade.dmi'
+
 	overlay_type = "aqua"
 
 /obj/item/explosive/grenade/smokebomb/cloak
 	icon = 'modular_RUtgmc/icons/obj/items/grenade.dmi'
+
+	overlay_type = "green"
 
 /obj/item/explosive/grenade/smokebomb/drain
 	icon = 'modular_RUtgmc/icons/obj/items/grenade.dmi'

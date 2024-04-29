@@ -471,6 +471,16 @@
 	if(src.get_ammo() == /datum/ammo/bullet/shotgun/g16_incendiary)
 		playsound(src.target, 'modular_RUtgmc/sound/misc/sparkler.ogg', 75, 1)
 
+/obj/item/weapon/gun/rifle/standard_autoshotgun/engineer
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/weapon/gun/grenade_launcher/underslung)
+
+/obj/item/weapon/gun/rifle/standard_autoshotgun/standard
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/heavy_barrel, /obj/item/weapon/gun/grenade_launcher/underslung)
+
+/obj/item/weapon/gun/rifle/standard_autoshotgun/plasma_pistol
+	starting_attachment_types = list(/obj/item/attachable/motiondetector, /obj/item/attachable/extended_barrel, /obj/item/weapon/gun/pistol/plasma_pistol)
+
+
 //-------------------------------------------------------
 //SH-24 JACKHAMMER AUTOMATIC SHOTGUN
 

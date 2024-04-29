@@ -1,6 +1,14 @@
 /obj/item/weapon/gun/shotgun
 	wield_sound = 'modular_RUtgmc/sound/weapons/guns/shotgun/Deploy_Wave_SHOTGUN.ogg'
 
+/obj/item/weapon/gun/shotgun/do_fire(obj/object_to_fire)
+	. = ..()
+	if(src.get_ammo() == /datum/ammo/bullet/shotgun/incendiary)
+		playsound(src.target, 'modular_RUtgmc/sound/misc/sparkler.ogg', 75, 1)
+
+/obj/item/weapon/gun/shotgun/double/marine/incendiary
+	default_ammo_type = /datum/ammo/bullet/shotgun/incendiary
+
 //------------------------------------------------------
 //SH-35 Pump shotgun
 

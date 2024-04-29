@@ -255,7 +255,8 @@
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/g16_incendiary/spread
 	shell_speed = 1
 	bonus_projectiles_amount = 5
-	bonus_projectiles_scatter = 4
+	bonus_projectiles_scatter = 3
+	damage_type = BURN
 	max_range = 9
 	incendiary_strength = 1
 	damage = 7
@@ -265,6 +266,32 @@
 
 /datum/ammo/bullet/shotgun/g16_incendiary/spread
 	name = "additional incendiary"
+
+/datum/ammo/bullet/shotgun/incendiary
+	name = "incendiary slug"
+	handful_icon_state = "incendiary slug"
+	hud_state = "shotgun_fire"
+	icon_state = "incendiary"
+
+	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_INCENDIARY|AMMO_SUNDERING
+	bonus_projectiles_type = /datum/ammo/bullet/shotgun/incendiary/spread
+	shell_speed = 1
+	bonus_projectiles_amount = 5
+	bonus_projectiles_scatter = 4
+	damage_type = BURN
+	max_range = 11
+	damage = 25
+	incendiary_strength = 2
+	damage_falloff = 1
+	penetration = 10
+	sundering = 0.5
+	bullet_color = COLOR_TAN_ORANGE
+
+/datum/ammo/bullet/shotgun/incendiary/spread
+	name = "additional incendiary"
+
+/datum/ammo/bullet/shotgun/incendiary/on_hit_mob(mob/M, obj/projectile/P)
+	return
 
 /*
 //================================================

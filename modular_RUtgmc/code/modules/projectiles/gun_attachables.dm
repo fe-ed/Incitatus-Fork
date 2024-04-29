@@ -127,3 +127,6 @@
 	if(target == user && !user.do_self_harm)
 		return
 	return ..()
+
+/obj/item/attachable/flamer_nozzle
+	icon = 'modular_RUtgmc/icons/Marine/attachments_64.dmi'

@@ -263,6 +263,7 @@
 #include "code\modules\projectiles\guns\shotguns.dm"
 #include "code\modules\projectiles\guns\smgs.dm"
 #include "code\modules\projectiles\guns\specialist.dm"
+#include "code\modules\projectiles\guns\flamer.dm"
 #include "code\modules\projectiles\magazines\magazines.dm"
 #include "code\modules\projectiles\magazines\misc.dm"
 #include "code\modules\projectiles\magazines\specialist.dm"

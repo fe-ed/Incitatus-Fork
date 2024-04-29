@@ -80,7 +80,7 @@
 
 /obj/item/storage/backpack/marine/engineerpack/pmc
 	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
-	icon_state = "pmc_backpack"
+	icon_state = "pmc_welderpack"
 	item_icons = list(
 		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
 	access_delay = 0
