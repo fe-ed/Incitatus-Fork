@@ -291,19 +291,6 @@
 	)
 
 //-------------------------------------------------------
-//SH-15 AUTOMATIC SHOTGUN
-
-/obj/item/weapon/gun/rifle/standard_autoshotgun
-	icon_state = "tx15"
-	item_state = "tx15"
-	greyscale_config = null
-	colorable_allowed = NONE
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
-		)
-
-//-------------------------------------------------------
 //SG-29 Smart Machine Gun (It's more of a rifle than the SG.)
 
 /obj/item/weapon/gun/rifle/standard_smartmachinegun
@@ -455,7 +442,7 @@
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_SMOKE_PARTICLES //Its a shotgun type weapon effectively, most shotgun type weapons shouldn't be able to point blank 1 handed.
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	starting_attachment_types = null
-	attachable_offset = list("muzzle_x" = 30, "muzzle_y" = 16,"rail_x" = 12, "rail_y" = 17, "under_x" = 20, "under_y" = 13, "stock_x" = 26, "stock_y" = 13)
+	attachable_offset = list("muzzle_x" = 43, "muzzle_y" = 17,"rail_x" = 23, "rail_y" = 20, "under_x" = 36, "under_y" = 13, "stock_x" = 26, "stock_y" = 13)
 	gun_skill_category = SKILL_SHOTGUNS
 
 	damage_mult = 2 //Low firerate
@@ -480,6 +467,9 @@
 /obj/item/weapon/gun/rifle/standard_autoshotgun/plasma_pistol
 	starting_attachment_types = list(/obj/item/attachable/motiondetector, /obj/item/attachable/extended_barrel, /obj/item/weapon/gun/pistol/plasma_pistol)
 
+/obj/item/weapon/gun/rifle/standard_autoshotgun/medic
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/extended_barrel, /obj/item/attachable/angledgrip)
+	default_ammo_type = /obj/item/ammo_magazine/rifle/tx15_slug
 
 //-------------------------------------------------------
 //SH-24 JACKHAMMER AUTOMATIC SHOTGUN
@@ -544,6 +534,15 @@
 	. = ..()
 	if(src.get_ammo() == /datum/ammo/bullet/shotgun/g16_incendiary)
 		playsound(src.target, 'modular_RUtgmc/sound/misc/sparkler.ogg', 75, 1)
+
+//It's very fast shogun, it's made to prevent stagger/weaken spam.
+/obj/item/weapon/gun/rifle/standard_autoshotgun/jackhammer/get_ammo()
+	. = ..()
+	switch(ammo_datum_type)
+		if(/datum/ammo/bullet/shotgun/g16_buckshot)
+			return /datum/ammo/bullet/shotgun/g16_buckshot/weak
+		if(/datum/ammo/bullet/shotgun/g16_slug)
+			return /datum/ammo/bullet/shotgun/g16_slug/weak
 
 
 //-------------------------------------------------------

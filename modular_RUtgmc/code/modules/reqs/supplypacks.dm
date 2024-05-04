@@ -15,6 +15,20 @@ OPERATIONS
 WEAPONS
 *******************************************************************************/
 
+/datum/supply_packs/weapons/g16_incendiary
+	name = "16G Dragonbreath Ammo box"
+	contains = list(/obj/item/ammo_magazine/packet/standardautoshotgun/incendiary)
+	cost = 300
+
+/datum/supply_packs/weapons/g16_incendiary
+	name = "16G SH-15 Dragonbreath magazine"
+	contains = list(/obj/item/ammo_magazine/rifle/tx15_incendiary)
+	cost = 50
+
+/datum/supply_packs/weapons/g16_incendiary
+	name = "16G SH-24 Dragonbreath magazine"
+	contains = list(/obj/item/ammo_magazine/rifle/tx24_incendiary)
+	cost = 75
 /datum/supply_packs/weapons/vector
 	name = "Vector"
 	contains = list(/obj/item/weapon/gun/smg/vector)

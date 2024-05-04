@@ -96,10 +96,12 @@
 
 /obj/item/storage/backpack/marine/satchel/medic
 	name = "\improper PMC Medical satchel"
-	icon_state = "pmc_medic_satchel_100"
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+	icon_state = "pmc_medic_satchel"
 	item_state = "pmc_medic_satchel"
 	item_icons = list(
 		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+
 	var/obj/item/cell/high/cell //Starts with a high capacity energy cell.
 	var/icon_skin
 

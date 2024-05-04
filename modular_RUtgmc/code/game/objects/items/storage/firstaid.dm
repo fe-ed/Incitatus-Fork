@@ -125,3 +125,15 @@
 	icon_state = "hypervene_pen"
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/hypervene = 30)
+
+/obj/item/reagent_containers/pill/oxycodone
+	pill_desc = "A oxycodone pill. Best painkiller."
+	list_reagents = list(/datum/reagent/medicine/oxycodone = 15)
+	pill_id = 7
+
+/obj/item/storage/pill_bottle/oxycodone
+	name = "oxycodone pill bottle"
+	desc = "Contains pills that numb severe pain."
+	pill_type_to_fill = /obj/item/reagent_containers/pill/oxycodone
+	greyscale_colors = "#360570#ffffff"
+	description_overlay = "Ox"

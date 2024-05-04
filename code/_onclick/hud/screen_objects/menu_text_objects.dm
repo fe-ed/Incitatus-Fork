@@ -38,7 +38,7 @@
 	color = COLOR_ORANGE
 	icon_state += "_a" //RUTGMC ADDITION
 	var/mob/new_player/player = usr
-	player.playsound_local(player, 'modular_RUtgmc/sound/effects/UI/move.ogg', 45) //RUTGMC EDIT
+	player.playsound_local(player, 'modular_RUtgmc/sound/effects/UI/move.ogg', 40) //RUTGMC EDIT
 
 /atom/movable/screen/text/lobby/clickable/MouseExited(location, control, params)
 	. = ..()
@@ -56,7 +56,7 @@
 		to_chat(usr, span_warning("The game is still setting up, please try again later."))
 		return
 	var/mob/new_player/player = usr
-	player.playsound_local(player, 'modular_RUtgmc/sound/effects/UI/click.ogg', 75) //RUTGMC EDIT
+	player.playsound_local(player, 'modular_RUtgmc/sound/effects/UI/click.ogg', 60) //RUTGMC EDIT
 
 
 /atom/movable/screen/text/lobby/clickable/setup_character

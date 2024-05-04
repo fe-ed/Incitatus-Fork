@@ -125,6 +125,8 @@
 	item_icons = list(
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_s_store_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
 	)
 	caliber = CALIBER_40ACP //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
@@ -223,6 +225,7 @@
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_64.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_64.dmi',
 		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_s_store_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
 	)
 	caliber = CALIBER_40ACPL //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
@@ -302,6 +305,13 @@
 		/obj/item/ammo_magazine/smg/mp7_new/pmc,
 	)
 
+/obj/item/weapon/gun/smg/mp7_new/attachm
+	starting_attachment_types = list(
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/foldable/mp7stock,
+	)
+
 //
 ////////////// PP-19 BIZON based on.. PP-19 "Bizon" ///////////////////
 //
@@ -320,6 +330,8 @@
 	item_icons = list(
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_1.dmi',
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
+		slot_s_store_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi',
 	)
 	caliber = CALIBER_9X18 //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
@@ -341,7 +353,7 @@
 		/obj/item/attachable/motiondetector,
 	)
 
-	starting_attachment_types = list(/obj/item/attachable/foldable/mp7stock)
+	starting_attachment_types = list(/obj/item/attachable/foldable/mp7stock/p19)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
@@ -363,3 +375,7 @@
 	movement_acc_penalty_mult = 0.1
 	upper_akimbo_accuracy = 5
 	lower_akimbo_accuracy = 5
+
+/obj/item/weapon/gun/smg/p19bizon/magnetic
+	starting_attachment_types = list(/obj/item/attachable/foldable/mp7stock/p19, /obj/item/attachable/magnetic_harness)
+

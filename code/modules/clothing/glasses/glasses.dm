@@ -578,3 +578,11 @@
 /obj/item/clothing/glasses/night_vision/mounted/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, NIGHT_VISION_GOGGLES_TRAIT)
+
+/obj/item/clothing/glasses/night_vision/pmc
+	icon = 'modular_RUtgmc/icons/obj/clothing/glasses.dmi'
+	icon_state = "night_vision_pmc"
+	deactive_state = "night_vision_pmc_off"
+	item_icons = list(
+		slot_glasses_str = 'modular_RUtgmc/icons/mob/clothing/eyes.dmi'
+	)

@@ -47,6 +47,9 @@
 	accuracy_unwielded_mod = -0.1
 	scatter_unwielded_mod = 4
 
+/obj/item/attachable/foldable/mp7stock/p19
+	name = "\improper P-19 \"Bizon\" submachinegun stock"
+
 /obj/item/attachable/foldable/t35stock
 	icon = 'modular_RUtgmc/icons/Marine/attachments_64.dmi'
 	greyscale_config = null

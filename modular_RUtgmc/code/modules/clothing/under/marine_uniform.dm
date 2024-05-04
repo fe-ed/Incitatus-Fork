@@ -78,12 +78,21 @@
 
 /obj/item/clothing/under/marine/veteran/pmcnew/d
 	icon_state = "pmc_jumpsuit_d"
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
 
 /obj/item/clothing/under/marine/veteran/pmcnew/engineer
 	icon_state = "engineer_jumpsuit"
 
+/obj/item/clothing/under/marine/veteran/pmcnew/holster
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
+
+/obj/item/clothing/under/marine/veteran/pmcnew/medic
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
+
 /obj/item/clothing/under/marine/veteran/pmcnew/leader
 	icon_state = "leader_jumpsuit"
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
 
 /obj/item/clothing/under/marine/veteran/pmcnew/leader/d
 	icon_state = "leader_jumpsuit_d"
+	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
