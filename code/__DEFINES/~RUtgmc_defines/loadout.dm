@@ -70,6 +70,21 @@ GLOBAL_LIST_INIT(medic_gear_listed_products, list(
 	/obj/item/defibrillator/gloves = list(CAT_MEDSUP, "Advanced medical gloves", 4, "yellow"),
 	/obj/item/tweezers_advanced = list(CAT_MEDSUP, "Advanced Tweezers", 8, "yellow"),
 	/obj/effect/vendor_bundle/stretcher = list(CAT_MEDSUP, "Medivac Stretcher", 16, "yellow"),
+	/obj/item/storage/ai2 = list(CAT_MEDSUP, "\"АИ\"-2 first aid kit", 16, "cyan"),
+	/obj/item/deployable_optable = list(CAT_MEDSUP, "Deployable Operating Table", 16, "yellow"),
+	/obj/item/storage/holster/belt/dartgun/full = list(CAT_MEDSUP, "DP-2 Dart Gun belt", 8, "blue"),
+	/obj/item/storage/dartbox/hypervene =     list(CAT_MEDSUP, "Hypervene Dart Box", 2, "orange2"),
+	/obj/item/storage/dartbox/tramadol =      list(CAT_MEDSUP, "Tramadol Dart Box", 2, "orange2"),
+	/obj/item/storage/dartbox/dylovene =      list(CAT_MEDSUP, "Dylovene Dart Box", 2, "orange2"),
+	/obj/item/storage/dartbox/bicaridine =    list(CAT_MEDSUP, "Bicaridine Dart Box", 4, "orange2"),
+	/obj/item/storage/dartbox/kelotane =      list(CAT_MEDSUP, "Kelotane Dart Box", 4, "orange2"),
+	/obj/item/storage/dartbox/tricordrazine = list(CAT_MEDSUP, "Tricordrazine Dart Box", 4, "orange2"),
+	/obj/item/storage/dartbox/inaprovaline =  list(CAT_MEDSUP, "Inaprovaline Dart Box", 6, "orange2"),
+	/obj/item/storage/dartbox/combat =        list(CAT_MEDSUP, "Combat Dart Box", 10, "orange2"),
+	/obj/item/storage/dartbox/synaptizine =   list(CAT_MEDSUP, "Synaptizine Dart Box", 12, "orange2"),
+	/obj/item/storage/dartbox/russian_red =   list(CAT_MEDSUP, "Russian Red Dart Box", 12, "orange2"),
+	/obj/item/storage/dartbox/meraderm =      list(CAT_MEDSUP, "Meraderm Dart Box", 16, "orange2"),
+	/obj/item/storage/dartbox/neuraline =     list(CAT_MEDSUP, "Neuraline Dart Box", 24, "orange2"),
 ))
 
 //A way to give them everything at once that still works with loadouts would be nice, but barring that make sure that your point calculation is set up so they don't get more than what they're supposed to

@@ -3,3 +3,4 @@
 #define CALIBER_40ACP ".40 ACP"
 #define CALIBER_40ACPL ".40 ACPL"
 #define CALIBER_9X18 "9x18mm"
+#define CALIBER_DART "dart"

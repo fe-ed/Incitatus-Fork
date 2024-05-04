@@ -6,6 +6,19 @@
 	faction = FACTION_TERRAGOV
 	job_flags = JOB_FLAG_PROVIDES_SQUAD_HUD
 
+/datum/skills/pmc/medic
+	name = "PMC Medic"
+	construction = SKILL_CONSTRUCTION_METAL
+	engineer = SKILL_ENGINEER_METAL
+	medical = SKILL_MEDICAL_PRACTICED
+	surgery = SKILL_SURGERY_PROFESSIONAL
+
+/datum/skills/pmc/engineer
+	name = "PMC Engineer"
+	engineer = SKILL_ENGINEER_MASTER
+	construction = SKILL_CONSTRUCTION_ADVANCED
+	leadership = SKILL_LEAD_BEGINNER
+	powerloader = SKILL_POWERLOADER_DABBLING
 
 //PMC Standard
 /datum/job/pmc/standard
@@ -199,6 +212,7 @@
 	title = "PMC Medic"
 	paygrade = "PMC3"
 	outfit = /datum/outfit/job/pmc/medic
+	skills_type = /datum/skills/pmc/medic
 	minimap_icon = "pmc_medic"
 	comm_title = "PMC-MD"
 
@@ -208,7 +222,7 @@
 	jobtype = /datum/job/pmc/medic
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/holster/belt/dartgun/pmc
 	ears = /obj/item/radio/headset/mainship
 	w_uniform = /obj/item/clothing/under/marine/veteran/pmcnew
 	shoes = /obj/item/clothing/shoes/veteran/pmc
@@ -216,8 +230,8 @@
 	gloves = /obj/item/healthanalyzer/gloves
 	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/medic
 	mask = /obj/item/clothing/mask/gas/pmc/leader
-	suit_store = /obj/item/weapon/gun/smg/m25/elite/pmc
-	r_store = /obj/item/storage/pouch/grenade
+	suit_store = /obj/item/weapon/gun/rifle/standard_autoshotgun
+	r_store = /obj/item/storage/pouch/surgery
 	l_store = /obj/item/storage/pouch/medical_injectors/firstaid
 	back = /obj/item/storage/backpack/marine/satchel/medic
 
@@ -262,6 +276,7 @@
 	title = "PMC Engineer"
 	paygrade = "PMC4"
 	outfit = /datum/outfit/job/pmc/engineer
+	skills_type = /datum/skills/pmc/engineer
 	minimap_icon = "pmc_engineer"
 	comm_title = "PMC-EN"
 
