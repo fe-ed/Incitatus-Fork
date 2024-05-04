@@ -248,7 +248,7 @@
 	icon_state = "minisentry"
 
 	max_integrity = 125
-	max_shells = 250
+	max_shells = 350
 	knockdown_threshold = 70
 
 	ammo_datum_type = /datum/ammo/bullet/turret/mini
@@ -320,6 +320,9 @@
 	max_shells = 75
 	fire_delay = 2 SECONDS
 
+	burst_amount = 1
+	extra_delay = 2 SECONDS
+
 	scatter = 0
 
 	ammo_datum_type = /datum/ammo/bullet/turret/sniper
@@ -370,6 +373,9 @@
 	max_shells = 75
 	fire_delay = 1.5 SECONDS
 
+	burst_amount = 2
+	extra_delay = 5 SECONDS
+
 	scatter = 5
 
 	ammo_datum_type = /datum/ammo/bullet/turret/buckshot
@@ -416,7 +422,10 @@
 	turret_range = 8
 	deploy_time = 5 SECONDS
 	max_shells = 100
-	fire_delay = 4 SECONDS
+	fire_delay = 3.5 SECONDS
+
+	burst_amount = 3
+	extra_delay = 10 SECONDS
 
 	scatter = 1
 

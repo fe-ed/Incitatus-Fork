@@ -130,7 +130,7 @@
 	)
 	caliber = CALIBER_40ACP //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	force = 25
+	force = 20
 	type_of_casings = null
 	default_ammo_type = /obj/item/ammo_magazine/smg/ump45
 	allowed_ammo_types = list(
@@ -229,7 +229,7 @@
 	)
 	caliber = CALIBER_40ACPL //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	force = 15
+	force = 10
 	type_of_casings = null
 	default_ammo_type = /obj/item/ammo_magazine/smg/mp7_new
 	allowed_ammo_types = list(
@@ -335,14 +335,14 @@
 	)
 	caliber = CALIBER_9X18 //codex
 	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	force = 25
+	force = 15
 	type_of_casings = null
 	default_ammo_type = /obj/item/ammo_magazine/smg/p19
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/smg/p19,
 	)
 	attachable_allowed = list(
-		/obj/item/attachable/foldable/mp7stock,
+		/obj/item/attachable/foldable/mp7stock/p19,
 
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/compensator,

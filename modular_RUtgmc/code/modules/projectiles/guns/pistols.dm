@@ -50,6 +50,8 @@
 	default_ammo_type = /datum/ammo/dart/bicaridine
 	allowed_ammo_types = list(/datum/ammo/dart)
 
+	max_chamber_items = 2
+
 	fire_sound = 'modular_RUtgmc/sound/weapons/guns/misc/dart_gun/dartgun_fire.ogg'
 	hand_reload_sound = 'sound/weapons/guns/interact/pistol_reload.ogg'
 	attachable_allowed = list(
@@ -65,7 +67,7 @@
 	max_chamber_items = 1
 	load_method = SINGLE_CASING
 	flags_equip_slot = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
-	reciever_flags = AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_TOGGLES_OPEN_EJECTS|AMMO_RECIEVER_HANDFULS
+	reciever_flags = AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_HANDFULS
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 6
 	gun_skill_category = SKILL_PISTOLS
@@ -74,6 +76,6 @@
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER
 	aim_speed_modifier = 0.65
 	scatter = -2
-	scatter_unwielded = 4
+	scatter_unwielded = 2
 	recoil = 0
 	recoil_unwielded = 0.5

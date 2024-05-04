@@ -399,7 +399,7 @@
 	sound_bounce = "ballistic_bounce"
 
 	handful_amount = 5
-	point_blank_range = 5
+	point_blank_range = 8
 	damage = 0
 	shrapnel_chance = 0
 	barricade_clear_distance = 16

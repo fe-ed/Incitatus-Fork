@@ -165,10 +165,37 @@ WEAPONS
 	containertype = /obj/structure/closet/crate/weapon
 
 /datum/supply_packs/weapons/sentry
-	name = "ST-571 Base Defense Sentry"
-	contains = list(/obj/item/storage/box/crate/sentry)
-	cost = 400
+	name = "ST-BASIC sentry gun"
+	contains = list(/obj/item/weapon/gun/sentry/big_sentry)
+	cost = 350
 
+/datum/supply_packs/weapons/sentry_upgrade_kit
+	name = "Sentry Upgrade Kit"
+	contains = list(/obj/item/engi_upgrade_kit)
+	cost = 200
+
+/datum/supply_packs/weapons/sentry_ammo
+	name = "ST-BASIC sentry ammunition"
+	contains = list(/obj/item/ammo_magazine/sentry)
+	cost = 100
+
+/datum/supply_packs/weapons/sentry_ammo/mini
+	name = "ST-MINI sentry ammunition"
+	contains = list(/obj/item/ammo_magazine/minisentry)
+
+/datum/supply_packs/weapons/sentry_ammo/sniper
+	name = "SRT-SNIPER sentry ammunition"
+	contains = list(/obj/item/ammo_magazine/sentry/sniper)
+
+/datum/supply_packs/weapons/sentry_ammo/shotgun
+	name = "SHT-SHOTGUN sentry ammunition"
+	contains = list(/obj/item/ammo_magazine/sentry/shotgun)
+
+/datum/supply_packs/weapons/sentry_ammo/flamer
+	name = "SFT-FLAMER sentry ammunition"
+	contains = list(/obj/item/ammo_magazine/flamer_tank/large/sentry)
+
+/*
 /datum/supply_packs/weapons/sentry_ammo
 	name = "ST-571 sentry ammunition"
 	contains = list(/obj/item/ammo_magazine/sentry)
@@ -203,6 +230,7 @@ WEAPONS
 	name = "SST-571 sniper sentry ammunition"
 	contains = list(/obj/item/ammo_magazine/sentry/sniper)
 	cost = 100
+*/
 
 /datum/supply_packs/weapons/buildasentry
 	name = "Build-A-Sentry Attachment System"

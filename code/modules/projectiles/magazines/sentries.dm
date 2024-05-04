@@ -17,7 +17,7 @@
 	icon_state = "minisentry_mag"
 	flags_magazine = NONE //can't be refilled or emptied by hand
 	caliber = CALIBER_10X20
-	max_rounds = 300
+	max_rounds = 350
 	default_ammo = /datum/ammo/bullet/turret/mini
 
 /obj/item/ammo_magazine/sentry_premade/dumb
