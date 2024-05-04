@@ -175,3 +175,19 @@
 			playsound(user, 'sound/weapons/guns/interact/rifle_reload.ogg', 25, 1, 5)
 			update_icon()
 	return ..()
+
+/obj/item/storage/backpack/marine/corpsman
+	icon = 'modular_RUtgmc/icons/obj/items/storage/storage.dmi'
+
+/obj/item/storage/backpack/marine/corpsman/satchel
+	item_icons = list(
+		slot_l_hand = 'modular_RUtgmc/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand = 'modular_RUtgmc/icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+
+/obj/item/storage/backpack/marine/satchel/tech
+	item_icons = list(
+		slot_l_hand = 'modular_RUtgmc/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand = 'modular_RUtgmc/icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_back_str = 'modular_RUtgmc/icons/mob/clothing/back.dmi')
+
