@@ -82,3 +82,8 @@
 	new /obj/item/storage/dartbox/dylovene(src)
 	new /obj/item/storage/dartbox/inaprovaline(src)
 	INVOKE_ASYNC(src, PROC_REF(handle_item_insertion), new_gun)
+
+/obj/item/storage/belt/grenade/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/tac_reload_storage)
+

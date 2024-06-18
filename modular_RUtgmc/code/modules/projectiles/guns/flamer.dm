@@ -1,3 +1,6 @@
+/obj/flamer_fire
+	icon = 'modular_RUtgmc/icons/effects/fire.dmi'
+
 /obj/item/weapon/gun/flamer/big_flamer/marinestandard
 	icon = 'modular_RUtgmc/icons/Marine/gun64.dmi'
 	item_icons = list(
