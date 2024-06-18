@@ -9,6 +9,7 @@
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 		return
 
+//RUTGMC ADDON BEGIN
 	if(src.a_intent == INTENT_HELP)
 		var/fire_level_to_extinguish = 5
 		var/turf/target_turf = A
@@ -35,6 +36,7 @@
 			src.visible_message(span_danger("\The [src] pats at the fire!"), \
 			span_danger("We pat the fire!"))
 			changeNext_move(CLICK_CD_MELEE)
+//RUTGMC ADDON END
 
 	var/atom/S = A.handle_barriers(src)
 	S.attack_alien(src, xeno_caste.melee_damage * xeno_melee_damage_modifier, isrightclick = islist(modifiers) ? modifiers["right"] : FALSE)
