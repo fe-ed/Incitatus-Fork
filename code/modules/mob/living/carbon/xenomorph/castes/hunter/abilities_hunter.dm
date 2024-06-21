@@ -296,7 +296,8 @@ RU TGMC EDIT */
 	if(owner.layer != MOB_LAYER)
 		owner.layer = MOB_LAYER
 		var/datum/action/ability/xeno_action/xenohide/hide_action = owner.actions_by_path[/datum/action/ability/xeno_action/xenohide]
-		hide_action?.button?.cut_overlay(mutable_appearance('icons/Xeno/actions.dmi', "selected_purple_frame", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)) // Removes Hide action icon border
+		//hide_action?.button?.cut_overlay(mutable_appearance('icons/Xeno/actions.dmi', "selected_purple_frame", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)) // Removes Hide action icon border // ORIGINAL
+		hide_action?.button?.cut_overlay(mutable_appearance('modular_RUtgmc/icons/Xeno/actions.dmi', "selected_purple_frame", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)) // RUTGMC EDIT
 	if(owner.buckled)
 		owner.buckled.unbuckle_mob(owner)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(movement_fx))
@@ -328,29 +329,31 @@ RU TGMC EDIT */
 		return
 
 	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(ishuman(living_target) && (living_target.dir in reverse_nearby_direction(living_target.dir)))
+	if(ishuman(living_target) && (angle_to_dir(Get_Angle(xeno_owner.throw_source, living_target)) in reverse_nearby_direction(living_target.dir)))
 		var/mob/living/carbon/human/human_target = living_target
 		if(!human_target.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee"))
 			xeno_owner.Paralyze(XENO_POUNCE_SHIELD_STUN_DURATION)
 			xeno_owner.set_throwing(FALSE)
+			playsound(xeno_owner, 'modular_RUtgmc/sound/machines/bonk.ogg', 50, FALSE) // RUTGMC ADDITION
 			return
-// RU TGMC EDIT
-	if(istype(owner, /mob/living/carbon/xenomorph/predalien))
-		owner.playsound_local(owner, 'sound/voice/predalien_pounce.ogg', 25, 0, 1)
-	else
-		playsound(living_target.loc, 'sound/voice/alien_pounce.ogg', 25, TRUE)
-// RU TGMC EDIT
+	trigger_pounce_effect(living_target)
+	pounce_complete()
+
+///Triggers the effect of a successful pounce on the target.
+/datum/action/ability/activable/xeno/pounce/proc/trigger_pounce_effect(mob/living/living_target)
+	playsound(get_turf(living_target), 'sound/voice/alien_pounce.ogg', 25, TRUE)
+	var/mob/living/carbon/xenomorph/xeno_owner = owner
 	xeno_owner.set_throwing(FALSE)
 	xeno_owner.Immobilize(XENO_POUNCE_STANDBY_DURATION)
 	xeno_owner.forceMove(get_turf(living_target))
 	living_target.Knockdown(XENO_POUNCE_STUN_DURATION)
-	pounce_complete()
 
 /datum/action/ability/activable/xeno/pounce/proc/pounce_complete()
 	SIGNAL_HANDLER
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_XENO_OBJ_THROW_HIT, COMSIG_XENOMORPH_LEAP_BUMP, COMSIG_MOVABLE_POST_THROW))
 	SEND_SIGNAL(owner, COMSIG_XENOMORPH_POUNCE_END)
 	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	xeno_owner.set_throwing(FALSE) // RUTGMC ADDITION, for whatever modular fuckery, without this pounce doesn't stop
 	xeno_owner.xeno_flags &= ~XENO_LEAPING
 
 /datum/action/ability/activable/xeno/pounce/proc/reset_pass_flags()

@@ -1,4 +1,8 @@
 #define HUG_RANGE 1
+#define HUGGER_POUNCE_RANGE 6
+#define HUGGER_POUNCE_PARALYZE_DURATION 1 SECONDS
+#define HUGGER_POUNCE_STANDBY_DURATION 1 SECONDS
+#define HUGGER_POUNCE_WINDUP_DURATION 1 SECONDS
 
 // ***************************************
 // *********** Hug
@@ -14,14 +18,6 @@
 		KEYBINDING_NORMAL = COMSING_XENOABILITY_HUGGER_POUNCE,
 	)
 	use_state_flags = ABILITY_USE_BUCKLED
-	///How far can we leap.
-	var/range = 6
-	///For how long will we stun the victim
-	var/victim_paralyze_time = 1 SECONDS
-	///For how long will we freeze upon hitting our target
-	var/freeze_on_hit_time = 1 SECONDS
-	///How long is the windup before leap
-	var/windup_time = 1 SECONDS
 	///Where do we start the leap from
 	var/start_turf
 
@@ -31,6 +27,7 @@
 	var/mob/living/carbon/xenomorph/caster = owner
 	caster.pass_flags = initial(caster.pass_flags)
 	caster.icon_state = "[caster.xeno_caste.caste_name] Walking"
+	caster.set_throwing(FALSE)
 	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENO_LIVING_THROW_HIT))
 
 /datum/action/ability/activable/xeno/pounce_hugger/proc/obj_hit(datum/source, obj/target, speed)
@@ -38,44 +35,41 @@
 	target.hitby(owner, speed)
 	pounce_complete()
 
-/datum/action/ability/activable/xeno/pounce_hugger/proc/mob_hit(datum/source, mob/living/M)
+/datum/action/ability/activable/xeno/pounce_hugger/proc/mob_hit(datum/source, mob/living/living_target)
 	SIGNAL_HANDLER
-	if(M.stat || isxeno(M))
+	if(living_target.stat || isxeno(living_target))
 		return
 
 	var/mob/living/carbon/xenomorph/facehugger/caster = owner
 
-	caster.visible_message(span_danger("[caster] leaps on [M]!"),
-				span_xenodanger("We leap on [M]!"), null, 5)
+	caster.visible_message(span_danger("[caster] leaps on [living_target]!"), span_xenodanger("We leap on [living_target]!"), null, 5)
 	playsound(caster.loc, 'sound/voice/alien_roar_larva3.ogg', 25, TRUE) //TODO: I NEED ACTUAL HUGGERS SOUND DAMMED
 
-	if(ishuman(M) && (M.dir in reverse_nearby_direction(caster.dir)))
-		var/mob/living/carbon/human/H = M
-		if(!H.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee"))
-			caster.Paralyze(6 SECONDS)
+	if(ishuman(living_target) && (angle_to_dir(Get_Angle(caster.throw_source, living_target)) in reverse_nearby_direction(living_target.dir)))
+		var/mob/living/carbon/human/human_target = living_target
+		if(!human_target.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee"))
+			caster.Paralyze(XENO_POUNCE_SHIELD_STUN_DURATION)
 			caster.set_throwing(FALSE) //Reset throwing manually.
+			playsound(caster, 'modular_RUtgmc/sound/machines/bonk.ogg', 50, FALSE)
 			return
 
-	caster.forceMove(get_turf(M))
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(get_dist(start_turf, H) <= HUG_RANGE) //Check whether we hugged the target or just knocked it down
-			caster.try_attach(H)
+	caster.forceMove(get_turf(living_target))
+	if(ishuman(living_target))
+		var/mob/living/carbon/human/human_target = living_target
+		if(get_dist(start_turf, human_target) <= HUG_RANGE) //Check whether we hugged the target or just knocked it down
+			caster.try_attach(human_target)
 		else
-			if(victim_paralyze_time)
-				H.Paralyze(victim_paralyze_time)
-
-			if(freeze_on_hit_time)
-				caster.Immobilize(freeze_on_hit_time)
+			human_target.Paralyze(HUGGER_POUNCE_PARALYZE_DURATION)
+			caster.Immobilize(HUGGER_POUNCE_STANDBY_DURATION)
 
 	pounce_complete()
 
-/datum/action/ability/activable/xeno/pounce_hugger/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/xeno/pounce_hugger/can_use_ability(atom/target, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
 
-	if(!A || A.layer >= FLY_LAYER)
+	if(!target || target.layer >= FLY_LAYER)
 		return FALSE
 
 /datum/action/ability/activable/xeno/pounce_hugger/proc/prepare_to_pounce()
@@ -91,17 +85,17 @@
 	caster.xeno_flags |= XENO_LEAPING
 	return ..()
 
-/datum/action/ability/activable/xeno/pounce_hugger/use_ability(atom/A)
+/datum/action/ability/activable/xeno/pounce_hugger/use_ability(atom/target)
 	var/mob/living/carbon/xenomorph/caster = owner
 
 	prepare_to_pounce()
-	if(!do_after(caster, windup_time, IGNORE_HELD_ITEM, caster, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_ability), A, FALSE, ABILITY_USE_BUSY)))
+	if(!do_after(caster, HUGGER_POUNCE_WINDUP_DURATION, IGNORE_HELD_ITEM, caster, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_ability), target, FALSE, ABILITY_USE_BUSY)))
 		return fail_activate()
 
 	caster.icon_state = "[caster.xeno_caste.caste_name] Thrown"
 
-	caster.visible_message(span_xenowarning("\The [caster] leaps at [A]!"), \
-	span_xenowarning("We leap at [A]!"))
+	caster.visible_message(span_xenowarning("\The [caster] leaps at [target]!"), \
+	span_xenowarning("We leap at [target]!"))
 
 	RegisterSignal(caster, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(obj_hit))
 	RegisterSignal(caster, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
@@ -114,9 +108,9 @@
 	caster.pass_flags ^= PASS_MOB
 
 	start_turf = get_turf(caster)
-	if(ishuman(A) && get_turf(A) == start_turf)
-		mob_hit(caster, A)
-	caster.throw_at(A, range, 2, caster)
+	if(ishuman(target) && get_turf(target) == start_turf)
+		mob_hit(caster, target)
+	caster.throw_at(target, HUGGER_POUNCE_RANGE, XENO_POUNCE_SPEED, caster)
 
 	return TRUE
 
@@ -135,7 +129,7 @@
 		return FALSE
 	action_activate()
 	LAZYINCREMENT(owner.do_actions, target)
-	addtimer(CALLBACK(src, PROC_REF(decrease_do_action), target), windup_time)
+	addtimer(CALLBACK(src, PROC_REF(decrease_do_action), target), HUGGER_POUNCE_WINDUP_DURATION)
 	return TRUE
 
 ///Decrease the do_actions of the owner
@@ -143,3 +137,7 @@
 	LAZYDECREMENT(owner.do_actions, target)
 
 #undef HUG_RANGE
+#undef HUGGER_POUNCE_RANGE
+#undef HUGGER_POUNCE_PARALYZE_DURATION
+#undef HUGGER_POUNCE_STANDBY_DURATION
+#undef HUGGER_POUNCE_WINDUP_DURATION

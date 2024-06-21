@@ -114,6 +114,9 @@
 	edge = 1
 	w_class = WEIGHT_CLASS_BULKY
 
+	///The person throwing tomahawk
+	var/mob/living/living_user
+
 /obj/item/weapon/claymore/tomahawk/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/strappable)
@@ -121,7 +124,34 @@
 /obj/item/weapon/claymore/tomahawk/equipped(mob/user, slot)
 	. = ..()
 	toggle_item_bump_attack(user, TRUE)
+	if(!living_user)
+		living_user = user
+		RegisterSignal(user, COMSIG_MOB_MOUSEDOWN, PROC_REF(try_throw))
 
 /obj/item/weapon/claymore/tomahawk/dropped(mob/user)
 	. = ..()
 	toggle_item_bump_attack(user, FALSE)
+	if(living_user)
+		living_user = null
+		UnregisterSignal(user, COMSIG_MOB_MOUSEDOWN)
+
+/obj/item/weapon/claymore/tomahawk/proc/try_throw(datum/source, atom/object, turf/location, control, params, bypass_checks = FALSE)
+	SIGNAL_HANDLER
+
+	var/list/modifiers = params2list(params)
+	if(modifiers["shift"])
+		return
+
+	if(modifiers["middle"])
+		return
+
+	if(living_user.get_active_held_item() != src) // If the object in our active hand is not atomahawk, abort
+		return
+
+	if(modifiers["right"])
+		//handle strapping
+		if(HAS_TRAIT_FROM(src, TRAIT_NODROP, STRAPPABLE_ITEM_TRAIT))
+			REMOVE_TRAIT(src, TRAIT_NODROP, STRAPPABLE_ITEM_TRAIT)
+		living_user.throw_item(get_turf_on_clickcatcher(object, living_user, params))
+		return
+

@@ -283,7 +283,7 @@
 	SIGNAL_HANDLER
 	if(X.health < 0)
 		to_chat(X, "<span class='xenohighdanger' style='color: red;'>We are critically wounded! We can only withstand [(RAVAGER_ENDURE_HP_LIMIT-X.health) * -1] more damage before we perish!</span>")
-		X.overlay_fullscreen("endure", /atom/movable/screen/fullscreen/bloodlust)
+		X.overlay_fullscreen("endure", /atom/movable/screen/fullscreen/animated/bloodlust)
 	else
 		X.clear_fullscreen("endure", 0.7 SECONDS)
 
@@ -558,6 +558,8 @@ RU TGMC EDIT */
 		return
 	if(timeleft(timer_ref) > 0)
 		return
+	var/mob/living/carbon/human/human_target = target // RUTGMC ADDITION START
+	human_target.blood_volume -= 5 // something about 1% // RUTGMC ADDITION END
 	var/mob/living/carbon/xenomorph/x = owner
 	x.adjustBruteLoss(-x.bruteloss * 0.125)
 	x.adjustFireLoss(-x.fireloss * 0.125)
